@@ -1,0 +1,48 @@
+---
+title: "RFC-DOC-001: Help Center en Markdown"
+sidebar_label: "RFC-DOC-001: Help Center"
+sidebar_position: 7
+audience: developer
+type: rfc
+status: rfc
+rfc_state: draft
+---
+
+import StatusBanner from '@site/src/components/StatusBanner';
+
+<StatusBanner status="rfc" />
+
+:::note Borrador para discusión
+Este RFC lo redacta el proyecto de documentación a partir de los problemas verificados en el código. **No es una decisión del autor de NOPAL.**
+:::
+
+## Problema
+
+- El **Centro de Ayuda** de la aplicación vive dentro del código: su estructura está en `app.js` (`HELP_CATEGORIES`, con iconos, etiquetas y claves) y su texto en los archivos `translations*.js`, en cinco idiomas.
+- Esos archivos se **regeneran** con `scripts/generate_i18n.py` para de, fr y pt-BR.
+- Existe además este sitio de documentación. Hay **dos manuales** que pueden contradecirse. La decisión vigente es **no compartir fuente** y que el sitio enlace al Centro de Ayuda sin copiarlo (Standard §10).
+
+## Propuesta
+
+1. **Fuente en Markdown** para el contenido del Centro de Ayuda, un archivo por tema y por idioma, con metadatos (categoría, etiquetas, sección de destino).
+2. **Un script** del core que genere de esos archivos los diccionarios `translations*.js`, reemplazando la edición a mano.
+3. **El sitio de documentación lee la misma fuente** y publica las páginas de ayuda, sin copiar texto.
+4. Las **pruebas existentes** del Centro de Ayuda (`test_help_center.py`, `test_help_center_links.py`) pasan a validar contra la nueva fuente.
+
+## Alternativas
+
+- **Statu quo**: dos manuales con enlaces entre ellos. Cuesta poco, pero depende de disciplina.
+- **Que el Centro de Ayuda consuma el sitio** (una página incrustada). Necesita conexión y rompe el uso sin internet de una instalación autoalojada.
+
+## Impacto
+
+Toca código del core (generación de traducciones y pruebas), no solo documentación. Por eso se aplazó por decisión del responsable del proyecto: el sitio enlaza al Centro de Ayuda sin copiarlo.
+
+## Preguntas abiertas
+
+- ¿Cómo se conserva la ayuda contextual breve dentro de la aplicación?
+- ¿Qué pasa con los idiomas que no son ES ni EN (de, fr, pt-BR)?
+
+## Estado
+
+`draft`. No se ha iniciado.

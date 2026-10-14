@@ -1,0 +1,66 @@
+---
+title: "RFC-0004: Bus de eventos y tareas de fondo para plugins"
+sidebar_label: "RFC-0004: Eventos"
+sidebar_position: 4
+audience: developer
+type: rfc
+status: rfc
+rfc_state: draft
+---
+
+import StatusBanner from '@site/src/components/StatusBanner';
+
+<StatusBanner status="rfc" />
+
+:::note Borrador para discusión
+Este RFC lo redacta el proyecto de documentación a partir de los problemas verificados en el código. **No es una decisión del autor de NOPAL.**
+:::
+
+## Problema
+
+- **No existe un bus de eventos** entre el core y los plugins. Un plugin que quiere reaccionar a un cambio (una máquina cambia de estado, un trabajo termina) tiene que **sondear**.
+- **No hay una API para tareas periódicas.** Los únicos bucles de fondo son los del core. Ver [backend de plugins](/05-desarrolladores/plugins-backend).
+- Consecuencias reales que cita el README de `matriz-led`: el **saludo automático** y los **avisos** solo funcionan si el panel de NOPAL está abierto en alguna pestaña (sondeo desde el navegador), y los anuncios con **programación por fecha** se guardan pero **no se disparan solos**.
+- Los canales de tiempo real que existen hoy son específicos de una función (el estado en vivo del láser), no genéricos.
+
+## Propuesta
+
+**Eventos en el backend.**
+
+- Una función para suscribirse a eventos desde un plugin, ejecutada en el mismo proceso, con un catálogo de eventos **versionado** (ver [RFC-0001](/07-rfc/rfc-0001-api-de-plugins-versionada)).
+- Catálogo inicial **propuesto** (estos nombres no existen hoy): conexión y desconexión de una máquina, cambio de estado de una máquina, inicio, fin y fallo de un trabajo, carga y descarga de un plugin.
+- Cada evento con una carga útil documentada (identificador de máquina interno estable, estado anterior y actual, marca de tiempo).
+
+**Tareas de fondo.**
+
+- Una forma de registrar una tarea periódica al cargar el plugin, que el core cancela al descargarlo y que sus errores no afectan al resto.
+
+**Eventos en el frontend.**
+
+- Un canal genérico hacia el navegador (WebSocket o *server-sent events*) para que la interfaz de un plugin reaccione sin sondear.
+
+## Alternativas
+
+- **Sondeo**, el comportamiento actual. Funciona, pero depende del navegador y multiplica las peticiones.
+- **Webhooks** hacia servicios externos. Útiles para integraciones, pero no resuelven la comunicación interna entre plugins.
+- **Que cada plugin cree sus propios hilos.** Es posible hoy en Python, pero sin ciclo de vida ni aislamiento de errores.
+
+## Impacto en plugins existentes
+
+- `matriz-led` dejaría de depender del navegador abierto y podría disparar la programación.
+- `arduino-accessories` podría reaccionar al estado de las máquinas sin sondear.
+- El Cotizador y Materiales (`spoolman`) podrían reaccionar a trabajos terminados.
+
+## Compatibilidad y migración
+
+Aditivo: los plugins que sondean seguirían funcionando.
+
+## Preguntas abiertas
+
+- ¿Qué garantías de entrega se ofrecen (al menos una vez, orden, pérdida)?
+- ¿Qué ocurre si un manejador es lento o falla?
+- ¿Cómo se ordenan los eventos de máquinas con identificadores que han migrado? Ver [Migración](/08-proyecto/migracion).
+
+## Estado
+
+`draft`. No se ha implementado nada de esto.

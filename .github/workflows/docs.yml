@@ -38,7 +38,7 @@ jobs:
       - run: npm run gen
       # Las páginas generadas versionadas deben estar al día con el código fuente.
       - name: Las páginas generadas están actualizadas
-        run: git diff --exit-code -- docs i18n plugin-docs
+        run: git diff --exit-code -- docs i18n plugin-docs ':(exclude)docs/08-proyecto/changelog.md' ':(exclude)i18n/en/docusaurus-plugin-content-docs/current/08-proyecto/changelog.md'
 
       # Standard §18: validadores antes de compilar.
       - run: npm run check

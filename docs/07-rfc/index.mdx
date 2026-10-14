@@ -12,14 +12,28 @@ import StatusBanner from '@site/src/components/StatusBanner';
 
 Los RFC describen **ideas que todavía no existen en NOPAL**. Nada de esta sección debe leerse como una función disponible. El proceso está en el [Documentation Standard](/00-inicio/estandar-de-documentacion), sección 16.
 
-## RFC identificados en la auditoría
+:::note Origen
+Estos RFC los redacta el proyecto de documentación a partir de los problemas verificados en el código (auditorías 01 a 04 y las páginas de [Desarrolladores](/05-desarrolladores)). Son **borradores para discusión**, no decisiones del autor de NOPAL. Se publican en español; la traducción al inglés queda pendiente.
+:::
+
+## RFC identificados
 
 | ID | Tema | Estado |
 |---|---|---|
-| RFC-0001 | API de plugins versionada | por redactar |
-| RFC-0002 | Permisos con aplicación forzada | por redactar |
-| RFC-0003 | Dependencias por plugin | por redactar |
-| RFC-0004 | Bus de eventos core ↔ plugins | por redactar |
-| RFC-0005 | Fuente única de metadatos de plugin | por redactar |
-| RFC-0006 | SDK y plantilla oficial de plugin | por redactar |
-| RFC-DOC-001 | Help Center en Markdown | por redactar |
+| [RFC-0001](/07-rfc/rfc-0001-api-de-plugins-versionada) | API de plugins versionada y ciclo de vida | `draft` |
+| [RFC-0002](/07-rfc/rfc-0002-permisos-con-aplicacion-forzada) | Permisos de plugins con aplicación forzada | `draft` |
+| [RFC-0003](/07-rfc/rfc-0003-dependencias-por-plugin) | Dependencias de Python por plugin | `draft` |
+| [RFC-0004](/07-rfc/rfc-0004-eventos-y-tareas-de-fondo) | Bus de eventos y tareas de fondo | `draft` |
+| [RFC-0005](/07-rfc/rfc-0005-metadatos-y-validacion-del-manifiesto) | Fuente única de metadatos y validación del manifiesto | `draft` |
+| [RFC-0006](/07-rfc/rfc-0006-sdk-plantilla-y-publicacion) | SDK, plantilla oficial y publicación para terceros | `draft` |
+| [RFC-DOC-001](/07-rfc/rfc-doc-001-help-center-en-markdown) | Help Center en Markdown | `draft` |
+
+## Cómo se relacionan
+
+```text
+RFC-0005 (metadatos)  ─┐
+RFC-0003 (dependencias)├─► RFC-0006 (SDK y publicación)
+RFC-0002 (permisos)   ─┤
+RFC-0001 (API)        ─┘
+RFC-0004 (eventos) depende de RFC-0001
+```

@@ -1,0 +1,61 @@
+---
+title: "RFC-0001: API de plugins versionada y ciclo de vida"
+sidebar_label: "RFC-0001: API versionada"
+sidebar_position: 1
+audience: developer
+type: rfc
+status: rfc
+rfc_state: draft
+---
+
+import StatusBanner from '@site/src/components/StatusBanner';
+
+<StatusBanner status="rfc" />
+
+:::note Borrador para discusión
+Este RFC lo redacta el proyecto de documentación a partir de los problemas verificados en el código. **No es una decisión del autor de NOPAL.**
+:::
+
+## Problema
+
+Hoy un plugin depende de la superficie interna del core sin ninguna garantía:
+
+- **No hay versión de API de plugins.** Nada indica a un plugin con qué versión del core es compatible, ni al core qué versión de API espera un plugin. Ver [el manifiesto](/05-desarrolladores/plugins-manifiesto).
+- **El frontend usa funciones globales internas de `app.js`.** Los plugins llaman a `showToast`, `appConfirm`, `switchSection`, `applySidebarOrder`…; el Cotizador usa además otras nueve. Ninguna está versionada. Ver [frontend](/05-desarrolladores/plugins-frontend).
+- **El backend importa módulos internos del core** (`backend.auth_deps`, `backend.services.laser_service`…). Si el core los renombra, el plugin se rompe en silencio. Ver [integraciones](/05-desarrolladores/plugins-integraciones).
+- **No hay ciclo de vida completo.** No existe una acción para deshabilitar un plugin, y el backend solo se carga al arrancar NOPAL.
+- **No hay comprobación de compatibilidad** más allá de `python_requires`.
+
+## Propuesta
+
+1. **Un número de API de plugins**, independiente del de NOPAL (un entero que sube solo con cambios incompatibles). El core lo publica en `/api/plugins` y en el frontend.
+2. **El manifiesto declara el rango que soporta**, por ejemplo un campo `plugin_api` con el rango admitido. El core se niega a cargar un plugin fuera de rango y lo explica en la Galería.
+3. **Una superficie pública explícita**, separada del código interno:
+   - Frontend: un objeto global único, con las funciones que hoy se toman por costumbre (avisos, confirmaciones, escape de HTML, cambio de sección, registro de una sección de menú), en lugar de que cada plugin manipule el DOM del core.
+   - Backend: un módulo del core que reexporte lo que un plugin puede usar con garantías (autenticación y roles).
+4. **Ciclo de vida completo:** acciones para habilitar y deshabilitar, y una decisión explícita sobre la carga del backend (recarga en caliente, o reinicio guiado desde la interfaz).
+5. **CI de compatibilidad** que ejecute los plugins oficiales contra cada versión de la API, como ya hace `plugins-compat` con Python 3.9.
+
+## Alternativas
+
+- **Statu quo**: sin versión; los plugins oficiales se actualizan a la vez que el core. Funciona mientras todos los plugins sean del mismo autor.
+- **Usar el número de versión de NOPAL como número de API.** Simple, pero obliga a subir la versión mayor del core por cambios que no afectan a plugins, o a ocultar cambios que sí los rompen.
+- **Solo documentar** la superficie actual como «no estable». Es lo que hace hoy esta documentación.
+
+## Impacto en plugins existentes
+
+Los 8 plugins oficiales usan funciones globales internas. Tendrían que migrar a la superficie pública. El Cotizador es el más afectado por la cantidad de funciones internas que reutiliza.
+
+## Compatibilidad y migración
+
+Un periodo de **coexistencia**: las funciones globales actuales seguirían existiendo, marcadas como obsoletas, durante al menos una versión mayor de la API, con un aviso en los registros cuando un plugin las use. Los plugins sin `plugin_api` en el manifiesto se tratarían como API 0, la actual.
+
+## Preguntas abiertas
+
+- ¿Qué entra en la primera versión pública y qué se deja fuera?
+- ¿Se admite más de una versión de API a la vez en el core?
+- ¿La carga del backend en caliente es viable con el modelo de paquetes actual (`nopal_plugins.<id>`)?
+
+## Estado
+
+`draft`. No se ha implementado nada de esto.

@@ -1,0 +1,63 @@
+---
+title: "RFC-0002: Permisos de plugins con aplicación forzada"
+sidebar_label: "RFC-0002: Permisos"
+sidebar_position: 2
+audience: developer
+type: rfc
+status: rfc
+rfc_state: draft
+---
+
+import StatusBanner from '@site/src/components/StatusBanner';
+
+<StatusBanner status="rfc" />
+
+:::note Borrador para discusión
+Este RFC lo redacta el proyecto de documentación a partir de los problemas verificados en el código. **No es una decisión del autor de NOPAL.**
+:::
+
+## Problema
+
+- Los **permisos del manifiesto son texto libre** en español (por ejemplo «Detectar webcams USB»). Ningún mecanismo los aplica ni los interpreta. Ver [el manifiesto](/05-desarrolladores/plugins-manifiesto).
+- Un plugin se ejecuta **dentro del proceso de NOPAL, con sus mismos privilegios**. Puede leer cualquier archivo que NOPAL pueda leer, abrir puertos serie, ejecutar comandos o importar cualquier módulo del core.
+- El administrador que instala un plugin **no tiene una forma fiable de saber qué hace**. Ver [Seguridad](/02-administracion/seguridad).
+- Un permiso especialmente sensible, **flashear firmware**, aparece igual que uno inofensivo.
+
+## Propuesta
+
+Se propone avanzar por fases, porque sin aislamiento de proceso un permiso no es una barrera de seguridad real.
+
+**Fase 1: permisos declarativos y estructurados.**
+
+- Identificadores estables en el manifiesto (por ejemplo `serial.access`, `network.local`, `library.write`, `firmware.flash`), con un texto localizado por el core, en lugar de frases libres.
+- La Galería muestra los permisos **antes de instalar** y destaca los sensibles.
+- El administrador **confirma** al instalar o al actualizar si los permisos cambian.
+- Sigue sin haber aplicación: es transparencia, y así debe decirse.
+
+**Fase 2: mediación en la API pública.** Si se crea la superficie pública de [RFC-0001](/07-rfc/rfc-0001-api-de-plugins-versionada), las operaciones sensibles (puertos serie, escritura en la biblioteca, flasheo) pasan por funciones del core que comprueban el permiso declarado. Un plugin que se salte la API sigue pudiendo hacerlo: es protección contra errores, no contra código malicioso.
+
+**Fase 3: aislamiento real.** Ejecutar el plugin en un proceso separado con una interfaz restringida. Es el único modo de que los permisos sean una garantía, y es un cambio de arquitectura grande.
+
+## Alternativas
+
+- **Mantener texto informativo** y mejorar solo la documentación (lo que existe hoy).
+- **Saltar directamente al aislamiento por proceso.** Más seguro, pero costoso y con impacto en cómo los plugins comparten el *event loop* y los servicios del core.
+- **Solo plugins revisados** (lista cerrada). Evita el problema a costa de impedir plugins de terceros.
+
+## Impacto en plugins existentes
+
+Los 8 plugins oficiales tendrían que traducir sus frases a identificadores. `arduino-accessories` mostraría el permiso de flasheo como sensible. Ningún plugin cambiaría de comportamiento en la fase 1.
+
+## Compatibilidad y migración
+
+El core aceptaría **ambos formatos** (frases y identificadores) durante un periodo, tratando las frases como permisos «sin clasificar» con una advertencia.
+
+## Preguntas abiertas
+
+- ¿Qué lista inicial de permisos es suficiente sin ser excesiva?
+- ¿Cómo se pide el consentimiento en una actualización automática?
+- ¿Qué se promete al usuario en la fase 1? La redacción importa: no debe sugerir una protección que no existe.
+
+## Estado
+
+`draft`. No se ha implementado nada de esto.

@@ -4,20 +4,16 @@ sidebar_label: Proyecto
 audience: reference
 type: reference
 status: implemented
-stub: true
+verified_against: "nopal@4346f72 (2026-10-07)"
 ---
 
-Hoja de ruta, changelog, versionado, seguridad y licencia.
+# Proyecto
 
-:::caution En construcción
-Esta sección está planificada en la [arquitectura documental](/00-inicio/arquitectura-documental). Aún no contiene páginas verificadas contra el código.
-:::
+Hoja de ruta, historial de cambios, versionado, migración y licencia.
 
-## Contenido previsto
-
-- Hoja de ruta
-- Changelog
-- Migración
-- Versionado y soporte
-- Política de seguridad
-- Licencia GPL-3.0
+- [Hoja de ruta](./hoja-de-ruta.md)
+- [Historial de cambios](./changelog.md): generado desde el historial de git.
+- [Versionado y soporte](./versionado-y-soporte.md)
+- [Migración](./migracion.md): lo que exige acción al actualizar.
+- [Licencia, créditos y apoyo](./licencia-y-apoyo.md)
+- [RFC](/07-rfc): propuestas que todavía no existen en NOPAL.

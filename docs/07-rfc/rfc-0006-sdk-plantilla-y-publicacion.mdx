@@ -1,0 +1,58 @@
+---
+title: "RFC-0006: SDK, plantilla oficial y publicación para terceros"
+sidebar_label: "RFC-0006: SDK y publicación"
+sidebar_position: 6
+audience: developer
+type: rfc
+status: rfc
+rfc_state: draft
+---
+
+import StatusBanner from '@site/src/components/StatusBanner';
+
+<StatusBanner status="rfc" />
+
+:::note Borrador para discusión
+Este RFC lo redacta el proyecto de documentación a partir de los problemas verificados en el código. **No es una decisión del autor de NOPAL.**
+:::
+
+## Problema
+
+- **Hoy no existe un SDK**: lo que hay es un [sistema de plugins](/05-desarrolladores/plugins-manifiesto) sin API versionada.
+- **No hay una plantilla oficial.** El [tutorial](/05-desarrolladores/tutorial-primer-plugin) y su ejemplo se escribieron para esta documentación.
+- **No hay forma de que un tercero publique un plugin.** Para aparecer en la Galería, su entrada debe añadirse al `plugin_catalog.json` del core mediante un cambio aceptado. Ver [instalación y Galería](/05-desarrolladores/plugins-instalacion-y-galeria).
+- **No hay distinción entre plugins oficiales y de la comunidad**, ni garantías de calidad.
+- El catálogo anuncia plugins que **no existen** (`coming_soon`).
+
+## Propuesta
+
+Depende de varios RFC: [0001](/07-rfc/rfc-0001-api-de-plugins-versionada), [0002](/07-rfc/rfc-0002-permisos-con-aplicacion-forzada), [0003](/07-rfc/rfc-0003-dependencias-por-plugin) y [0005](/07-rfc/rfc-0005-metadatos-y-validacion-del-manifiesto). No conviene llamar «SDK» a nada hasta que la API de [RFC-0001](/07-rfc/rfc-0001-api-de-plugins-versionada) exista.
+
+1. **Repositorio de plantilla** (`nopal-plugin-template`) a partir del ejemplo del tutorial, con pruebas, CI y un README que cumpla el estándar de documentación.
+2. **Un nombre y un alcance para el SDK:** la API pública de [RFC-0001](/07-rfc/rfc-0001-api-de-plugins-versionada), su documentación y la plantilla.
+3. **Un índice de plugins de la comunidad**: una lista, mantenida por el proyecto, de repositorios con el *commit* revisado, separada del catálogo oficial.
+4. **Dos niveles en la Galería**: *Oficial* y *Comunidad*, con una advertencia visible en el segundo (los plugins no están aislados; ver [RFC-0002](/07-rfc/rfc-0002-permisos-con-aplicacion-forzada)).
+5. **Requisitos de aceptación** para figurar en la Galería: manifiesto válido, `plugin_api` declarado, documentación mínima, pruebas de compatibilidad y licencia compatible.
+6. **Instalar fijando un commit**, no «la punta de la rama», para que una actualización no cambie lo revisado.
+
+## Alternativas
+
+- **Mantener el catálogo curado** y aceptar plugins de terceros solo por cambio al core (hoy).
+- **Instalación libre por URL**, sin índice. Máxima libertad, mínima protección: es el modelo que los avisos de seguridad actuales intentan evitar.
+
+## Impacto en plugins existentes
+
+Los plugins oficiales pasarían a ser el primer consumidor de la plantilla y de la API pública.
+
+## Compatibilidad y migración
+
+El catálogo actual seguiría siendo el nivel *Oficial*.
+
+## Preguntas abiertas
+
+- ¿Quién revisa los plugins de la comunidad y con qué criterios?
+- ¿Se admiten plugins de pago? Hoy los rechaza el core porque falta el servidor de licencias.
+
+## Estado
+
+`draft`. No se ha implementado nada de esto.

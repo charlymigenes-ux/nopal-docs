@@ -26,6 +26,8 @@ for (const file of walkDocs(path.join(ROOT, 'docs'))) {
   for (const m of content.matchAll(/`(?:(?:GET|POST|PUT|PATCH|DELETE|WS)\s+)?(\/api\/[^\s`?]+)/g)) {
     const route = normalizeRoute(m[1].replace(/<[^>]+>/g, '{}'));
     // Se admite un prefijo (p. ej. `/api/pricing`) si alguna ruta real empieza por él.
+    // Rutas retiradas del código que una guía de migración menciona a propósito (scope.json).
+    if ((scope.removed_routes_documented || []).includes(route)) continue;
     const ok = known.has(route) || [...known].some((k) => k.startsWith(`${route}/`));
     if (!ok) errors.push(`${rel}: la ruta \`${m[1]}\` no existe en el código`);
   }

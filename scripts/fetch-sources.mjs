@@ -11,14 +11,20 @@ fs.mkdirSync(SOURCES, { recursive: true });
 
 for (const repo of scope.included_repos) {
   const dir = path.join(SOURCES, repo);
+  const full = (scope.full_history_repos || []).includes(repo); // el changelog necesita el historial completo
   const url = `https://github.com/${OWNER}/${repo}.git`;
   if (fs.existsSync(path.join(dir, '.git'))) {
     console.log(`actualizando ${repo}`);
-    execFileSync('git', ['-C', dir, 'fetch', '--depth', '1', 'origin'], { stdio: 'inherit' });
+    if (full) {
+      const shallow = execFileSync('git', ['-C', dir, 'rev-parse', '--is-shallow-repository'], { encoding: 'utf8' }).trim() === 'true';
+      execFileSync('git', ['-C', dir, 'fetch', ...(shallow ? ['--unshallow'] : []), 'origin'], { stdio: 'inherit' });
+    } else {
+      execFileSync('git', ['-C', dir, 'fetch', '--depth', '1', 'origin'], { stdio: 'inherit' });
+    }
     execFileSync('git', ['-C', dir, 'reset', '--hard', 'FETCH_HEAD'], { stdio: 'inherit' });
   } else {
     console.log(`clonando ${repo}`);
-    execFileSync('git', ['clone', '--depth', '1', url, dir], { stdio: 'inherit' });
+    execFileSync('git', ['clone', ...(full ? [] : ['--depth', '1']), url, dir], { stdio: 'inherit' });
   }
 }
 console.log(`Fuentes en ${SOURCES}`);

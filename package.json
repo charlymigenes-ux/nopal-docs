@@ -15,11 +15,12 @@
     "check:i18n": "node scripts/check-i18n.mjs",
     "fetch": "node scripts/fetch-sources.mjs",
     "gen:routes": "python -I scripts/extract_routes.py \"${NOPAL_SOURCES:-.sources}\" generated/routes.json",
-    "gen": "npm run gen:routes && node scripts/gen-docs.mjs",
+    "gen": "npm run gen:routes && node scripts/gen-docs.mjs && node scripts/gen-changelog.mjs",
     "check:sources": "node scripts/check-manifests.mjs && node scripts/check-routes.mjs",
     "check:scope": "node scripts/check-scope.mjs",
     "preview": "docusaurus build && docusaurus serve",
-    "gen:tutorial": "node scripts/gen-tutorial-en.mjs"
+    "gen:tutorial": "node scripts/gen-tutorial-en.mjs",
+    "gen:changelog": "node scripts/gen-changelog.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "^3.10.2",

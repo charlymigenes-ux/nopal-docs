@@ -1,0 +1,57 @@
+---
+title: "RFC-0005: Fuente única de metadatos y validación del manifiesto"
+sidebar_label: "RFC-0005: Metadatos"
+sidebar_position: 5
+audience: developer
+type: rfc
+status: rfc
+rfc_state: draft
+---
+
+import StatusBanner from '@site/src/components/StatusBanner';
+
+<StatusBanner status="rfc" />
+
+:::note Borrador para discusión
+Este RFC lo redacta el proyecto de documentación a partir de los problemas verificados en el código. **No es una decisión del autor de NOPAL.**
+:::
+
+## Problema
+
+Verificado en el código y en la [matriz de plugins](/03-plugins/matriz-de-plugins):
+
+- **La versión de un plugin vive en tres sitios**: el manifiesto, `plugin_catalog.json` del core y el `version` que escribe el JavaScript del plugin. **Tres plugins ya están desfasados** (`matriz-led`, `arduino-accessories`, `font-library`).
+- **`permissions`, `compatibility`, `python_requires` y los textos se duplican** entre el manifiesto y el catálogo.
+- **El core no valida el manifiesto.** Solo comprueba que sea JSON legible. Ningún código lee `schema_version`, y un campo mal escrito no produce ningún aviso. Ver [el manifiesto](/05-desarrolladores/plugins-manifiesto).
+- **`frontend.section` se expone pero no se usa.**
+- Para un plugin instalado, la Galería muestra la versión del **manifiesto** y guarda aparte la del catálogo (para ofrecer «Actualizar»). Un desfase accidental puede, por tanto, mostrar acciones engañosas.
+
+## Propuesta
+
+1. **El manifiesto del repositorio del plugin es la fuente única.** El catálogo del core pasa a contener solo lo que no está en el manifiesto (si está disponible, destacado, repositorio), y el resto se **deriva o se valida contra él**.
+2. **Un esquema JSON publicado** del manifiesto, con `schema_version` con significado: el core rechaza versiones de esquema que no entiende.
+3. **Validación al instalar**: el core informa de los campos inválidos o desconocidos con un mensaje claro, y no instala un manifiesto inválido.
+4. **La versión del JavaScript sale del manifiesto**, no de un literal que se escribe a mano.
+5. **Una comprobación en CI** del core que cruce catálogo y manifiestos de los plugins oficiales y falle ante desfases. Hoy hace algo parecido el validador de manifiestos de este repositorio de documentación, solo como aviso.
+
+## Alternativas
+
+- **Mantener tres lugares** y confiar en revisiones manuales (lo que causó los desfases actuales).
+- **Eliminar el catálogo** y descubrir los plugins por un índice de repositorios. Más radical; relacionado con [RFC-0006](/07-rfc/rfc-0006-sdk-plantilla-y-publicacion).
+
+## Impacto en plugins existentes
+
+Los plugins oficiales tendrían que corregir sus desfases de versión y, quizá, añadir campos requeridos por el esquema. El cambio es de bajo riesgo.
+
+## Compatibilidad y migración
+
+Un periodo en que la validación solo **avisa**, antes de empezar a rechazar manifiestos.
+
+## Preguntas abiertas
+
+- ¿Qué campos son obligatorios y cuáles opcionales?
+- ¿Se genera el catálogo automáticamente o se valida a mano?
+
+## Estado
+
+`draft`. No se ha implementado nada de esto.
