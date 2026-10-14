@@ -117,6 +117,10 @@ Solo la **línea moderna** (HTTP), como Adventurer 5M o AD5X. Las Adventurer 3 y
 | **Check code** | En la pantalla de la impresora: **Ajustes → Red** o **Información** |
 | **Nombre** | El que tú elijas |
 
+## Asistente guiado
+
+Si eres administrador, puedes añadir Hellbot (Marlin), Bambu Lab, Elegoo y FlashForge con un asistente de 6 pasos. Ver [Centro de ayuda y recorrido guiado](./centro-de-ayuda-y-recorrido#asistente-guiado-de-impresoras).
+
 ## Después del alta
 
 **Comprueba:** la máquina aparece en el **Panel de control** con un punto de estado:

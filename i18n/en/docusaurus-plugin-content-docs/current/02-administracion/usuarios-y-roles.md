@@ -37,20 +37,29 @@ The full reference, route by route, is in the [core REST API](../06-referencia/a
 | Area | Operator | Administrator |
 |---|:-:|:-:|
 | View machine and system status | ✅ | ✅ |
-| Pause, resume and cancel jobs | ✅ | ✅ |
-| Model and G-code library | ✅ | ✅ |
-| Console and macros (per the policy) | ✅ | ✅ |
-| Discover machines on the network | ❌ | ✅ |
+| Start, pause, resume and cancel jobs | ✅ | ✅ |
+| Move the toolhead, *home* and set temperatures | ✅ | ✅ |
+| Model and G-code library (upload, move, rename, delete) | ✅ | ✅ |
+| Klipper queue and scheduled prints | ✅ | ✅ |
+| Use NOPAL Intelligence (ask questions) | ✅ | ✅ |
+| View the logs | ✅ | ✅ |
 | Test the connection of an already registered machine | ✅ | ✅ |
-| **Add and remove** printers (Bambu, Elegoo, FlashForge, Marlin) and laser/CNC | ❌ | ✅ |
+| **Console**: send G-code or GRBL commands | ❌ | ✅ |
+| **Klipper macros**: run them | ❌ | ✅ |
+| **Laser and spindle power** (M3, M4, S…) | ❌ | ✅ |
+| Write `printer.cfg`, restart Klipper or its firmware | ❌ | ✅ |
+| GRBL `$$` parameters | ❌ | ✅ |
+| Format a laser's SD card | ❌ | ✅ |
+| Discover machines on the network | ❌ | ✅ |
+| **Add and remove** machines (all brands, laser and CNC) | ❌ | ✅ |
 | Manage users | ❌ | ✅ |
-| Install, update and remove plugins | ❌ | ✅ |
+| Plugin gallery: view, install, update and remove | ❌ | ✅ |
 | Configuration backups | ❌ | ✅ |
-| System control (services, restart, shutdown) | ❌ | ✅ |
+| System control, update NOPAL and change the log level | ❌ | ✅ |
 | NOPAL Intelligence configuration | ❌ | ✅ |
 
 :::info Two mechanisms coexist
-Many routes check only the role. A growing group (console, macros, movement, temperature, Marlin job start and control, GRBL settings, Klipper restart) also consults a **central authorization policy** that decides by action and resource. The reference shows which one each route uses in the *Policy* column. Migration of the remaining routes is in progress.
+Many routes check only the role. A growing group (console, macros, laser power, movement, temperature, Marlin job start and control, GRBL settings, Klipper restart) also consults a **central authorization policy** that decides by action and resource. The reference shows which one each route uses in the *Policy* column. Migration of the remaining routes is in progress: **some actions the policy intends for administrators only are not yet checked on every route** (for example, deleting files from a laser's SD card is currently allowed to any session).
 :::
 
 ## Lost password

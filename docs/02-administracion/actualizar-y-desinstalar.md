@@ -14,6 +14,10 @@ verified_against: "nopal@4346f72 (2026-10-07)"
 
 NOPAL se actualiza con `git`. Hay dos formas.
 
+:::caution Aviso de seguridad al actualizar desde la interfaz
+Antes de actualizar, NOPAL muestra *«Detén todas las máquinas antes de continuar»* y exige marcar una casilla de confirmación antes de **Actualizar y reiniciar**. Si el reinicio no es automático o falla la instalación de dependencias, la pantalla lo avisa. Ver [Control del sistema](./control-del-sistema).
+:::
+
 ### Desde la terminal
 
 ```bash

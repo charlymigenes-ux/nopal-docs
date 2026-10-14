@@ -16,10 +16,31 @@ Guides for using NOPAL day to day.
 
 1. [First access](./primer-acceso.md): create your account and sign in.
 2. [Connect your first machine](./conectar-primera-maquina.md): Klipper, Marlin, laser/CNC, Bambu Lab, Elegoo and FlashForge.
-3. [Troubleshooting](./solucion-de-problemas.md): real messages and what to do.
+3. [Dashboard](./panel-de-control.md): the overview of all your machines.
+
+## Machines
+
+- [Klipper printers](./impresoras-klipper.md)
+- [Marlin printers](./impresoras-marlin.md)
+- [Bambu Lab, Elegoo and FlashForge](./impresoras-bambu-elegoo-flashforge.md)
+- [Laser and CNC](./laser-y-cnc.md)
+
+## Files and jobs
+
+- [Library](./biblioteca.md)
+- [G-code editor](./editor-de-gcode.md)
+- [Console and macros](./consola-y-macros.md)
+- [Job history](./historial-de-trabajos.md)
+
+## Extend and configure
+
+- [Plugin gallery](./galeria-de-plugins.md)
+- [NOPAL Intelligence](./nopal-intelligence.md)
+- [General settings](./configuracion-general.md)
+- [Help Center and guided tour](./centro-de-ayuda-y-recorrido.md)
+
+## If something fails
+
+[Troubleshooting](./solucion-de-problemas.md): real messages and what to do.
 
 To know what NOPAL can do with each type of machine, see the [compatibility matrix](../04-hardware/matriz-de-compatibilidad.md).
-
-:::caution Under construction
-These guides are not written yet: dashboard, printers by brand (detail view), laser and CNC, model and G-code library, G-code editor, console, job history, plugin gallery, NOPAL Intelligence and general settings. They will be added as they are verified against the code.
-:::

@@ -15,10 +15,31 @@ Guías para usar NOPAL día a día.
 
 1. [Primer acceso](./primer-acceso.md): crea tu cuenta y entra.
 2. [Conectar tu primera máquina](./conectar-primera-maquina.md): Klipper, Marlin, láser/CNC, Bambu Lab, Elegoo y FlashForge.
-3. [Solución de problemas](./solucion-de-problemas.md): mensajes reales y qué hacer.
+3. [Panel de control](./panel-de-control.md): la vista general de todas tus máquinas.
+
+## Máquinas
+
+- [Impresoras Klipper](./impresoras-klipper.md)
+- [Impresoras Marlin](./impresoras-marlin.md)
+- [Bambu Lab, Elegoo y FlashForge](./impresoras-bambu-elegoo-flashforge.md)
+- [Láser y CNC](./laser-y-cnc.md)
+
+## Archivos y trabajos
+
+- [Biblioteca](./biblioteca.md)
+- [Editor de G-code](./editor-de-gcode.md)
+- [Consola y macros](./consola-y-macros.md)
+- [Historial de trabajos](./historial-de-trabajos.md)
+
+## Extender y configurar
+
+- [Galería de plugins](./galeria-de-plugins.md)
+- [NOPAL Intelligence](./nopal-intelligence.md)
+- [Configuración general](./configuracion-general.md)
+- [Centro de ayuda y recorrido guiado](./centro-de-ayuda-y-recorrido.md)
+
+## Si algo falla
+
+[Solución de problemas](./solucion-de-problemas.md): mensajes reales y qué hacer.
 
 Para saber qué puede hacer NOPAL con cada tipo de máquina, consulta la [matriz de compatibilidad](../04-hardware/matriz-de-compatibilidad.md).
-
-:::caution En construcción
-Estas guías aún no están escritas: panel de control, impresoras por marca (vista de detalle), láser y CNC, biblioteca de modelos y G-code, editor de G-code, consola, historial de trabajos, galería de plugins, NOPAL Intelligence y configuración general. Se añadirán a medida que se verifiquen contra el código.
-:::

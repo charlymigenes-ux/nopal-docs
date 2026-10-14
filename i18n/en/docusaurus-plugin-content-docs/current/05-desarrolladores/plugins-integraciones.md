@@ -43,6 +43,8 @@ The core calls it with optional chaining (`?.`): **if `camera-viewer` is not ins
 
 - Each element must be a `Tool` from `backend.services.ai_tools`. It is imported lazily.
 - An invalid value (not iterable, or an element that is not a `Tool`) is **skipped with a warning**; it never breaks the AI layer.
+- Each `Tool` must declare `policy_action` (`Action.USE_PLUGIN` or `Action.CONFIGURE_PLUGIN`) and whether it is `read_only`. Non-conforming tools are skipped with a warning in the log.
+- There is no auto-confirm flow: identity always comes from the session of whoever is chatting.
 - Only modules of **installed** plugins are considered.
 - The tools respect the authorization of whoever is chatting: the core has a specific test for it.
 

@@ -15,6 +15,10 @@ source_commit: "4346f72"
 
 NOPAL is updated with `git`. There are two ways.
 
+:::caution Safety notice when updating from the interface
+Before updating, NOPAL shows *"Stop all machines before continuing"* and requires ticking a confirmation box before **Update and restart**. If the restart is not automatic or installing dependencies fails, the screen tells you. See [System control](./control-del-sistema).
+:::
+
 ### From the terminal
 
 ```bash

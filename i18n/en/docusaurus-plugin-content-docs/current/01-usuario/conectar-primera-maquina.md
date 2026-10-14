@@ -118,6 +118,10 @@ Only the **modern line** (HTTP), such as Adventurer 5M or AD5X. Adventurer 3 and
 | **Check code** | On the printer screen: **Settings → Network** or **Info** |
 | **Name** | Whatever you choose |
 
+## Guided wizard
+
+If you are an administrator, you can add Hellbot (Marlin), Bambu Lab, Elegoo and FlashForge with a 6-step wizard. See [Help Center and guided tour](./centro-de-ayuda-y-recorrido#guided-printer-setup).
+
 ## After registering
 
 **Check:** the machine appears on the **Dashboard** with a status dot:

@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting
 sidebar_label: Troubleshooting
-sidebar_position: 3
+sidebar_position: 20
 audience: user
 type: how-to
 status: implemented

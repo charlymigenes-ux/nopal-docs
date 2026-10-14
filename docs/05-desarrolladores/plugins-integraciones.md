@@ -42,6 +42,8 @@ El core lo invoca con encadenamiento opcional (`?.`): **si `camera-viewer` no es
 
 - Cada elemento debe ser un `Tool` de `backend.services.ai_tools`. Se importa de forma perezosa.
 - Un valor inválido (no iterable, o un elemento que no es un `Tool`) se **omite con una advertencia**; nunca rompe la capa de IA.
+- Cada `Tool` debe declarar `policy_action` (`Action.USE_PLUGIN` o `Action.CONFIGURE_PLUGIN`) e indicar si es `read_only`. Las herramientas que no cumplen se omiten con una advertencia en el log.
+- No hay flujo de autoconfirmación: la identidad sale siempre de la sesión de quien conversa.
 - Solo se consideran módulos de plugins **instalados**.
 - Las herramientas respetan la autorización de quien conversa: existe una prueba específica de ello en el core.
 

@@ -1,7 +1,7 @@
 ---
 title: Solución de problemas
 sidebar_label: Solución de problemas
-sidebar_position: 3
+sidebar_position: 20
 audience: user
 type: how-to
 status: implemented
