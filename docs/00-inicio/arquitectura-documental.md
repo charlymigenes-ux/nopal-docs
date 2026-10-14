@@ -10,6 +10,8 @@ verified_against: "n/a (documento normativo)"
 # NOPAL Documentation Architecture
 
 **Versión:** 1.0 (borrador para aprobación) · **Fecha:** 2026-10-14
+> **Aplazamiento (2026-10-14):** todo lo relativo a TUNA-Screen (guía de usuario, instalación, emparejamiento, contrato v1, tiempo real `/ws/tunascreen`) está **diferido** hasta nueva orden del responsable. Las filas y fases que lo mencionan se leen como suspendidas.
+
 **Depende de:** `DOCUMENTATION_STANDARD.md` v1.0 (aprobado) · **Evidencia:** `auditoria/`
 
 Define **qué documentación existe, dónde vive, de dónde sale cada página y en qué orden se construye**.

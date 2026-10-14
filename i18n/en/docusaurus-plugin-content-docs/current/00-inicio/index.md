@@ -17,7 +17,6 @@ source_commit: "pending-first-commit"
 - **GRBL laser and CNC** machines, over the network or USB, several at the same time.
 - A **3D model and G-code library** (STL, 3MF, STEP, G-code) with in-browser preview.
 - A **plugin system** for materials, quoting, cameras, workshop automation and laser/CNC design.
-- **TUNA-Screen**, an Android app that works as a remote screen for NOPAL.
 
 NOPAL does not use an external database: it keeps its state in local JSON files. It runs as a service, for example with systemd on Linux, and is licensed under GPL-3.0.
 

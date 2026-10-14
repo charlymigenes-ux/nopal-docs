@@ -17,7 +17,6 @@ source_commit: ""
 - **Láser y CNC con GRBL**, por red o por USB, con varias máquinas a la vez.
 - Una **biblioteca de modelos 3D y G-code** (STL, 3MF, STEP, G-code) con vista previa en el navegador.
 - Un **sistema de plugins** para materiales, cotización, cámaras, automatización del taller y diseño para láser/CNC.
-- **TUNA-Screen**, una app Android que sirve como pantalla remota de NOPAL.
 
 NOPAL no usa una base de datos externa: guarda su estado en archivos JSON locales. Se ejecuta como un servicio, por ejemplo con systemd en Linux, y se licencia bajo GPL-3.0.
 

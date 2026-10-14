@@ -28,13 +28,14 @@ Que cualquier persona (usuario, administrador o desarrollador) pueda confiar en 
 ## 2. Alcance
 
 **Dentro del estándar**
-- `nopal` (core), `nopal-demo`, TUNA-Screen (app Android) y el sitio web.
+- `nopal` (core), `nopal-demo` y el sitio web.
 - Los 8 plugins oficiales: `matriz-led`, `arduino-accessories`, `camera-viewer`, `spoolman`, `cotizador`,
   `shape-creator`, `svg-toolkit`, `font-library`.
 - Hardware **que NOPAL controla** (Klipper/Moonraker, Marlin, Bambu, Elegoo, FlashForge, GRBL, ESP32/Arduino y paneles LED).
 
 **Fuera del estándar**
-- `purecutcnc-main` y `TUNA-S` (proyecto Flutter): no forman parte de NOPAL, decisión del responsable del proyecto (2026-10-14).
+- `purecutcnc-main`, `TUNA-S` (proyecto Flutter) y la carpeta `@PLUGIN TIPOGRAFIA@`: no forman parte de NOPAL, decisión del responsable del proyecto (2026-10-14).
+- **TUNA-Screen (app Android)**: **diferida** hasta nueva orden del responsable (su repositorio es privado). No se documenta la app, su instalación, su emparejamiento ni su contrato `/api/tunascreen/*` y `/ws/tunascreen`. No se menciona en las páginas públicas.
 - `MKS-DLC32-FIRMWARE` y cualquier firmware de terceros: se menciona, como máximo, como hardware compatible con enlace al proyecto original.
 - Plugins de terceros: se rigen por la sección 6 solo si piden figurar en la galería oficial.
 
@@ -250,6 +251,7 @@ requieren un plan de adecuación.
 ### Historial
 - 1.0 (2026-10-14): versión inicial.
 - 1.1 (2026-10-14): se añade el estado de página esqueleto (`stub: true`) en §5.
+- 1.4 (2026-10-14): §2: TUNA-Screen diferida (repo privado); `@PLUGIN TIPOGRAFIA@` fuera de alcance. Los puntos de TUNA-Screen en §7, §8 y §9 quedan **suspendidos** mientras dure el aplazamiento.
 - 1.3 (2026-10-14): §2 declara fuera de alcance `purecutcnc-main` y `TUNA-S`.
 - 1.2 (2026-10-14): corrección en §5: no existe un prefijo de ruta común para plugins (verificado en AUDITORIA_03).
 

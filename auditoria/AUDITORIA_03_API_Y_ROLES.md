@@ -1,5 +1,7 @@
 # Auditoría 03 — API, autenticación y roles
 
+> Nota (2026-10-14): las rutas `/api/tunascreen/*` y `/ws/tunascreen` figuran en el inventario como **evidencia interna**; su documentación está **diferida** (TUNA-Screen no entra hasta nueva orden).
+
 Fecha: 2026-10-14 · Base: `nopal@main` y los 7 repos de plugin clonados el mismo día · Excluido: `MKS-DLC32-FIRMWARE`
 Inventario completo: [`data/rutas.csv`](data/rutas.csv) (367 rutas). Cierra los pendientes **A** y **C** de AUDITORIA_02.
 

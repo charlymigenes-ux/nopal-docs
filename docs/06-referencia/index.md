@@ -16,7 +16,6 @@ Esta sección está planificada en la [arquitectura documental](/00-inicio/arqui
 ## Contenido previsto
 
 - API REST del core (generada)
-- Contrato TUNA-Screen v1
 - API de cada plugin
 - Archivos de estado JSON
 - Roles y autorización

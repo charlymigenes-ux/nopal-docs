@@ -23,6 +23,5 @@ Esta sección está planificada en la [arquitectura documental](/00-inicio/arqui
 - Editor de G-code, consola e historial
 - Galería de plugins
 - NOPAL Intelligence (experimental)
-- TUNA-Screen
 - Configuración, idioma y tema
 - Solución de problemas

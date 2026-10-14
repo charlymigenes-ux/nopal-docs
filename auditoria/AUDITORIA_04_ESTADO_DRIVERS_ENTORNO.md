@@ -79,15 +79,17 @@ Los valores por defecto de las variables de IA no se verificaron; el resto de co
 Las capacidades de la matriz de compatibilidad **deben salir de la API real de cada driver**, no de la marca. Los modelos concretos probados no constan en el código;
 **no se declaran como "compatibles" sin confirmación del autor** (Standard §13) [?].
 
-## 5. TUNA-Screen [V parcial]
+## 5. TUNA-Screen — DIFERIDA (repo privado) [V parcial]
 
-- **No está en GitHub como repositorio** entre los 11 repos públicos de la cuenta; existe en la carpeta local `TUNA-Screen/repo` (Kotlin + Jetpack Compose, `README.md`, `HANDOFF.md`).
+> Por decisión del responsable (2026-10-14), TUNA-Screen **no entra en la documentación hasta nueva orden**. Esta sección es solo evidencia interna de la auditoría y **no debe usarse para redactar páginas**.
+
+- **Repositorio privado** (no aparece entre los 11 repos públicos); existe en la carpeta local `TUNA-Screen/repo` (Kotlin + Jetpack Compose, `README.md`, `HANDOFF.md`).
   La carpeta `TUNA-S` (Flutter) **queda fuera de NOPAL** por decisión del responsable (2026-10-14).
 - El README de la app describe: pantalla completa horizontal, **descubrimiento por NSD y conexión manual por IP**, emparejamiento con código temporal y token persistente,
   perfiles por tamaño de pantalla (3.5"/4.3", 5", 7", 10", PC), estado en vivo por WebSocket, acciones según `machine.actions`.
 - **Discrepancia:** la hoja de ruta del README del core menciona mDNS como pendiente, mientras la app ya usa NSD. Hay que fijar qué es cierto antes de publicar [?].
 - El contrato API v1 está en `docs/TUNASCREEN_API.md` y en `tunascreen.py` (20 rutas: 12 con token de dispositivo, 5 solo admin, 3 públicas).
-- **Pendiente:** dónde se publica la app (APK, Play Store, otra) y cómo se instala [?].
+- Distribución e instalación: sin definir; **no se documenta** mientras esté diferida.
 
 ## 6. `nopal-demo` [V]
 
@@ -112,14 +114,14 @@ Las capacidades de la matriz de compatibilidad **deben salir de la API real de c
 
 - `purecutcnc-main`: **no forma parte de NOPAL** (confirmado por el responsable, 2026-10-14). Excluido.
 - `TUNA-S` (Flutter): **excluido** (confirmado, 2026-10-14).
-- `@PLUGIN TIPOGRAFIA@`: carpeta vacía; la tipografía ya está cubierta por el plugin `font-library`.
+- `@PLUGIN TIPOGRAFIA@`: **excluida** (confirmado, 2026-10-14).
 
 ## 9. Hallazgos que cambian el plan
 
 1. **Las capturas no pueden venir de la demo actual** (§6): requieren una instancia del core `main`.
 2. **No existe un esquema documentado de los archivos de estado**; la página de referencia será trabajo de lectura de código, no de recopilación.
 3. **Hay dos convenciones de ubicación de datos en plugins** y un problema latente de colisión de rutas (AUDITORIA_03).
-4. **TUNA-Screen no tiene repositorio público identificado**: bloquea la guía de instalación hasta aclarar su distribución.
+4. **TUNA-Screen es privada y está diferida**: sin guía, sin contrato publicado y sin mención en páginas públicas.
 5. **El sitio estático existente (`nopal_site`) incluye un PDF del manual**: hay que decidir cómo convive.
 6. **El instalador solo cubre Debian/Ubuntu y derivados**: la guía de instalación debe decirlo con claridad.
 
