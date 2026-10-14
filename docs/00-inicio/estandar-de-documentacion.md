@@ -34,6 +34,7 @@ Que cualquier persona (usuario, administrador o desarrollador) pueda confiar en 
 - Hardware **que NOPAL controla** (Klipper/Moonraker, Marlin, Bambu, Elegoo, FlashForge, GRBL, ESP32/Arduino y paneles LED).
 
 **Fuera del estándar**
+- `purecutcnc-main` y `TUNA-S` (proyecto Flutter): no forman parte de NOPAL, decisión del responsable del proyecto (2026-10-14).
 - `MKS-DLC32-FIRMWARE` y cualquier firmware de terceros: se menciona, como máximo, como hardware compatible con enlace al proyecto original.
 - Plugins de terceros: se rigen por la sección 6 solo si piden figurar en la galería oficial.
 
@@ -249,6 +250,7 @@ requieren un plan de adecuación.
 ### Historial
 - 1.0 (2026-10-14): versión inicial.
 - 1.1 (2026-10-14): se añade el estado de página esqueleto (`stub: true`) en §5.
+- 1.3 (2026-10-14): §2 declara fuera de alcance `purecutcnc-main` y `TUNA-S`.
 - 1.2 (2026-10-14): corrección en §5: no existe un prefijo de ruta común para plugins (verificado en AUDITORIA_03).
 
 ---

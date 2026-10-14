@@ -82,7 +82,7 @@ Las capacidades de la matriz de compatibilidad **deben salir de la API real de c
 ## 5. TUNA-Screen [V parcial]
 
 - **No está en GitHub como repositorio** entre los 11 repos públicos de la cuenta; existe en la carpeta local `TUNA-Screen/repo` (Kotlin + Jetpack Compose, `README.md`, `HANDOFF.md`).
-  Hay también una carpeta `TUNA-S` (proyecto Flutter con README genérico) **sin relación clara** con la app: **no documentar hasta que el autor la clasifique** [?].
+  La carpeta `TUNA-S` (Flutter) **queda fuera de NOPAL** por decisión del responsable (2026-10-14).
 - El README de la app describe: pantalla completa horizontal, **descubrimiento por NSD y conexión manual por IP**, emparejamiento con código temporal y token persistente,
   perfiles por tamaño de pantalla (3.5"/4.3", 5", 7", 10", PC), estado en vivo por WebSocket, acciones según `machine.actions`.
 - **Discrepancia:** la hoja de ruta del README del core menciona mDNS como pendiente, mientras la app ya usa NSD. Hay que fijar qué es cierto antes de publicar [?].
@@ -106,12 +106,13 @@ Las capacidades de la matriz de compatibilidad **deben salir de la API real de c
 | `core: docs/index.html`, `docs/nopal-landing.html`, `docs/colabora/` | Páginas estáticas dentro del core | [?: relación con `nopal_site`] |
 
 **Decisión pendiente:** qué hace el nuevo `nopal-docs` frente a la landing existente (¿se enlaza desde ella, la reemplaza, o conviven con dominios distintos?).
-`@PLUGIN TIPOGRAFIA@` está vacía y `purecutcnc-main` (ver §8) no se auditó.
+`@PLUGIN TIPOGRAFIA@` está vacía.
 
-## 8. Elementos locales sin clasificar [?]
+## 8. Elementos locales fuera de alcance
 
-- `purecutcnc-main`: proyecto web (TypeScript, Playwright) con `AGENTS.md`, `ARCHITECTURE.md`, `CONVENTIONS.md`… No aparece en la cuenta de GitHub ni se mencionó en el alcance. **Se excluye de la documentación hasta que el autor confirme su relación con NOPAL.**
-- `TUNA-S` (Flutter): ver §5.
+- `purecutcnc-main`: **no forma parte de NOPAL** (confirmado por el responsable, 2026-10-14). Excluido.
+- `TUNA-S` (Flutter): **excluido** (confirmado, 2026-10-14).
+- `@PLUGIN TIPOGRAFIA@`: carpeta vacía; la tipografía ya está cubierta por el plugin `font-library`.
 
 ## 9. Hallazgos que cambian el plan
 
