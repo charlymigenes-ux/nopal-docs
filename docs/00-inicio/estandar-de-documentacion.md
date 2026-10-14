@@ -9,12 +9,12 @@ verified_against: "n/a (documento normativo)"
 
 # NOPAL Documentation Standard
 
-**Versión del estándar:** 1.0 (borrador para aprobación)
+**Versión del estándar:** 1.6 (aprobado)
 **Fecha:** 2026-10-14
-**Base de evidencia:** `auditoria/AUDITORIA_01_PLUGINS.md` y `auditoria/AUDITORIA_02_CODIGO.md`
+**Base de evidencia:** `auditoria/AUDITORIA_01` a `AUDITORIA_04` del repositorio de documentación
 
 Este documento define **cómo se escribe, revisa y mantiene** la documentación oficial de NOPAL y de sus extensiones.
-La estructura de contenidos vive en `DOCUMENTATION_ARCHITECTURE.md`.
+La estructura de contenidos vive en la [Arquitectura documental](./arquitectura-documental.md).
 
 Las palabras **DEBE**, **NO DEBE** y **DEBERÍA** se leen como obligación, prohibición y recomendación.
 
@@ -75,7 +75,7 @@ Toda página técnica declara su estado en el front-matter (`status:`) y, si una
 | `deprecated` | Existe por compatibilidad | No en trabajo nuevo |
 
 Reglas:
-- Una página `rfc` **DEBE** vivir en `docs/rfc/` y mostrar un aviso visible en la parte superior.
+- Una página `rfc` **DEBE** vivir en `docs/07-rfc/` y mostrar un aviso visible en la parte superior.
 - Una página `implemented` **DEBE** declarar la versión de NOPAL contra la que se verificó (`verified_against: 1.2.0-alpha.1 @ <commit>`).
 - Ninguna característica `rfc` puede aparecer en guías de usuario ni en tutoriales.
 
@@ -144,17 +144,17 @@ Todo acoplamiento no declarado en el manifiesto **DEBE** documentarse en la fich
 
 - El sitio se versiona por **línea mayor.menor** de NOPAL (`1.2`, `1.3`), no por parche.
 - Mientras NOPAL esté en `alpha` y sin tags de git, existe una sola versión publicada: **"Próxima (main)"**, con aviso de que puede cambiar.
-- Al publicar la primera release etiquetada, se congela la versión y se activa el selector de versiones.
+- Al publicar la primera release etiquetada, se congela la versión y se activa el selector de versiones. **No se congela antes**: una versión congelada sin etiqueta de NOPAL no tendría contra qué verificarse. El procedimiento está en el README del repositorio de documentación.
 - El contrato de TUNA-Screen y, cuando exista, la API de plugins, tienen su **propio número** independiente del número de NOPAL.
 - Cambios incompatibles ⇒ entrada en `CHANGELOG` marcada **Breaking** + página en `migration/`.
 
 ## 9. Idiomas (ES / EN)
 
 - **Español es la fuente.** Inglés es traducción oficial. Ambos idiomas son requisito de publicación de una página `implemented`
-  en las secciones Usuario, Administrador y Referencia; en Desarrollador e RFC basta español con aviso "pendiente de traducir".
+  en las secciones Usuario, Administrador y Referencia; en Desarrollador e RFC basta español con aviso "pendiente de traducir". Desde F8 **todas** las páginas están traducidas.
 - Cada página traducida declara `source_commit` del español; si el español cambia, el CI marca la traducción como **desactualizada**.
 - Los idiomas de la interfaz (de, fr, pt-BR) **NO** son idiomas de documentación; no se traducen las guías a ellos.
-- Terminología fija en un glosario bilingüe (`docs/glossary`): una palabra, un término. Los nombres de producto
+- Terminología fija en un glosario bilingüe (`docs/00-inicio/glosario.md`): una palabra, un término. Los nombres de producto
   (NOPAL, TUNA-Screen, Cotizador) no se traducen.
 
 ## 10. Relación con el Help Center de la app
@@ -200,7 +200,7 @@ y se enlaza el reemplazo. No se elimina su documentación hasta que se elimine d
 
 ## 16. Proceso RFC
 
-1. Toda idea que no exista en código se propone en `docs/rfc/RFC-NNNN-titulo.md` con la plantilla del repo de documentación.
+1. Toda idea que no exista en código se propone en `docs/07-rfc/` (por ejemplo `rfc-0007-titulo.mdx`) con la plantilla `templates/rfc.mdx`.
 2. Secciones obligatorias: problema, propuesta, alternativas, impacto en plugins existentes, compatibilidad, plan de migración, estado.
 3. Estados: `draft` → `review` → `accepted` → `implemented` | `rejected` | `withdrawn`.
 4. Cuando un RFC se implementa, se crea la página oficial `implemented` y el RFC pasa a archivo con enlace.
@@ -210,29 +210,32 @@ y se enlaza el reemplazo. No se elimina su documentación hasta que se elimine d
 ## 17. Revisión y criterios de aceptación
 
 Un PR de documentación **solo se fusiona** si:
-- [ ] El estado (`status`) y la versión verificada están declarados.
-- [ ] Las afirmaciones técnicas están trazadas a código, prueba o salida real.
-- [ ] No describe como existente algo `rfc`.
-- [ ] Respeta el nivel y tipo de página (sección 3).
-- [ ] Pasa los validadores del CI (sección 18).
-- [ ] Incluye la traducción o el aviso de pendiente (sección 9).
-- [ ] Capturas y ejemplos cumplen secciones 11 y 12.
+- ☐ El estado (`status`) y la versión verificada están declarados.
+- ☐ Las afirmaciones técnicas están trazadas a código, prueba o salida real.
+- ☐ No describe como existente algo `rfc`.
+- ☐ Respeta el nivel y tipo de página (sección 3).
+- ☐ Pasa los validadores del CI (sección 18).
+- ☐ Incluye la traducción o el aviso de pendiente (sección 9).
+- ☐ Capturas y ejemplos cumplen secciones 11 y 12.
 
 Un PR de **código** que cambia comportamiento público (ruta, campo de manifiesto, mensaje de websocket, ajuste, rol requerido)
 **DEBE** actualizar la documentación afectada o abrir el issue de documentación enlazado en el PR.
 
 ## 18. Validación automática (CI del repositorio de documentación)
 
-| Validador | Comprueba |
-|---|---|
-| Enlaces | Sin enlaces internos o externos rotos |
-| Front-matter | `status`, `audience`, `type`, `verified_against` presentes y válidos |
-| Manifiestos | Cada `nopal-plugin.json` cumple el esquema y coincide con el catálogo y el JS |
-| Rutas de API | Las rutas documentadas existen en el OpenAPI/AST del core; las del core están documentadas |
-| ES/EN | Paridad de páginas y `source_commit` vigente |
-| RFC | Ninguna página `rfc` enlazada desde Usuario/Administrador |
-| Estilo | Glosario, markdownlint y ortografía |
-| Capturas | Existen los archivos referenciados y tienen nombre válido |
+| Validador | Comprueba | Estado |
+|---|---|---|
+| Enlaces internos | Sin enlaces internos rotos (`onBrokenLinks: 'throw'` en el build) | Implementado |
+| Enlaces externos | Las URL externas responden (`scripts/check-external-links.mjs`) | Implementado, **solo avisa** (la red es inestable) |
+| Front-matter | `status`, `audience`, `type`, `verified_against` presentes y válidos; RFC solo en `07-rfc` con su aviso | Implementado |
+| Alcance | Ninguna página pública menciona lo excluido o diferido (`scripts/data/scope.json`) | Implementado |
+| Ejemplos | Los bloques de código del tutorial coinciden con los archivos probados | Implementado |
+| Manifiestos | Cada `nopal-plugin.json` cumple los campos requeridos y coincide con el catálogo y el JS | Implementado; los desfases de versión **solo avisan** |
+| Rutas de API | Las rutas citadas en páginas escritas existen en el código; la referencia generada está al día | Implementado |
+| ES/EN | Paridad de páginas y `source_commit` presente | Implementado; **no** comprueba que el `source_commit` siga vigente |
+| Estilo | Glosario, markdownlint y ortografía | **Pendiente** |
+| Capturas | Existen los archivos referenciados y tienen nombre válido | **Pendiente** (aún no hay capturas) |
+| Accesibilidad | Auditoría con axe-core de las páginas principales, en claro y oscuro | Hecha **a mano** en F8; no está en el CI |
 
 ## 19. Roles
 
@@ -249,12 +252,13 @@ Los cambios se proponen por PR, llevan nota en la sección siguiente y, si son i
 requieren un plan de adecuación.
 
 ### Historial
-- 1.0 (2026-10-14): versión inicial.
-- 1.1 (2026-10-14): se añade el estado de página esqueleto (`stub: true`) en §5.
+- 1.6 (2026-10-14): F8. Se actualizan referencias desfasadas (ruta de RFC, glosario), el estado real de los validadores en §18, la regla de no congelar versiones sin etiqueta en §8 y los asuntos abiertos del Anexo C. Todas las páginas tienen traducción EN.
 - 1.5 (2026-10-14): §7.1: la referencia REST se genera por análisis estático (scripts/extract_routes.py), con OpenAPI como complemento futuro.
 - 1.4 (2026-10-14): §2: TUNA-Screen diferida (repo privado); `@PLUGIN TIPOGRAFIA@` fuera de alcance. Los puntos de TUNA-Screen en §7, §8 y §9 quedan **suspendidos** mientras dure el aplazamiento.
 - 1.3 (2026-10-14): §2 declara fuera de alcance `purecutcnc-main` y `TUNA-S`.
 - 1.2 (2026-10-14): corrección en §5: no existe un prefijo de ruta común para plugins (verificado en AUDITORIA_03).
+- 1.1 (2026-10-14): se añade el estado de página esqueleto (`stub: true`) en §5.
+- 1.0 (2026-10-14): versión inicial.
 
 ---
 
@@ -279,13 +283,15 @@ source_commit: "<commit del español>"   # solo en traducciones
 | Idiomas de documentación | ES (fuente) + EN |
 | Help Center | Sin fuente compartida; RFC-DOC-001 para el futuro |
 | Término vigente | "NOPAL Plugin System" (no "SDK") |
-| Fuera de alcance | `MKS-DLC32-FIRMWARE` |
+| Fuera de alcance | `MKS-DLC32-FIRMWARE`, `purecutcnc-main`, `TUNA-S` y `@PLUGIN TIPOGRAFIA@` |
+| Diferido | TUNA-Screen (repositorio privado) |
 | Repositorio | Un único `nopal-docs` al inicio; separar plantillas cuando haya terceros |
 
 ## Anexo C — Asuntos abiertos
 
-1. Confirmar que `/docs` y `/openapi.json` de FastAPI están activos y accesibles en una instalación por defecto.
-2. Definir dominio y hosting del sitio (GitHub Pages inicialmente).
-3. Decidir si `nopal-demo` es la instancia oficial para capturas y ejemplos de API.
-4. Definir el responsable humano de cada rol de la sección 19.
-5. Decidir cómo se tratan las traducciones de la interfaz (de, fr, pt-BR) en la guía de usuario.
+1. ~~Confirmar que `/docs` y `/openapi.json` de FastAPI están activos~~ **Resuelto:** el código no los desactiva. La referencia REST se genera por análisis estático (v1.5).
+2. Definir dominio y hosting del sitio (GitHub Pages inicialmente). **Abierto.**
+3. ~~Decidir si `nopal-demo` es la instancia oficial para capturas~~ **Resuelto:** no; la demo se compiló de una versión anterior. Las capturas deben tomarse de una instancia local de `nopal@main`.
+4. Definir el responsable humano de cada rol de la sección 19. **Abierto.**
+5. Decidir cómo se tratan las traducciones de la interfaz (de, fr, pt-BR) en la guía de usuario. **Abierto.**
+6. Lista de hardware probado por el autor (`auditoria/HARDWARE_PROBADO.md`). **Abierto.**

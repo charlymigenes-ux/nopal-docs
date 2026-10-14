@@ -1,0 +1,67 @@
+---
+title: "RFC-0004: Event bus and background tasks for plugins"
+sidebar_label: "RFC-0004: Events"
+sidebar_position: 4
+audience: developer
+type: rfc
+status: rfc
+rfc_state: draft
+source_commit: "f0c1f27"
+---
+
+import StatusBanner from '@site/src/components/StatusBanner';
+
+<StatusBanner status="rfc" />
+
+:::note Draft for discussion
+This RFC is written by the documentation project from the problems verified in the code. **It is not a decision by NOPAL's author.**
+:::
+
+## Problem
+
+- **There is no event bus** between the core and plugins. A plugin that wants to react to a change (a machine changes state, a job ends) has to **poll**.
+- **There is no API for periodic tasks.** The only background loops are the core's own. See [plugin backend](/05-desarrolladores/plugins-backend).
+- Real consequences cited in `matriz-led`'s README: the **automatic greeting** and the **notices** only work if the NOPAL panel is open in some tab (polling from the browser), and announcements with **date scheduling** are saved but **do not fire on their own**.
+- The real-time channels that exist today are specific to one feature (the laser's live status), not generic.
+
+## Proposal
+
+**Events in the backend.**
+
+- A function for a plugin to subscribe to events, run in the same process, with a **versioned** event catalog (see [RFC-0001](/07-rfc/rfc-0001-api-de-plugins-versionada)).
+- **Proposed** initial catalog (these names do not exist today): a machine connecting and disconnecting, a machine changing state, a job starting, finishing and failing, a plugin loading and unloading.
+- Each event with a documented payload (stable internal machine identifier, previous and current state, timestamp).
+
+**Background tasks.**
+
+- A way to register a periodic task when the plugin loads, which the core cancels when it unloads and whose errors do not affect the rest.
+
+**Events in the frontend.**
+
+- A generic channel to the browser (WebSocket or server-sent events) so a plugin's interface can react without polling.
+
+## Alternatives
+
+- **Polling**, today's behavior. It works, but depends on the browser and multiplies requests.
+- **Webhooks** to external services. Useful for integrations, but they do not solve internal communication between plugins.
+- **Each plugin creates its own threads.** It is possible today in Python, but with no lifecycle or error isolation.
+
+## Impact on existing plugins
+
+- `matriz-led` would stop depending on an open browser and could fire scheduling.
+- `arduino-accessories` could react to machine status without polling.
+- The Cotizador and Materials (`spoolman`) could react to finished jobs.
+
+## Compatibility and migration
+
+Additive: plugins that poll would keep working.
+
+## Open questions
+
+- What delivery guarantees are offered (at least once, ordering, loss)?
+- What happens if a handler is slow or fails?
+- How are events ordered for machines whose identifiers have migrated? See [Migration](/08-proyecto/migracion).
+
+## Status
+
+`draft`. None of this has been implemented.

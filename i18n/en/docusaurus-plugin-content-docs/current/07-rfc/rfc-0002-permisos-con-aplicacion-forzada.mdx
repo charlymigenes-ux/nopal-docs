@@ -1,0 +1,64 @@
+---
+title: "RFC-0002: Plugin permissions with enforcement"
+sidebar_label: "RFC-0002: Permissions"
+sidebar_position: 2
+audience: developer
+type: rfc
+status: rfc
+rfc_state: draft
+source_commit: "f0c1f27"
+---
+
+import StatusBanner from '@site/src/components/StatusBanner';
+
+<StatusBanner status="rfc" />
+
+:::note Draft for discussion
+This RFC is written by the documentation project from the problems verified in the code. **It is not a decision by NOPAL's author.**
+:::
+
+## Problem
+
+- The **manifest permissions are free text** in Spanish (for example "Detectar webcams USB"). No mechanism enforces or interprets them. See [the manifest](/05-desarrolladores/plugins-manifiesto).
+- A plugin runs **inside the NOPAL process, with its same privileges**. It can read any file NOPAL can read, open serial ports, run commands or import any core module.
+- The administrator who installs a plugin **has no reliable way to know what it does**. See [Security](/02-administracion/seguridad).
+- An especially sensitive permission, **flashing firmware**, looks the same as a harmless one.
+
+## Proposal
+
+It is proposed to proceed in phases, because without process isolation a permission is not a real security barrier.
+
+**Phase 1: declarative, structured permissions.**
+
+- Stable identifiers in the manifest (for example `serial.access`, `network.local`, `library.write`, `firmware.flash`), with a text localized by the core, instead of free phrases.
+- The Gallery shows the permissions **before installing** and highlights the sensitive ones.
+- The administrator **confirms** on install or update if the permissions change.
+- There is still no enforcement: it is transparency, and it must be stated as such.
+
+**Phase 2: mediation in the public API.** If the public surface of [RFC-0001](/07-rfc/rfc-0001-api-de-plugins-versionada) is created, sensitive operations (serial ports, library writes, flashing) go through core functions that check the declared permission. A plugin that bypasses the API can still do so: it is protection against mistakes, not against malicious code.
+
+**Phase 3: real isolation.** Run the plugin in a separate process with a restricted interface. It is the only way for permissions to be a guarantee, and it is a large architectural change.
+
+## Alternatives
+
+- **Keep informational text** and improve only the documentation (what exists today).
+- **Jump straight to process isolation.** Safer, but costly and with impact on how plugins share the event loop and the core's services.
+- **Reviewed plugins only** (a closed list). It avoids the problem at the cost of preventing third-party plugins.
+
+## Impact on existing plugins
+
+The 8 official plugins would have to translate their phrases into identifiers. `arduino-accessories` would show the flashing permission as sensitive. No plugin would change behavior in phase 1.
+
+## Compatibility and migration
+
+The core would accept **both formats** (phrases and identifiers) for a period, treating phrases as "unclassified" permissions with a warning.
+
+## Open questions
+
+- Which initial list of permissions is sufficient without being excessive?
+- How is consent requested in an automatic update?
+- What is promised to the user in phase 1? The wording matters: it must not suggest a protection that does not exist.
+
+## Status
+
+`draft`. None of this has been implemented.

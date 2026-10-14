@@ -1,0 +1,49 @@
+---
+title: "RFC-DOC-001: Help Center in Markdown"
+sidebar_label: "RFC-DOC-001: Help Center"
+sidebar_position: 7
+audience: developer
+type: rfc
+status: rfc
+rfc_state: draft
+source_commit: "f0c1f27"
+---
+
+import StatusBanner from '@site/src/components/StatusBanner';
+
+<StatusBanner status="rfc" />
+
+:::note Draft for discussion
+This RFC is written by the documentation project from the problems verified in the code. **It is not a decision by NOPAL's author.**
+:::
+
+## Problem
+
+- The application's **Help Center** lives inside the code: its structure is in `app.js` (`HELP_CATEGORIES`, with icons, tags and keys) and its text in the `translations*.js` files, in five languages.
+- Those files are **regenerated** with `scripts/generate_i18n.py` for de, fr and pt-BR.
+- There is also this documentation site. There are **two manuals** that can contradict each other. The current decision is **not to share a source** and for the site to link to the Help Center without copying it (Standard §10).
+
+## Proposal
+
+1. **A Markdown source** for the Help Center content, one file per topic and language, with metadata (category, tags, target section).
+2. **A script** in the core that generates the `translations*.js` dictionaries from those files, replacing hand editing.
+3. **The documentation site reads the same source** and publishes the help pages, without copying text.
+4. The Help Center's **existing tests** (`test_help_center.py`, `test_help_center_links.py`) start validating against the new source.
+
+## Alternatives
+
+- **Status quo**: two manuals with links between them. It costs little, but depends on discipline.
+- **Have the Help Center consume the site** (an embedded page). It needs a connection and breaks use without internet in a self-hosted installation.
+
+## Impact
+
+It touches core code (translation generation and tests), not just documentation. That is why it was deferred by decision of the project owner: the site links to the Help Center without copying it.
+
+## Open questions
+
+- How is the brief contextual help inside the application preserved?
+- What happens to the languages that are neither ES nor EN (de, fr, pt-BR)?
+
+## Status
+
+`draft`. It has not been started.

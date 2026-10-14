@@ -2,7 +2,7 @@
 
 Sitio de documentación oficial de **NOPAL** y sus extensiones. Hecho con [Docusaurus](https://docusaurus.io/), en español (fuente) e inglés.
 
-> Estado: **F1 (esqueleto), F2 (auditoría) y F3 (generadores y validadores), F4 a F7 completas**; ver `auditoria/`. Las secciones contienen páginas esqueleto (`stub: true`) salvo *Inicio*. El contenido real llega por fases; ver `docs/00-inicio/arquitectura-documental.md` §9.
+> Estado: **F1 (esqueleto), F2 (auditoría) y F3 (generadores y validadores), F4 a F8 completas**; ver `auditoria/`. Las secciones contienen páginas esqueleto (`stub: true`) salvo *Inicio*. El contenido real llega por fases; ver `docs/00-inicio/arquitectura-documental.md` §9.
 
 ## Reglas
 
@@ -78,6 +78,45 @@ npm run check && npm run check:sources
 ```
 
 Valida front-matter, alcance, paridad ES/EN, manifiestos y rutas. El alcance (qué se incluye y qué no se puede mencionar) vive en `scripts/data/scope.json`. Las notas verificadas de cada plugin, con su evidencia, en `scripts/data/plugin-notes.json`.
+
+## Accesibilidad
+
+El sitio se audita con **axe-core** (WCAG 2.1 AA). En F8 se corrigieron: el color primario del tema claro (contraste 2.2:1 → 5.6:1), los colores de estado, el resaltado de código (propio, en `src/theme/prismThemes.js`), los enlaces dentro del texto (subrayados), el logo (decorativo) y las tablas anchas (enfocables con teclado, en `src/clientModules/accessibility.js`).
+
+Para repetir la auditoría **no hace falta añadir nada al proyecto**:
+
+1. Instala `axe-core` en una carpeta temporal, fuera del repositorio.
+2. Compila con `npm run build`, copia `axe.min.js` dentro de `build/` y sirve el sitio con `npx docusaurus serve`.
+3. En el navegador, carga `axe.min.js` en cada página (en claro y en oscuro) y ejecuta `axe.run()` con las etiquetas `wcag2a`, `wcag2aa`, `wcag21a`, `wcag21aa` y `best-practice`.
+
+La auditoría **no está en el CI** (Standard §18).
+
+## Congelar una versión del sitio
+
+**No se congela ninguna versión mientras NOPAL no tenga una etiqueta de git** (Standard §8): sin etiqueta, no hay contra qué verificarla. Hoy solo existe la versión «Próxima (main)».
+
+Cuando exista la primera etiqueta (por ejemplo `v1.2.0`), el procedimiento previsto es:
+
+1. Ejecutar `npm run fetch` y `npm run gen` contra ese commit, y comprobar que `npm run check` está en verde.
+2. Ejecutar `npx docusaurus docs:version 1.2`, que congela `docs/` y la traducción de esa línea.
+3. Añadir `{ type: 'docsVersionDropdown', position: 'right' }` a la barra de navegación en `docusaurus.config.js`.
+4. Anotar en el changelog y en la migración los cambios incompatibles de esa versión.
+
+Este procedimiento **no se ha probado**: aún no hay versiones.
+
+## Enlaces y salud
+
+```bash
+npm run check:external
+```
+
+Comprueba las URL externas. Solo avisa.
+
+```bash
+npm run report
+```
+
+Informa las métricas de salud documental. Necesita haber ejecutado `npm run gen` antes.
 
 ## Plantillas
 

@@ -1,0 +1,58 @@
+---
+title: "RFC-0005: Single source of metadata and manifest validation"
+sidebar_label: "RFC-0005: Metadata"
+sidebar_position: 5
+audience: developer
+type: rfc
+status: rfc
+rfc_state: draft
+source_commit: "f0c1f27"
+---
+
+import StatusBanner from '@site/src/components/StatusBanner';
+
+<StatusBanner status="rfc" />
+
+:::note Draft for discussion
+This RFC is written by the documentation project from the problems verified in the code. **It is not a decision by NOPAL's author.**
+:::
+
+## Problem
+
+Verified in the code and in the [plugin matrix](/03-plugins/matriz-de-plugins):
+
+- **A plugin's version lives in three places**: the manifest, the core's `plugin_catalog.json` and the `version` the plugin's JavaScript writes. **Three plugins are already out of sync** (`matriz-led`, `arduino-accessories`, `font-library`).
+- **`permissions`, `compatibility`, `python_requires` and the texts are duplicated** between the manifest and the catalog.
+- **The core does not validate the manifest.** It only checks that it is readable JSON. No code reads `schema_version`, and a misspelled field produces no warning. See [the manifest](/05-desarrolladores/plugins-manifiesto).
+- **`frontend.section` is exposed but not used.**
+- For an installed plugin, the Gallery shows the **manifest** version and keeps the catalog one separately (to offer "Update"). An accidental drift can therefore show misleading actions.
+
+## Proposal
+
+1. **The manifest in the plugin's repository is the single source.** The core's catalog comes to contain only what is not in the manifest (whether it is available, featured, the repository), and the rest is **derived or validated against it**.
+2. **A published JSON schema** for the manifest, with a meaningful `schema_version`: the core rejects schema versions it does not understand.
+3. **Validation on install**: the core reports invalid or unknown fields with a clear message, and does not install an invalid manifest.
+4. **The JavaScript version comes from the manifest**, not from a literal written by hand.
+5. **A CI check** in the core that cross-checks the catalog and the official plugins' manifests and fails on drift. Today something similar is done by this documentation repository's manifest validator, only as a warning.
+
+## Alternatives
+
+- **Keep three places** and rely on manual reviews (what caused the current drift).
+- **Remove the catalog** and discover plugins through a repository index. More radical; related to [RFC-0006](/07-rfc/rfc-0006-sdk-plantilla-y-publicacion).
+
+## Impact on existing plugins
+
+The official plugins would have to fix their version drift and, perhaps, add fields required by the schema. The change is low-risk.
+
+## Compatibility and migration
+
+A period in which validation only **warns**, before starting to reject manifests.
+
+## Open questions
+
+- Which fields are mandatory and which optional?
+- Is the catalog generated automatically or validated by hand?
+
+## Status
+
+`draft`. None of this has been implemented.

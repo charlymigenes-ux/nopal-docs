@@ -37,8 +37,6 @@ The documentation has identified gaps in the plugin system and written them up a
 | [RFC-0005](/07-rfc/rfc-0005-metadatos-y-validacion-del-manifiesto) | Single source of metadata |
 | [RFC-0006](/07-rfc/rfc-0006-sdk-plantilla-y-publicacion) | SDK, template and publishing |
 
-The RFCs are published in Spanish; their translation is pending.
-
 ## Known limitations today
 
 These are not plans, but things that **do not exist yet** and are worth knowing:

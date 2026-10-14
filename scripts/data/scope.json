@@ -64,7 +64,9 @@
   ],
   "forbidden_terms_exempt_paths": [
     "docs/00-inicio/estandar-de-documentacion.md",
-    "docs/00-inicio/arquitectura-documental.md"
+    "docs/00-inicio/arquitectura-documental.md",
+    "i18n/en/docusaurus-plugin-content-docs/current/00-inicio/estandar-de-documentacion.md",
+    "i18n/en/docusaurus-plugin-content-docs/current/00-inicio/arquitectura-documental.md"
   ],
   "full_history_repos": [
     "nopal"

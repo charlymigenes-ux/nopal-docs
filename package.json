@@ -20,7 +20,10 @@
     "check:scope": "node scripts/check-scope.mjs",
     "preview": "docusaurus build && docusaurus serve",
     "gen:tutorial": "node scripts/gen-tutorial-en.mjs",
-    "gen:changelog": "node scripts/gen-changelog.mjs"
+    "gen:changelog": "node scripts/gen-changelog.mjs",
+    "check:external": "node scripts/check-external-links.mjs",
+    "report": "node scripts/report-health.mjs",
+    "docs:version": "docusaurus docs:version"
   },
   "dependencies": {
     "@docusaurus/core": "^3.10.2",

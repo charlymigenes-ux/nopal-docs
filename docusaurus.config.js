@@ -1,5 +1,5 @@
 // @ts-check
-import { themes as prismThemes } from 'prism-react-renderer';
+import { prismLight, prismDark } from './src/theme/prismThemes.js';
 
 // Hosting provisional: GitHub Pages (Architecture §12.1). Cambiar `url` y `baseUrl`
 // cuando se defina el dominio definitivo.
@@ -36,6 +36,8 @@ const config = {
     },
   },
 
+  clientModules: ['./src/clientModules/accessibility.js'],
+
   presets: [
     [
       'classic',
@@ -45,6 +47,8 @@ const config = {
           routeBasePath: '/',
           // Conserva los prefijos 00-…08- en las URLs (coinciden con la arquitectura documental).
           numberPrefixParser: false,
+          // Sin etiqueta de NOPAL no se congela ninguna versión (Standard §8): solo existe «Próxima».
+          versions: { current: { label: 'Próxima (main)' } },
           sidebarPath: './sidebars.js',
           editUrl: `https://github.com/${GH_USER}/${GH_REPO}/edit/main/`,
           showLastUpdateTime: false,
@@ -64,7 +68,7 @@ const config = {
       },
       navbar: {
         title: 'NOPAL',
-        logo: { alt: 'NOPAL', src: 'img/logo.png' },
+        logo: { alt: '', src: 'img/logo.png' } /* decorativo: el título «NOPAL» ya está al lado */,
         items: [
           { to: '/01-usuario', label: 'Usuario', position: 'left' },
           { to: '/02-administracion', label: 'Administración', position: 'left' },
@@ -102,8 +106,8 @@ const config = {
         copyright: 'NOPAL se distribuye bajo GPL-3.0. Esta documentación forma parte del proyecto.',
       },
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: prismLight,
+        darkTheme: prismDark,
         additionalLanguages: ['bash', 'json', 'python', 'yaml', 'ini'],
       },
     }),

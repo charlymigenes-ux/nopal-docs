@@ -1,0 +1,40 @@
+---
+title: RFC
+sidebar_label: RFC
+audience: developer
+type: explanation
+status: rfc
+source_commit: "f0c1f27"
+---
+
+import StatusBanner from '@site/src/components/StatusBanner';
+
+<StatusBanner status="rfc" />
+
+RFCs describe **ideas that do not exist in NOPAL yet**. Nothing in this section should be read as an available feature. The process is in the [Documentation Standard](/00-inicio/estandar-de-documentacion), section 16.
+
+:::note Origin
+These RFCs are written by the documentation project from the problems verified in the code (audits 01 to 04 and the [Developers](/05-desarrolladores) pages). They are **drafts for discussion**, not decisions by NOPAL's author.
+:::
+
+## Identified RFCs
+
+| ID | Topic | Status |
+|---|---|---|
+| [RFC-0001](/07-rfc/rfc-0001-api-de-plugins-versionada) | Versioned plugin API and lifecycle | `draft` |
+| [RFC-0002](/07-rfc/rfc-0002-permisos-con-aplicacion-forzada) | Plugin permissions with enforcement | `draft` |
+| [RFC-0003](/07-rfc/rfc-0003-dependencias-por-plugin) | Per-plugin Python dependencies | `draft` |
+| [RFC-0004](/07-rfc/rfc-0004-eventos-y-tareas-de-fondo) | Event bus and background tasks | `draft` |
+| [RFC-0005](/07-rfc/rfc-0005-metadatos-y-validacion-del-manifiesto) | Single source of metadata and manifest validation | `draft` |
+| [RFC-0006](/07-rfc/rfc-0006-sdk-plantilla-y-publicacion) | SDK, official template and publishing for third parties | `draft` |
+| [RFC-DOC-001](/07-rfc/rfc-doc-001-help-center-en-markdown) | Help Center in Markdown | `draft` |
+
+## How they relate
+
+```text
+RFC-0005 (metadata)    ─┐
+RFC-0003 (dependencies) ├─► RFC-0006 (SDK and publishing)
+RFC-0002 (permissions) ─┤
+RFC-0001 (API)         ─┘
+RFC-0004 (events) depends on RFC-0001
+```

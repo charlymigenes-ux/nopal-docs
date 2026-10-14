@@ -1,0 +1,63 @@
+---
+title: "RFC-0003: Per-plugin Python dependencies"
+sidebar_label: "RFC-0003: Dependencies"
+sidebar_position: 3
+audience: developer
+type: rfc
+status: rfc
+rfc_state: draft
+source_commit: "f0c1f27"
+---
+
+import StatusBanner from '@site/src/components/StatusBanner';
+
+<StatusBanner status="rfc" />
+
+:::note Draft for discussion
+This RFC is written by the documentation project from the problems verified in the code. **It is not a decision by NOPAL's author.**
+:::
+
+## Problem
+
+- **NOPAL installs nothing from a plugin.** If a plugin needs a library, the user must install it by hand in NOPAL's environment. See [plugin backend](/05-desarrolladores/plugins-backend).
+- Real case: **`matriz-led` requires `pypixelcolor`** installed by hand. If it is missing, the plugin installs but sends nothing, with no clear message.
+- The only thing the core checks is **`python_requires`**.
+- Two plugins cannot request incompatible versions of the same library without anyone noticing, because they share the environment with the core.
+
+## Proposal
+
+**Phase 1: declare and verify, without installing.**
+
+- The manifest declares the packages it needs (name and version range).
+- On install or at startup, the core **checks** they are present and, if not, shows in the Gallery what is missing and the exact command to install it.
+- It does not run `pip` on its own. It solves the lack-of-warning problem without the risks of installing code.
+
+**Phase 2: assisted installation.** With the administrator's confirmation, the core installs the declared packages into NOPAL's environment, first checking they do not clash with the core's dependencies (`pip check`) or with other plugins'.
+
+**Phase 3: per-plugin environment.** Each plugin with its own environment and process. It is compatible with the isolation of [RFC-0002](/07-rfc/rfc-0002-permisos-con-aplicacion-forzada) and is the most robust and most costly option.
+
+## Security risks
+
+Installing packages runs third-party code with NOPAL's privileges. Any automatic installation requires **explicit administrator consent**, pinned versions and, ideally, checksum verification.
+
+## Alternatives
+
+- **Status quo** with clear documentation in each plugin's README (what the `plugin-docs` drafts do today).
+- **Bundle the dependencies inside the plugin** (like `font-library` with `opentype.js`). It only works for JavaScript or pure-Python libraries.
+
+## Impact on existing plugins
+
+Only `matriz-led` has an explicit external dependency today (`pypixelcolor`). The others use what the core's `requirements.txt` already brings.
+
+## Compatibility and migration
+
+Phase 1 is additive: a plugin without the field behaves as today.
+
+## Open questions
+
+- How is a shared dependency updated without breaking another plugin?
+- What happens to the dependencies when a plugin is uninstalled?
+
+## Status
+
+`draft`. None of this has been implemented.

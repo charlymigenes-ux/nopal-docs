@@ -5,13 +5,13 @@
   --nopal-accent-hover: #31e06f;
   --nopal-accent-active: #17b754;
 
-  --ifm-color-primary: #17b754;
-  --ifm-color-primary-dark: #15a64c;
-  --ifm-color-primary-darker: #149d48;
-  --ifm-color-primary-darkest: #108039;
-  --ifm-color-primary-light: #19c85c;
-  --ifm-color-primary-lighter: #1ad060;
-  --ifm-color-primary-lightest: #2ee576;
+  --ifm-color-primary: #0b6b31; /* contraste 5.6:1 sobre #ebecee (WCAG AA) */
+  --ifm-color-primary-dark: #0a6230;
+  --ifm-color-primary-darker: #095c2d;
+  --ifm-color-primary-darkest: #074a24;
+  --ifm-color-primary-light: #0d7a37;
+  --ifm-color-primary-lighter: #0e8239;
+  --ifm-color-primary-lightest: #119a44;
   --ifm-background-color: #f7f8fa;
   --ifm-navbar-background-color: #ffffff;
   --ifm-font-color-base: #1e293b;
@@ -61,8 +61,20 @@
   color: var(--nopal-status-color);
   white-space: nowrap;
 }
-.nopal-status--implemented { --nopal-status-color: #17b754; }
-.nopal-status--convention { --nopal-status-color: #2b7fff; }
-.nopal-status--experimental { --nopal-status-color: #e6b422; }
-.nopal-status--rfc { --nopal-status-color: #a855f7; }
-.nopal-status--deprecated { --nopal-status-color: #e5484d; }
+/* Colores de estado: tema claro (texto oscuro sobre fondo claro, >= 4.5:1) y tema oscuro (texto claro) */
+.nopal-status--implemented { --nopal-status-color: #0b6b31; }
+.nopal-status--convention { --nopal-status-color: #1456c0; }
+.nopal-status--experimental { --nopal-status-color: #8a6200; }
+.nopal-status--rfc { --nopal-status-color: #7a2fc4; }
+.nopal-status--deprecated { --nopal-status-color: #b3262b; }
+[data-theme='dark'] .nopal-status--implemented { --nopal-status-color: #25d366; }
+[data-theme='dark'] .nopal-status--convention { --nopal-status-color: #5b9bff; }
+[data-theme='dark'] .nopal-status--experimental { --nopal-status-color: #e6b422; }
+[data-theme='dark'] .nopal-status--rfc { --nopal-status-color: #b57cf8; }
+[data-theme='dark'] .nopal-status--deprecated { --nopal-status-color: #ff6b70; }
+
+/* Enlaces dentro de texto: subrayados, para no depender solo del color (WCAG 1.4.1) */
+.markdown p a:not(.hash-link), .markdown li a:not(.hash-link), .markdown td a, .markdown .admonition a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

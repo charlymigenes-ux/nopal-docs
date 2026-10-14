@@ -1,0 +1,59 @@
+---
+title: "RFC-0006: SDK, official template and publishing for third parties"
+sidebar_label: "RFC-0006: SDK and publishing"
+sidebar_position: 6
+audience: developer
+type: rfc
+status: rfc
+rfc_state: draft
+source_commit: "f0c1f27"
+---
+
+import StatusBanner from '@site/src/components/StatusBanner';
+
+<StatusBanner status="rfc" />
+
+:::note Draft for discussion
+This RFC is written by the documentation project from the problems verified in the code. **It is not a decision by NOPAL's author.**
+:::
+
+## Problem
+
+- **There is no SDK today**: what exists is a [plugin system](/05-desarrolladores/plugins-manifiesto) without a versioned API.
+- **There is no official template.** The [tutorial](/05-desarrolladores/tutorial-primer-plugin) and its example were written for this documentation.
+- **There is no way for a third party to publish a plugin.** To appear in the Gallery, its entry must be added to the core's `plugin_catalog.json` through an accepted change. See [installation and Gallery](/05-desarrolladores/plugins-instalacion-y-galeria).
+- **There is no distinction between official and community plugins**, nor quality guarantees.
+- The catalog announces plugins that **do not exist** (`coming_soon`).
+
+## Proposal
+
+It depends on several RFCs: [0001](/07-rfc/rfc-0001-api-de-plugins-versionada), [0002](/07-rfc/rfc-0002-permisos-con-aplicacion-forzada), [0003](/07-rfc/rfc-0003-dependencias-por-plugin) and [0005](/07-rfc/rfc-0005-metadatos-y-validacion-del-manifiesto). Nothing should be called an "SDK" until the API of [RFC-0001](/07-rfc/rfc-0001-api-de-plugins-versionada) exists.
+
+1. **A template repository** (`nopal-plugin-template`) based on the tutorial's example, with tests, CI and a README that meets the documentation standard.
+2. **A name and a scope for the SDK:** the public API of [RFC-0001](/07-rfc/rfc-0001-api-de-plugins-versionada), its documentation and the template.
+3. **A community plugin index**: a list, maintained by the project, of repositories with the reviewed *commit*, separate from the official catalog.
+4. **Two levels in the Gallery**: *Official* and *Community*, with a visible warning on the latter (plugins are not isolated; see [RFC-0002](/07-rfc/rfc-0002-permisos-con-aplicacion-forzada)).
+5. **Acceptance requirements** to be listed in the Gallery: a valid manifest, a declared `plugin_api`, minimum documentation, compatibility tests and a compatible license.
+6. **Install pinned to a commit**, not "the tip of the branch", so an update does not change what was reviewed.
+
+## Alternatives
+
+- **Keep the curated catalog** and accept third-party plugins only by changing the core (today).
+- **Free installation by URL**, with no index. Maximum freedom, minimum protection: it is the model the current security warnings try to avoid.
+
+## Impact on existing plugins
+
+The official plugins would become the first consumer of the template and the public API.
+
+## Compatibility and migration
+
+The current catalog would remain the *Official* level.
+
+## Open questions
+
+- Who reviews community plugins, and by what criteria?
+- Are paid plugins supported? Today the core rejects them because the license server is missing.
+
+## Status
+
+`draft`. None of this has been implemented.
