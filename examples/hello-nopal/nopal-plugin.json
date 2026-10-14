@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "hello-nopal",
+  "name": "Hola NOPAL",
+  "version": "0.1.0",
+  "publisher": "Tu nombre",
+  "category": "Herramientas",
+  "description": "Plugin de ejemplo: muestra un saludo y quién lo está viendo.",
+  "permissions": [],
+  "compatibility": ["Impresión 3D", "Láser", "CNC"],
+  "frontend": {
+    "script": "frontend/hello-nopal.js",
+    "style": "frontend/hello-nopal.css",
+    "section": "hello-nopal"
+  },
+  "backend": {
+    "entry": "backend/router.py"
+  }
+}

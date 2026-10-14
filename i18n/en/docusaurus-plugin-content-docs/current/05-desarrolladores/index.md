@@ -17,6 +17,7 @@ How NOPAL is built and how to extend it.
 - [Architecture](./arquitectura.md)
 - [Development environment and tests](./entorno-y-pruebas.md)
 - [Contributing](./contribuir.md)
+- [Tutorial: your first plugin](./tutorial-primer-plugin.md)
 
 ## Plugin system
 
@@ -35,5 +36,5 @@ There is no versioned plugin API, enforced permission system, per-plugin depende
 :::
 
 :::caution Under construction
-Pending: adding a device driver, a first-plugin tutorial and the design system.
+Pending: adding a device driver and the design system.
 :::

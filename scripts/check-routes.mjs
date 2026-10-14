@@ -8,6 +8,12 @@ import { ROOT, scope, loadRoutes, walkDocs, normalizeRoute } from './lib/common.
 
 const data = loadRoutes();
 const known = new Set(data.routes.map((r) => normalizeRoute(r.path)));
+
+// Rutas del plugin de ejemplo del tutorial (examples/hello-nopal): no son de NOPAL, pero el tutorial las cita.
+const exampleRouter = path.join(ROOT, 'examples', 'hello-nopal', 'backend', 'router.py');
+if (fs.existsSync(exampleRouter)) {
+  for (const m of fs.readFileSync(exampleRouter, 'utf8').matchAll(/@router\.\w+\("([^"]+)"/g)) known.add(normalizeRoute(m[1]));
+}
 const errors = [];
 
 for (const file of walkDocs(path.join(ROOT, 'docs'))) {

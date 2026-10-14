@@ -10,7 +10,7 @@
     "build": "docusaurus build",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
-    "check": "node scripts/check-frontmatter.mjs && node scripts/check-scope.mjs && node scripts/check-i18n.mjs",
+    "check": "node scripts/check-frontmatter.mjs && node scripts/check-scope.mjs && node scripts/check-examples.mjs && node scripts/check-i18n.mjs",
     "check:frontmatter": "node scripts/check-frontmatter.mjs",
     "check:i18n": "node scripts/check-i18n.mjs",
     "fetch": "node scripts/fetch-sources.mjs",
@@ -18,7 +18,8 @@
     "gen": "npm run gen:routes && node scripts/gen-docs.mjs",
     "check:sources": "node scripts/check-manifests.mjs && node scripts/check-routes.mjs",
     "check:scope": "node scripts/check-scope.mjs",
-    "preview": "docusaurus build && docusaurus serve"
+    "preview": "docusaurus build && docusaurus serve",
+    "gen:tutorial": "node scripts/gen-tutorial-en.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "^3.10.2",

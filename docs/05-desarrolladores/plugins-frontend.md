@@ -77,6 +77,8 @@ Los plugins oficiales llaman a estas funciones **globales** de `app.js`:
 | `window.escapeHtml(valor)` | Escapa texto para insertarlo en HTML |
 | `window.loadModelsFolder(ruta)` | Recarga la biblioteca de modelos (lo usan los plugins que guardan archivos) |
 
+Hay plugins que dependen de **más** funciones internas. El Cotizador, por ejemplo, reutiliza el visor de miniaturas y el explorador de archivos de la biblioteca (`loadRealGcodeThumbnail`, `renderStandardModelPreview`, `renderCncGcodeThumbnail`, `formatSize`, `isGcodeFile`, `stripSectionPrefix`) y varios widgets (`createOptionSwitch`, `wireTopbarDropdown`, `closeAllTopbarDropdowns`). Por eso necesita correr junto a una versión de `app.js` que siga definiéndolas.
+
 :::warning No es una API estable
 Son funciones internas de `app.js` que los plugins **dan por sentadas**. No están versionadas ni documentadas por el core, y pueden cambiar sin aviso. Defiéndete: usa `window.showToast?.(...)` con encadenamiento opcional, como hacen los plugins oficiales.
 :::

@@ -77,6 +77,10 @@ The official plugins import `backend.auth_deps`. It is a hard, intentional coupl
 
 A route meant to be called by **firmware** (no cookies) can authenticate with another mechanism, such as the shared header token that `arduino-accessories` uses on `POST /api/accessories/cluster/event`.
 
+## Background tasks
+
+The core **does not offer an API for a plugin to register periodic tasks**. The only background loops are the core's own (for example, scheduled prints). `matriz-led`, for instance, works around it by polling from the browser, so some of its features need the dashboard open in some tab; its README flags this as a limitation.
+
 ## Python dependencies
 
 **There is no per-plugin dependency mechanism.** NOPAL installs nothing from the plugin. If your plugin needs a library, the user must install it by hand in NOPAL's environment (like `pypixelcolor` in `matriz-led`). Document it in your plugin's README.

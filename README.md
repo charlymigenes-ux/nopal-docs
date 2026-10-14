@@ -2,7 +2,7 @@
 
 Sitio de documentación oficial de **NOPAL** y sus extensiones. Hecho con [Docusaurus](https://docusaurus.io/), en español (fuente) e inglés.
 
-> Estado: **F1 (esqueleto), F2 (auditoría) y F3 (generadores y validadores), F4 y F5 (contenido inicial) completas**; ver `auditoria/`. Las secciones contienen páginas esqueleto (`stub: true`) salvo *Inicio*. El contenido real llega por fases; ver `docs/00-inicio/arquitectura-documental.md` §9.
+> Estado: **F1 (esqueleto), F2 (auditoría) y F3 (generadores y validadores), F4, F5 y F6 completas**; ver `auditoria/`. Las secciones contienen páginas esqueleto (`stub: true`) salvo *Inicio*. El contenido real llega por fases; ver `docs/00-inicio/arquitectura-documental.md` §9.
 
 ## Reglas
 
@@ -53,6 +53,8 @@ templates/            plantillas por tipo de página
 scripts/              validadores (front-matter, i18n)
 generated/            salida de los generadores (F3); no se edita a mano
 auditoria/            auditorías del código usadas como evidencia
+examples/hello-nopal/ plugin del tutorial: código probado (npm run check lo compara con el tutorial)
+plugin-docs/          borradores de docs/ para cada plugin (no se han subido a ningún repo)
 ```
 
 ## Generadores y validadores (F3)

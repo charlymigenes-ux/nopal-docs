@@ -343,7 +343,41 @@ ${soon.length
   write(locale, '03-plugins/matriz-de-plugins.md', body);
 }
 
+// ---- api.md de cada plugin (borrador para su repositorio; Standard §6.2) ---------------------------
+// Salida: plugin-docs/<repo>/docs/api.md. No se publica en el sitio: el autor lo copia al repo del plugin.
+function genPluginApiDoc(i) {
+  const { manifest: m, plugin: p } = i;
+  const c = countByAccess(i.routes);
+  const header = `---
+title: ${m.name}: API
+status: draft
+verified_against: "${p.repo}@${i.commit} (${m.version}) · nopal@${coreCommit}"
+generated: true
+---
+
+# ${m.name}: API
+
+> Página **generada** desde el código del plugin. No la edites a mano.
+
+`;
+  let body;
+  if (!i.routes.length) {
+    body = `Este plugin **no tiene backend**: no expone rutas propias. Usa los endpoints que ya ofrece el core de NOPAL.\n`;
+  } else {
+    body = `Prefijo(s) de ruta: ${prefixOf(i.routes).map((x) => `\`${x}\``).join(', ')} · ${i.routes.length} rutas (${T.es.access.session}: ${c.session}; ${T.es.access.admin}: ${c.admin}; ${T.es.access.public}: ${c.public}).
+
+${routeTable('es', i.routes)}
+
+El acceso mostrado es el declarado en cada ruta (\`require_auth\`, \`require_role("admin")\`). Una comprobación de rol dentro del cuerpo de la función no se detecta.
+`;
+  }
+  const f = path.join(ROOT, 'plugin-docs', p.repo, 'docs', 'api.md');
+  fs.mkdirSync(path.dirname(f), { recursive: true });
+  fs.writeFileSync(f, (header + body).replace(/\r\n/g, '\n'));
+}
+
 // ---- ejecutar ------------------------------------------------------------------------------------
+for (const i of pluginInfo) genPluginApiDoc(i);
 for (const locale of ['es', 'en']) {
   genCoreApi(locale);
   genMatrix(locale);

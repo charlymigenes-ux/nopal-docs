@@ -78,6 +78,8 @@ The official plugins call these **global** functions from `app.js`:
 | `window.escapeHtml(value)` | Escapes text to insert into HTML |
 | `window.loadModelsFolder(path)` | Reloads the model library (used by plugins that save files) |
 
+Some plugins depend on **more** internal functions. The Cotizador, for example, reuses the core's thumbnail viewer and library file explorer (`loadRealGcodeThumbnail`, `renderStandardModelPreview`, `renderCncGcodeThumbnail`, `formatSize`, `isGcodeFile`, `stripSectionPrefix`) and several widgets (`createOptionSwitch`, `wireTopbarDropdown`, `closeAllTopbarDropdowns`). That is why it must run alongside a version of `app.js` that still defines them.
+
 :::warning This is not a stable API
 These are internal `app.js` functions the plugins **take for granted**. They are not versioned or documented by the core, and may change without notice. Be defensive: use `window.showToast?.(...)` with optional chaining, as the official plugins do.
 :::

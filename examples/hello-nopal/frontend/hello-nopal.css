@@ -1,0 +1,13 @@
+.hn-section {
+    padding: 24px;
+}
+
+.hn-section .hn-button {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.hn-section .hn-output {
+    margin-top: 16px;
+    font-size: 1.1rem;
+}

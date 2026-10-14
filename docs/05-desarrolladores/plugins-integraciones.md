@@ -16,7 +16,7 @@ Además del contrato básico (manifiesto, `router`, `NopalPluginRegistry`), hay 
 |---|---|
 | `NopalCameraCard` (core → `camera-viewer`) | `convention` |
 | `AI_TOOLS` (plugin → NOPAL Intelligence) | `experimental` |
-| Hook de proyecto `NopalPluginContext` (consumido por `font-library`) | `experimental` |
+| Hooks de proyecto `NopalPluginContext` y `NopalProject.addElement` (consumidos por `font-library`) | `experimental` |
 | Material compartido `spoolman:<id>` (`spoolman` → `cotizador`) | `convention` |
 | Imports directos del core desde un plugin | `convention` |
 
@@ -50,6 +50,10 @@ Ningún plugin oficial lo declara hoy. Puede cambiar sin aviso.
 ## `NopalPluginContext`: contexto de proyecto opcional
 
 **Estado: experimental.** `font-library` consulta, de forma opcional, `window.NopalPluginContext` (con `getCurrentProject()` o una propiedad `currentProject`) y `window.__NOPAL_PROJECT_CONTEXT__` para saber el proyecto activo y su material. **Ningún repositorio revisado define ese proveedor**: el plugin funciona sin él.
+
+### `NopalProject.addElement`: un gancho que el core no implementa
+
+`font-library` entrega su resultado con `window.NopalProject.addElement(detalle)` y, si no existe, dispara el evento cancelable `nopal:add-project-element` en `window`. **El core no define ni uno ni otro**: hoy el botón *Agregar al proyecto* muestra un aviso de éxito pero los datos no se guardan en ningún sitio (así lo indica el README del plugin). Queda a la espera de que el core lo implemente.
 
 ## Material compartido entre `spoolman` y `cotizador`
 

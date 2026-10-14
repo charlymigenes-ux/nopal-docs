@@ -38,7 +38,7 @@ jobs:
       - run: npm run gen
       # Las páginas generadas versionadas deben estar al día con el código fuente.
       - name: Las páginas generadas están actualizadas
-        run: git diff --exit-code -- docs i18n
+        run: git diff --exit-code -- docs i18n plugin-docs
 
       # Standard §18: validadores antes de compilar.
       - run: npm run check

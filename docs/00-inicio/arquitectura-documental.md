@@ -238,7 +238,7 @@ Cada plugin entrega lo exigido en Standard §6.2. Situación de partida (de la a
 | **F3** | Generadores: referencia REST, fichas de plugin, matriz de manifiestos, validadores | Build verde con datos reales — **completada 2026-10-14** (la referencia usa análisis estático; ver Standard §7.1) |
 | **F4** | Contenido de mayor valor: 00 Inicio, instalación, primera máquina, matriz de compatibilidad, solución de problemas | Un usuario nuevo instala y conecta una máquina solo con el sitio |
 | **F5** | Administración y Sistema de plugins (implementado). El contrato de TUNA-Screen queda diferido | Un desarrollador entiende la carga de un plugin sin leer el código del core — **completada 2026-10-14**, salvo «Añadir un driver», el tutorial del primer plugin (F6) y el sistema de diseño |
-| **F6** | `docs/` en cada plugin y tutorial "Hola NOPAL" | Los 8 plugins cumplen Standard §6.2 |
+| **F6** | `docs/` de cada plugin (borradores) y tutorial «Hola NOPAL» | Los 8 plugins tienen borrador conforme al Standard §6.2 — **completada 2026-10-14** como **borradores** en `plugin-docs/`; falta el `CHANGELOG` por plugin y que el autor los copie a cada repo |
 | **F7** | RFC iniciales, changelog real, migración | Roadmap y RFC publicados |
 | **F8** | Traducción EN completa, versionado, revisión de accesibilidad y de enlaces | Paridad ES/EN y primera versión congelada |
 
