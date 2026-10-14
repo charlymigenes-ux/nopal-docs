@@ -9,6 +9,8 @@ Inventario completo: [`data/rutas.csv`](data/rutas.csv) (367 rutas). Cierra los 
 `Depends(...)` de cada función. No se ejecutó código. **Límite:** no ve comprobaciones de rol hechas *dentro* del cuerpo de una función
 (`if user["role"] != ...`) ni cambios dinámicos; el campo `mecanismo_crudo` del CSV conserva lo detectado para revisarlo.
 
+> **Corrección (2026-10-14):** la primera versión de este inventario omitía el `prefix=` de los routers `ai`, `config_backup`, `plugins` y `system` (38 rutas salían sin `/api/ai`, `/api/config-backup`, `/api/plugins` y `/api/system`). Corregido en `scripts/extract_routes.py` y regenerado `data/rutas.csv`. Los totales y el acceso por ruta no cambian.
+
 ## 1. Totales
 
 | Componente | Rutas | Sesión (admin u operador) | Solo admin | Token de dispositivo | Públicas |
@@ -50,7 +52,7 @@ Rutas ya migradas (`ensure_authorized`), por acción:
 | acción variable | `/api/laser/command` |
 | `RESTART_KLIPPER`, `FIRMWARE_RESTART`, `PRINTER_CONFIG` | `/api/printers/{port}/restart`, `/firmware-restart`, `/config-files/content` |
 | `SYSTEM_CONTROL` | `PUT /api/logs/config` |
-| `CLEAR_ALL_CONVERSATIONS` | `DELETE /conversations` (IA) |
+| `CLEAR_ALL_CONVERSATIONS` | `DELETE /api/ai/conversations` (IA) |
 
 **Consecuencia para la documentación:** la matriz de permisos que se publique debe ser la **real por ruta** (el CSV), con el estado de migración,
 y no la matriz TARGET del SDD ni la del código de la política. Los *Alias* de acciones están en el docstring de `authorization_policy.py`.
