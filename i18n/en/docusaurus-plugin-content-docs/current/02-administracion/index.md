@@ -19,7 +19,6 @@ Install, protect, back up and maintain a NOPAL installation.
 5. [Logs](./registros.md)
 6. [Configuration backups](./respaldos.md)
 7. [System control](./control-del-sistema.md)
-
-:::caution Under construction
-Pending: network, ports and HTTPS with a reverse proxy (step-by-step guide), machine identity and its migration, plugin dependencies and diagnostics ("About NOPAL").
-:::
+8. [Network, ports and HTTPS](./red-y-https.md)
+9. [Machine identity and its migration](./identidad-de-maquinas.md)
+10. [Diagnostics and plugin dependencies](./diagnostico.md)

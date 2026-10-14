@@ -154,7 +154,7 @@ El mapa anterior es el **plan**. Esto es lo que existe hoy:
 |---|---|---|
 | 00 Inicio | Qué es NOPAL, glosario, estándar y arquitectura | Demo y capturas (aún no hay capturas) |
 | 01 Usuario | Primer acceso, conectar la primera máquina, panel de control, impresoras (Klipper, Marlin, Bambu/Elegoo/FlashForge), láser/CNC, biblioteca, editor de G-code, consola, historial, galería de plugins, IA, configuración general, centro de ayuda, solución de problemas | Capturas de pantalla |
-| 02 Administración | Instalación, actualizar y desinstalar, usuarios y roles, seguridad, registros, respaldos | Red, puertos y HTTPS con proxy inverso (paso a paso), diagnóstico |
+| 02 Administración | Instalación, actualizar y desinstalar, usuarios y roles, seguridad, registros, respaldos, control del sistema, red y HTTPS, identidad de máquinas, diagnóstico | — |
 | 03 Plugins | Índice, matriz y 8 fichas (generadas) | Flujo de diseño láser/CNC |
 | 04 Hardware | Matriz de compatibilidad | Una página por familia, ESP32/Arduino, paneles LED, cámaras, lista de modelos probados |
 | 05 Desarrolladores | Arquitectura, entorno y pruebas, 5 páginas del sistema de plugins, tutorial, contribuir | Añadir un driver, sistema de diseño |

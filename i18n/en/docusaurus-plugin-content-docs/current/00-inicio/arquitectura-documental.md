@@ -155,7 +155,7 @@ The map above is the **plan**. This is what exists today:
 |---|---|---|
 | 00 Start | What NOPAL is, glossary, standard and architecture | Demo and screenshots (there are no screenshots yet) |
 | 01 User | First access, connect the first machine, dashboard, printers (Klipper, Marlin, Bambu/Elegoo/FlashForge), laser/CNC, library, G-code editor, console, history, plugin gallery, AI, general settings, Help Center, troubleshooting | Screenshots |
-| 02 Administration | Installation, update and uninstall, users and roles, security, logs, backups | Network, ports and HTTPS with a reverse proxy (step by step), diagnostics |
+| 02 Administration | Installation, update and uninstall, users and roles, security, logs, backups, system control, network and HTTPS, machine identity, diagnostics | — |
 | 03 Plugins | Index, matrix and 8 sheets (generated) | Laser/CNC design flow |
 | 04 Hardware | Compatibility matrix | One page per family, ESP32/Arduino, LED panels, cameras, list of tested models |
 | 05 Developers | Architecture, environment and tests, 5 plugin system pages, tutorial, contributing | Adding a driver, design system |
