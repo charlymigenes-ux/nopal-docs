@@ -1,0 +1,44 @@
+{
+  "name": "nopal-docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Documentación oficial de NOPAL y sus extensiones",
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "start": "docusaurus start",
+    "start:en": "docusaurus start --locale en",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear",
+    "check": "node scripts/check-frontmatter.mjs && node scripts/check-i18n.mjs",
+    "check:frontmatter": "node scripts/check-frontmatter.mjs",
+    "check:i18n": "node scripts/check-i18n.mjs"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.10.2",
+    "@docusaurus/preset-classic": "^3.10.2",
+    "@mdx-js/react": "^3.1.1",
+    "clsx": "^2.1.1",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=20.0"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}

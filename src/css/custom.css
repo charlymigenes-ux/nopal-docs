@@ -1,0 +1,68 @@
+/* Tokens de NOPAL_DESIGN_SYSTEM_v1.md (tema NOPAL Green y White). */
+
+:root {
+  --nopal-accent: #25d366;
+  --nopal-accent-hover: #31e06f;
+  --nopal-accent-active: #17b754;
+
+  --ifm-color-primary: #17b754;
+  --ifm-color-primary-dark: #15a64c;
+  --ifm-color-primary-darker: #149d48;
+  --ifm-color-primary-darkest: #108039;
+  --ifm-color-primary-light: #19c85c;
+  --ifm-color-primary-lighter: #1ad060;
+  --ifm-color-primary-lightest: #2ee576;
+  --ifm-background-color: #f7f8fa;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-font-color-base: #1e293b;
+  --ifm-code-font-size: 92%;
+  --docusaurus-highlighted-code-line-bg: rgba(37, 211, 102, 0.12);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #25d366;
+  --ifm-color-primary-dark: #20c05b;
+  --ifm-color-primary-darker: #1eb556;
+  --ifm-color-primary-darkest: #189947;
+  --ifm-color-primary-light: #31e06f;
+  --ifm-color-primary-lighter: #44e47c;
+  --ifm-color-primary-lightest: #6ceb99;
+  --ifm-background-color: #050708;
+  --ifm-background-surface-color: #11161b;
+  --ifm-navbar-background-color: #0a0d10;
+  --ifm-footer-background-color: #0a0d10;
+  --ifm-color-emphasis-300: #2b3542;
+  --ifm-font-color-base: #f5f7fa;
+  --ifm-font-color-secondary: #b7c1cc;
+  --docusaurus-highlighted-code-line-bg: rgba(37, 211, 102, 0.18);
+}
+
+.navbar__title {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Aviso de estado de página (src/components/StatusBanner) */
+.nopal-status {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin: 0 0 1.5rem;
+  padding: 0.65rem 0.9rem;
+  border-left: 4px solid var(--nopal-status-color);
+  border-radius: var(--ifm-global-radius);
+  background: color-mix(in srgb, var(--nopal-status-color) 10%, transparent);
+  font-size: 0.9rem;
+}
+.nopal-status__label {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--nopal-status-color);
+  white-space: nowrap;
+}
+.nopal-status--implemented { --nopal-status-color: #17b754; }
+.nopal-status--convention { --nopal-status-color: #2b7fff; }
+.nopal-status--experimental { --nopal-status-color: #e6b422; }
+.nopal-status--rfc { --nopal-status-color: #a855f7; }
+.nopal-status--deprecated { --nopal-status-color: #e5484d; }

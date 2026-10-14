@@ -1,0 +1,7 @@
+node_modules/
+build/
+.docusaurus/
+.cache/
+generated/*
+!generated/.gitkeep
+.DS_Store
