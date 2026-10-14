@@ -4,20 +4,16 @@ sidebar_label: Referencia
 audience: reference
 type: reference
 status: implemented
-stub: true
+verified_against: "nopal@4346f72 (2026-10-07)"
 ---
 
-Datos exactos: API, archivos de estado, roles y contratos.
+# Referencia
+
+Datos exactos, sin narrativa.
+
+- [API REST del core](./api-rest-core.md): rutas, acceso y política de autorización. Generada desde el código.
+- La API de cada plugin está en su [ficha](../03-plugins/index.md).
 
 :::caution En construcción
-Esta sección está planificada en la [arquitectura documental](/00-inicio/arquitectura-documental). Aún no contiene páginas verificadas contra el código.
+Pendiente: archivos de estado JSON, roles y autorización por acción, tiempo real (WebSocket), variables de entorno, scripts y códigos de error.
 :::
-
-## Contenido previsto
-
-- API REST del core (generada)
-- API de cada plugin
-- Archivos de estado JSON
-- Roles y autorización
-- Tiempo real (WebSocket)
-- Variables, scripts y CLI

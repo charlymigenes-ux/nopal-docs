@@ -4,24 +4,20 @@ sidebar_label: Administración
 audience: admin
 type: explanation
 status: implemented
-stub: true
+verified_against: "nopal@4346f72 (2026-10-07)"
 ---
 
-Instalar, asegurar, respaldar y mantener una instalación de NOPAL.
+# Administración
+
+Instalar, proteger, respaldar y mantener una instalación de NOPAL.
+
+1. [Instalación](./instalacion.md)
+2. [Actualizar y desinstalar](./actualizar-y-desinstalar.md)
+3. [Usuarios y roles](./usuarios-y-roles.md)
+4. [Seguridad y exposición a internet](./seguridad.md)
+5. [Registros](./registros.md)
+6. [Respaldos de configuración](./respaldos.md)
 
 :::caution En construcción
-Esta sección está planificada en la [arquitectura documental](/00-inicio/arquitectura-documental). Aún no contiene páginas verificadas contra el código.
+Pendientes: red, puertos y HTTPS con proxy inverso (guía paso a paso), identidad de máquinas y su migración, dependencias de plugins y diagnóstico ("Acerca de NOPAL").
 :::
-
-## Contenido previsto
-
-- Instalación y requisitos
-- Actualizar y desinstalar
-- Usuarios y roles (Admin / Operator)
-- Seguridad y exposición a internet
-- Red, puertos y HTTPS
-- Registros
-- Copias de seguridad
-- Identidad de máquinas
-- Plugins: dependencias y Python mínimo
-- Diagnóstico

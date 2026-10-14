@@ -4,20 +4,15 @@ sidebar_label: Hardware
 audience: reference
 type: reference
 status: implemented
-stub: true
+verified_against: "nopal@4346f72 (2026-10-07)"
 ---
 
-Qué hardware controla NOPAL y con qué nivel de soporte.
+# Hardware
+
+Qué hardware controla NOPAL y con qué alcance.
+
+- [Matriz de compatibilidad](./matriz-de-compatibilidad.md): capacidades por familia, conexión, límites y estado de verificación de los modelos.
 
 :::caution En construcción
-Esta sección está planificada en la [arquitectura documental](/00-inicio/arquitectura-documental). Aún no contiene páginas verificadas contra el código.
+Pendientes: una página por familia (Klipper/Moonraker, Marlin, GRBL, Bambu Lab, Elegoo, FlashForge), ESP32/Arduino, paneles LED y cámaras, y la lista de modelos probados por el autor.
 :::
-
-## Contenido previsto
-
-- Matriz de compatibilidad
-- Klipper / Moonraker, Marlin, GRBL
-- Bambu Lab, Elegoo, FlashForge
-- ESP32 / Arduino
-- Paneles LED
-- Cámaras
