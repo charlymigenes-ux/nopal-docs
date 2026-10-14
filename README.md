@@ -2,7 +2,7 @@
 
 Sitio de documentación oficial de **NOPAL** y sus extensiones. Hecho con [Docusaurus](https://docusaurus.io/), en español (fuente) e inglés.
 
-> Estado: **F1 (esqueleto) y F2 (auditoría) completas**; ver `auditoria/`. Las secciones contienen páginas esqueleto (`stub: true`) salvo *Inicio*. El contenido real llega por fases; ver `docs/00-inicio/arquitectura-documental.md` §9.
+> Estado: **F1 (esqueleto), F2 (auditoría) y F3 (generadores y validadores) completas**; ver `auditoria/`. Las secciones contienen páginas esqueleto (`stub: true`) salvo *Inicio*. El contenido real llega por fases; ver `docs/00-inicio/arquitectura-documental.md` §9.
 
 ## Reglas
 
@@ -49,12 +49,33 @@ generated/            salida de los generadores (F3); no se edita a mano
 auditoria/            auditorías del código usadas como evidencia
 ```
 
+## Generadores y validadores (F3)
+
+Las páginas `docs/06-referencia/api-rest-core.md`, `docs/03-plugins/<id>.md` y `docs/03-plugins/matriz-de-plugins.md` (y su versión EN) son **generadas**: no se editan a mano. Salen del código de `nopal` y de los plugins.
+
+```bash
+npm run fetch
+```
+
+Clona (solo lectura) los repos públicos del alcance en `.sources/`. Para usar otra carpeta, define `NOPAL_SOURCES`.
+
+```bash
+npm run gen
+```
+
+Extrae las rutas (`scripts/extract_routes.py`, análisis estático sin ejecutar código) y regenera las páginas.
+
+```bash
+npm run check && npm run check:sources
+```
+
+Valida front-matter, alcance, paridad ES/EN, manifiestos y rutas. El alcance (qué se incluye y qué no se puede mencionar) vive en `scripts/data/scope.json`. Las notas verificadas de cada plugin, con su evidencia, en `scripts/data/plugin-notes.json`.
+
 ## Plantillas
 
 Copia la de `templates/` que corresponda al tipo de página y rellena el front-matter (Standard, Anexo A).
 
 ## Pendiente (según las fases)
 
-- **F3**: generadores (referencia REST, fichas de plugin, matriz de manifiestos) y validadores de rutas/manifiestos.
 - Búsqueda en el sitio: se añade al elegir plugin de búsqueda (decisión abierta).
 - Logo: el actual es **provisional**.

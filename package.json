@@ -10,9 +10,14 @@
     "build": "docusaurus build",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
-    "check": "node scripts/check-frontmatter.mjs && node scripts/check-i18n.mjs",
+    "check": "node scripts/check-frontmatter.mjs && node scripts/check-scope.mjs && node scripts/check-i18n.mjs",
     "check:frontmatter": "node scripts/check-frontmatter.mjs",
-    "check:i18n": "node scripts/check-i18n.mjs"
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "fetch": "node scripts/fetch-sources.mjs",
+    "gen:routes": "python -I scripts/extract_routes.py \"${NOPAL_SOURCES:-.sources}\" generated/routes.json",
+    "gen": "npm run gen:routes && node scripts/gen-docs.mjs",
+    "check:sources": "node scripts/check-manifests.mjs && node scripts/check-routes.mjs",
+    "check:scope": "node scripts/check-scope.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "^3.10.2",

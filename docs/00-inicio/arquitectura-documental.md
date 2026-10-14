@@ -235,7 +235,7 @@ Cada plugin entrega lo exigido en Standard §6.2. Situación de partida (de la a
 | **F0** | Standard + Architecture + auditorías (hecho) | Aprobados |
 | **F1** | Esqueleto `nopal-docs`: Docusaurus ES/EN, plantillas, front-matter, tema con el sistema de diseño, CI con enlaces y front-matter | Sitio vacío publicado en GitHub Pages |
 | **F2** | Auditoría restante (pendientes A–G de AUDITORIA_02) | Inventario completo de rutas, archivos de estado, roles y drivers |
-| **F3** | Generadores: referencia REST, fichas de plugin, matriz de manifiestos, validadores | Build verde con datos reales |
+| **F3** | Generadores: referencia REST, fichas de plugin, matriz de manifiestos, validadores | Build verde con datos reales — **completada 2026-10-14** (la referencia usa análisis estático; ver Standard §7.1) |
 | **F4** | Contenido de mayor valor: 00 Inicio, instalación, primera máquina, matriz de compatibilidad, solución de problemas | Un usuario nuevo instala y conecta una máquina solo con el sitio |
 | **F5** | Administración y Sistema de plugins (implementado) + contrato TUNA-Screen | Un desarrollador carga un plugin de ejemplo sin leer el código del core |
 | **F6** | `docs/` en cada plugin y tutorial "Hola NOPAL" | Los 8 plugins cumplen Standard §6.2 |

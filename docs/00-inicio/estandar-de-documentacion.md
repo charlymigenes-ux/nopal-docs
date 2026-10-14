@@ -129,7 +129,7 @@ Todo acoplamiento no declarado en el manifiesto **DEBE** documentarse en la fich
 
 ## 7. Documentación de API
 
-1. La **referencia de la API del core se genera desde OpenAPI** (FastAPI). No se mantiene a mano en paralelo.
+1. La **referencia de la API del core se genera**, no se mantiene a mano: por **análisis estático** del código (incluye el rol de cada ruta, que OpenAPI no refleja) y, cuando se pueda, complementada con el OpenAPI de FastAPI.
 2. Para que la generación sea útil, el código **DEBERÍA** tener `summary`, `description`, `tags`, modelos de respuesta y códigos de error.
    El título y la descripción de la app FastAPI **DEBEN** actualizarse (hoy: "Biblioteca inteligente para modelos 3D y G-code").
 3. Las rutas de plugins no entran al OpenAPI del core de forma curada; se documentan en `docs/api.md` de cada plugin con la plantilla siguiente.
@@ -251,6 +251,7 @@ requieren un plan de adecuación.
 ### Historial
 - 1.0 (2026-10-14): versión inicial.
 - 1.1 (2026-10-14): se añade el estado de página esqueleto (`stub: true`) en §5.
+- 1.5 (2026-10-14): §7.1: la referencia REST se genera por análisis estático (scripts/extract_routes.py), con OpenAPI como complemento futuro.
 - 1.4 (2026-10-14): §2: TUNA-Screen diferida (repo privado); `@PLUGIN TIPOGRAFIA@` fuera de alcance. Los puntos de TUNA-Screen en §7, §8 y §9 quedan **suspendidos** mientras dure el aplazamiento.
 - 1.3 (2026-10-14): §2 declara fuera de alcance `purecutcnc-main` y `TUNA-S`.
 - 1.2 (2026-10-14): corrección en §5: no existe un prefijo de ruta común para plugins (verificado en AUDITORIA_03).

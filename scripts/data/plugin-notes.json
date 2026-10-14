@@ -1,0 +1,61 @@
+{
+  "_comment": "Notas verificadas a mano, una por hecho, con la evidencia que las respalda. Todo lo que no esté aquí ni en el manifiesto/código no se afirma en las fichas.",
+  "matriz-led": [
+    {
+      "es": "Requiere instalar a mano la biblioteca `pypixelcolor` en el entorno Python de NOPAL: no existe un mecanismo de dependencias por plugin.",
+      "en": "The `pypixelcolor` library must be installed manually in NOPAL's Python environment: there is no per-plugin dependency mechanism.",
+      "evidence": "matriz-led/README.md"
+    },
+    {
+      "es": "El panel iPixel Color (BLE) se alcanza a través de un ESP32 con el firmware `Nopal_FF.ino` del repositorio de NOPAL; el panel FK-8Wa se controla por TCP (puerto 5858) en la misma red.",
+      "en": "The iPixel Color panel (BLE) is reached through an ESP32 running `Nopal_FF.ino` from NOPAL's repository; the FK-8Wa panel is driven over TCP (port 5858) on the same network.",
+      "evidence": "matriz-led/README.md"
+    }
+  ],
+  "arduino-accessories": [
+    {
+      "es": "Solo funciona con placas que tengan el firmware genérico de NOPAL; relés o tiras LED con firmware de fábrica no están soportados.",
+      "en": "Only works with boards running NOPAL's generic firmware; relays or LED strips with factory firmware are not supported.",
+      "evidence": "nopal-plugin-arduino-accessories/README.md"
+    },
+    {
+      "es": "El proceso de NOPAL necesita permiso de lectura y escritura sobre `/dev/ttyUSB*` o `/dev/ttyACM*` (normalmente mediante el grupo `dialout`). El flasheo por USB requiere `esptool` en el equipo.",
+      "en": "The NOPAL process needs read/write access to `/dev/ttyUSB*` or `/dev/ttyACM*` (usually via the `dialout` group). USB flashing requires `esptool` on the host.",
+      "evidence": "nopal-plugin-arduino-accessories/README.md"
+    },
+    {
+      "es": "Importa servicios del core (`backend.services.laser_service`, `marlin_printer_service`) para omitir puertos USB que ya usa un láser/CNC o una impresora Marlin.",
+      "en": "Imports core services (`backend.services.laser_service`, `marlin_printer_service`) to skip USB ports already used by a laser/CNC or a Marlin printer.",
+      "evidence": "nopal-plugin-arduino-accessories/README.md"
+    }
+  ],
+  "camera-viewer": [
+    {
+      "es": "Además de su sección propia, expone el widget `window.NopalCameraCard` (`frontend/camera-card.js`), que el propio core monta en las fichas de Klipper, láser, CNC y Marlin. Esta integración del core con el plugin no está declarada en el manifiesto.",
+      "en": "Besides its own section, it exposes the `window.NopalCameraCard` widget (`frontend/camera-card.js`), which the core itself mounts on the Klipper, laser, CNC and Marlin device cards. This core-to-plugin integration is not declared in the manifest.",
+      "evidence": "nopal-plugin-camera-viewer/frontend/camera-card.js; nopal/backend/static/js/app.js"
+    }
+  ],
+  "spoolman": [
+    {
+      "es": "Integración opcional con el Cotizador: un `material_id` con la forma `spoolman:<id_de_carrete>` enviado a `POST /api/pricing/quote` toma el costo de este plugin en lugar de `pricing_config.json`. Spoolman sigue siendo la fuente de verdad del inventario.",
+      "en": "Optional Cotizador integration: a `material_id` of the form `spoolman:<spool_id>` sent to `POST /api/pricing/quote` takes its cost from this plugin instead of `pricing_config.json`. Spoolman remains the source of truth for inventory.",
+      "evidence": "nopal-plugin-spoolman/README.md"
+    },
+    {
+      "es": "Requiere un servidor Spoolman accesible en la red (el README propone ejecutarlo con Docker en el puerto 7912).",
+      "en": "Requires a Spoolman server reachable on the network (the README suggests running it with Docker on port 7912).",
+      "evidence": "nopal-plugin-spoolman/README.md"
+    }
+  ],
+  "cotizador": [
+    {
+      "es": "Su sección de interfaz se llama `pricing`, distinta del id del plugin (`cotizador`).",
+      "en": "Its UI section is named `pricing`, different from the plugin id (`cotizador`).",
+      "evidence": "nopal-plugin-cotizador/nopal-plugin.json"
+    }
+  ],
+  "shape-creator": [],
+  "svg-toolkit": [],
+  "font-library": []
+}

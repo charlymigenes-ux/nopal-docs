@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   pull_request:
+  schedule:
+    # Semanal: el core y los plugins cambian sin que este repositorio haga push.
+    - cron: "23 9 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -24,12 +27,25 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
       - run: npm ci
+
+      # Fuentes: clones superficiales de solo lectura de los repos públicos del alcance.
+      - run: npm run fetch
+      # Páginas generadas (referencia REST, fichas y matriz de plugins).
+      - run: npm run gen
+      # Las páginas generadas versionadas deben estar al día con el código fuente.
+      - name: Las páginas generadas están actualizadas
+        run: git diff --exit-code -- docs i18n
+
       # Standard §18: validadores antes de compilar.
-      - run: npm run check:frontmatter
-      - run: npm run check:i18n
+      - run: npm run check
+      - run: npm run check:sources
       # onBrokenLinks: 'throw' hace fallar el build ante enlaces rotos.
       - run: npm run build
+
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
         with:

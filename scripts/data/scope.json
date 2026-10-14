@@ -1,0 +1,33 @@
+{
+  "_comment": "Alcance de la documentación (Standard §2). Es la única fuente de qué se incluye, se omite o se prohíbe mencionar.",
+  "included_repos": [
+    "nopal",
+    "nopal-demo",
+    "matriz-led",
+    "nopal-plugin-arduino-accessories",
+    "nopal-plugin-camera-viewer",
+    "nopal-plugin-spoolman",
+    "nopal-plugin-cotizador",
+    "nopal-plugin-shape-creator",
+    "nopal-plugin-svg-toolkit",
+    "nopal-plugin-font-library"
+  ],
+  "plugins": [
+    { "id": "matriz-led", "repo": "matriz-led" },
+    { "id": "arduino-accessories", "repo": "nopal-plugin-arduino-accessories" },
+    { "id": "camera-viewer", "repo": "nopal-plugin-camera-viewer" },
+    { "id": "spoolman", "repo": "nopal-plugin-spoolman" },
+    { "id": "cotizador", "repo": "nopal-plugin-cotizador" },
+    { "id": "shape-creator", "repo": "nopal-plugin-shape-creator" },
+    { "id": "svg-toolkit", "repo": "nopal-plugin-svg-toolkit" },
+    { "id": "font-library", "repo": "nopal-plugin-font-library" }
+  ],
+  "github_owner": "charlymigenes-ux",
+  "excluded_core_files": ["tunascreen.py"],
+  "excluded_route_prefixes": ["/api/tunascreen", "/ws/tunascreen"],
+  "forbidden_terms_in_public_pages": ["TUNA-Screen", "TUNA-S", "tunascreen", "TUNASCREEN", "MKS-DLC32", "purecutcnc"],
+  "forbidden_terms_exempt_paths": [
+    "docs/00-inicio/estandar-de-documentacion.md",
+    "docs/00-inicio/arquitectura-documental.md"
+  ]
+}
