@@ -31,7 +31,7 @@ Inconsistencias a corregir o documentar:
 ## 2. Contrato backend [V]
 
 - `backend/router.py` con `router = APIRouter()` **sin prefijo**.
-- Cada ruta declara su ruta completa, por convención `/api/plugins/<id>/...`. **Nada lo obliga**: es convención.
+- Cada ruta declara su ruta completa. **Corrección (AUDITORIA_03): no existe prefijo común.** matriz-led usa `/api/plugins/matriz-led`; arduino-accessories `/api/accessories`; camera-viewer `/api/cameras`; cotizador `/api/pricing` (+ `/cotizador/print`); spoolman `/api/spoolman`.
 - Endpoints por plugin (decoradores `@router.*`): matriz-led 40 · arduino-accessories 43 · camera-viewer 32 · cotizador 18 · spoolman 17. Los 3 de diseño: 0 (solo frontend).
 - Extensión opcional `AI_TOOLS` → NOPAL Intelligence. Hay prueba de autorización (`test_ai_plugin_tools_authorization.py`), con la regla de que un módulo ajeno a un plugin instalado se omite. **Estado: Experimental.**
 - `python_requires`: lo respeta la Galería (no instala) y el cargador (no carga). Hay CI de compatibilidad con Python 3.9 (`scripts/check_plugins_compat.py`).

@@ -81,7 +81,7 @@ Reglas:
 
 Ejemplo vigente de aplicación (de la auditoría):
 - `NopalPluginRegistry` con `mount/unmount/version` → `implemented`.
-- Prefijo de ruta `/api/plugins/<id>/` → `convention`.
+- Rutas de un plugin: **no hay prefijo común** (cada plugin elige el suyo: `/api/plugins/matriz-led`, `/api/accessories`, `/api/cameras`, `/api/pricing`, `/api/spoolman`). Se documenta el prefijo real de cada plugin; ninguna "convención de prefijo" es contrato.
 - `AI_TOOLS` → `experimental`.
 - Permisos del manifiesto → `implemented` como **texto informativo**; "permisos con aplicación forzada" → `rfc`.
 - Versión de Plugin API, dependencias por plugin, sandbox, bus de eventos → `rfc`.
@@ -249,6 +249,7 @@ requieren un plan de adecuación.
 ### Historial
 - 1.0 (2026-10-14): versión inicial.
 - 1.1 (2026-10-14): se añade el estado de página esqueleto (`stub: true`) en §5.
+- 1.2 (2026-10-14): corrección en §5: no existe un prefijo de ruta común para plugins (verificado en AUDITORIA_03).
 
 ---
 

@@ -57,7 +57,7 @@ el core los haga cumplir. Documentar como **declarativos**, no como un sistema d
 2. Lee el manifiesto y resuelve `backend.entry` dentro de `plugins/<id>/`; rechaza rutas fuera de su carpeta.
 3. Registra `backend/` como paquete `nopal_plugins.<id_con_guiones_bajos>` (permite imports relativos).
 4. Importa el módulo de entrada y exige una variable de módulo **`router`** (`APIRouter`).
-5. Hace `app.include_router(router)`. El plugin define sus propias rutas completas (convención `/api/plugins/<id>/...` [R]).
+5. Hace `app.include_router(router)`. El plugin define sus propias rutas completas (**corregido en AUDITORIA_03**: no hay prefijo común; cada plugin usa el suyo).
 6. Un plugin roto se salta con un log; **no tumba el arranque**.
 
 ### Puntos de extensión adicionales [V]

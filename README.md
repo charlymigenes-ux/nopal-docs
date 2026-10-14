@@ -2,7 +2,7 @@
 
 Sitio de documentación oficial de **NOPAL** y sus extensiones. Hecho con [Docusaurus](https://docusaurus.io/), en español (fuente) e inglés.
 
-> Estado: **F1 (esqueleto)**. Las secciones contienen páginas esqueleto (`stub: true`) salvo *Inicio*. El contenido real llega por fases; ver `docs/00-inicio/arquitectura-documental.md` §9.
+> Estado: **F1 (esqueleto) y F2 (auditoría) completas**; ver `auditoria/`. Las secciones contienen páginas esqueleto (`stub: true`) salvo *Inicio*. El contenido real llega por fases; ver `docs/00-inicio/arquitectura-documental.md` §9.
 
 ## Reglas
 
@@ -55,7 +55,6 @@ Copia la de `templates/` que corresponda al tipo de página y rellena el front-m
 
 ## Pendiente (según las fases)
 
-- **F2**: auditoría restante (rutas, archivos de estado, roles, drivers).
 - **F3**: generadores (referencia REST, fichas de plugin, matriz de manifiestos) y validadores de rutas/manifiestos.
 - Búsqueda en el sitio: se añade al elegir plugin de búsqueda (decisión abierta).
 - Logo: el actual es **provisional**.

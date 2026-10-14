@@ -1,0 +1,368 @@
+repo,archivo,metodo,ruta,funcion,acceso,politica_adr006,mecanismo_crudo
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/announcements,list_announcements_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,POST,/api/plugins/matriz-led/announcements,create_announcement_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,DELETE,/api/plugins/matriz-led/announcements/{announcement_id},delete_announcement_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/announcements/{announcement_id},get_announcement_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,PUT,/api/plugins/matriz-led/announcements/{announcement_id},update_announcement_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,POST,/api/plugins/matriz-led/announcements/{announcement_id}/send,send_announcement_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/config,get_config_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,POST,/api/plugins/matriz-led/config,save_config_endpoint,admin,,role:admin
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/device-info,get_device_info_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,POST,/api/plugins/matriz-led/fk8wa/brightness,fk8wa_brightness_endpoint,admin,,role:admin
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/fk8wa/config,fk8wa_get_config_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,PUT,/api/plugins/matriz-led/fk8wa/config,fk8wa_save_config_endpoint,admin,,role:admin
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/fk8wa/effects,fk8wa_effects_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,POST,/api/plugins/matriz-led/fk8wa/effects/test,fk8wa_effect_test_endpoint,admin,,role:admin
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/fk8wa/frames,fk8wa_frames_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/fk8wa/machines,fk8wa_machines_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,DELETE,/api/plugins/matriz-led/fk8wa/message,fk8wa_clear_message_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/fk8wa/message,fk8wa_get_message_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,POST,/api/plugins/matriz-led/fk8wa/message,fk8wa_set_message_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/fk8wa/preview,fk8wa_preview_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/fk8wa/scroll-preview,fk8wa_scroll_preview_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/fk8wa/status,fk8wa_status_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,POST,/api/plugins/matriz-led/fk8wa/test,fk8wa_test_endpoint,admin,,role:admin
+matriz-led,backend/router.py,POST,/api/plugins/matriz-led/image,send_image_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/last-error,get_last_error_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/last-sent,get_last_sent_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/last-sent-history,get_last_sent_history_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/machine-alerts,list_machine_alerts_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/machine-alerts/{machine_id},get_machine_alerts_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,PUT,/api/plugins/matriz-led/machine-alerts/{machine_id},save_machine_alerts_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/machines,list_machines_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/rules,list_rules_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,POST,/api/plugins/matriz-led/rules,create_rule_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,DELETE,/api/plugins/matriz-led/rules/{rule_id},delete_rule_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,PUT,/api/plugins/matriz-led/rules/{rule_id},update_rule_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,POST,/api/plugins/matriz-led/rules/{rule_id}/run,run_rule_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/stats,get_stats_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/status,get_status_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,POST,/api/plugins/matriz-led/text,send_text_endpoint,sesion (admin u operador),,auth
+matriz-led,backend/router.py,GET,/api/plugins/matriz-led/text-sizes,list_text_sizes_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,GET,/actions,list_ai_actions_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,POST,/actions/{token}/cancel,cancel_ai_action_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,POST,/actions/{token}/confirm,confirm_ai_action_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,POST,/ask,ask_ai_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,GET,/config,get_ai_config_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,PUT,/config,save_ai_config_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,DELETE,/conversations,clear_conversations_endpoint,sesion (admin u operador),Action.CLEAR_ALL_CONVERSATIONS,auth|policy:Action.CLEAR_ALL_CONVERSATIONS
+nopal,backend/api/ai.py,GET,/conversations,list_conversations_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,DELETE,/conversations/{conversation_id},delete_conversation_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,GET,/conversations/{conversation_id},get_conversation_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,PUT,/conversations/{conversation_id},rename_conversation_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,POST,/enabled,set_ai_enabled_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,GET,/presets,ai_presets_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,GET,/providers,list_ai_providers_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,POST,/providers,create_ai_provider_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,DELETE,/providers/{provider_id},delete_ai_provider_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,PUT,/providers/{provider_id},update_ai_provider_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,POST,/providers/{provider_id}/activate,activate_ai_provider_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,GET,/status,ai_status_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,GET,/suggestions,get_ai_suggestions_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,PUT,/suggestions,save_ai_suggestions_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,POST,/test,test_ai_connection_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,GET,/tiers,ai_tiers_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,GET,/tools,list_ai_tools_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,POST,/tools/{tool_name},call_ai_tool_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/auth.py,POST,/api/auth/login,login_endpoint,publico,,
+nopal,backend/api/auth.py,POST,/api/auth/logout,logout_endpoint,publico,,
+nopal,backend/api/auth.py,GET,/api/auth/me,me_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/auth.py,POST,/api/auth/setup,setup_endpoint,publico,,
+nopal,backend/api/auth.py,GET,/api/auth/setup-required,setup_required_endpoint,publico,,
+nopal,backend/api/auth.py,GET,/api/auth/users,list_users_endpoint,admin,,role:admin
+nopal,backend/api/auth.py,POST,/api/auth/users,create_user_endpoint,admin,,role:admin
+nopal,backend/api/auth.py,POST,/api/auth/users/remove,remove_user_endpoint,admin,,role:admin
+nopal,backend/api/auth.py,POST,/api/auth/users/update,update_user_endpoint,admin,,role:admin
+nopal,backend/api/bambu_printers.py,GET,/api/bambu/printers,bambu_printers_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/bambu_printers.py,POST,/api/bambu/printers,bambu_register_endpoint,admin,,role:admin
+nopal,backend/api/bambu_printers.py,POST,/api/bambu/printers/discover,bambu_discover_endpoint,admin,,role:admin
+nopal,backend/api/bambu_printers.py,DELETE,/api/bambu/printers/{printer_id},bambu_unregister_endpoint,admin,,role:admin
+nopal,backend/api/bambu_printers.py,POST,/api/bambu/printers/{printer_id}/cancel,bambu_cancel_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/bambu_printers.py,POST,/api/bambu/printers/{printer_id}/pause,bambu_pause_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/bambu_printers.py,POST,/api/bambu/printers/{printer_id}/resume,bambu_resume_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/bambu_printers.py,POST,/api/bambu/printers/{printer_id}/send,bambu_send_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/bambu_printers.py,POST,/api/bambu/printers/{printer_id}/test-connection,bambu_test_connection_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/config_backup.py,POST,/export,export_endpoint,admin,,role:admin
+nopal,backend/api/config_backup.py,GET,/groups,list_groups_endpoint,admin,,role:admin
+nopal,backend/api/config_backup.py,POST,/import,import_endpoint,admin,,role:admin
+nopal,backend/api/config_backup.py,POST,/inspect,inspect_endpoint,admin,,role:admin
+nopal,backend/api/console.py,POST,/api/console/command,send_console_command_endpoint,sesion (admin u operador),Action.SEND_CONSOLE_COMMAND,auth|policy:Action.SEND_CONSOLE_COMMAND
+nopal,backend/api/console.py,GET,/api/console/messages,get_console_messages_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/console.py,GET,/api/macros,get_macros_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/console.py,POST,/api/macros/run,run_macro_endpoint,sesion (admin u operador),Action.RUN_MACRO,auth|policy:Action.RUN_MACRO
+nopal,backend/api/dashboard.py,GET,/api/dashboard/summary,dashboard_summary_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/devices.py,GET,/api/devices/registry,devices_registry_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/elegoo_printers.py,GET,/api/elegoo/printers,elegoo_printers_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/elegoo_printers.py,POST,/api/elegoo/printers,elegoo_register_endpoint,admin,,role:admin
+nopal,backend/api/elegoo_printers.py,POST,/api/elegoo/printers/discover,elegoo_discover_endpoint,admin,,role:admin
+nopal,backend/api/elegoo_printers.py,DELETE,/api/elegoo/printers/{printer_id},elegoo_unregister_endpoint,admin,,role:admin
+nopal,backend/api/elegoo_printers.py,POST,/api/elegoo/printers/{printer_id}/cancel,elegoo_cancel_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/elegoo_printers.py,POST,/api/elegoo/printers/{printer_id}/pause,elegoo_pause_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/elegoo_printers.py,POST,/api/elegoo/printers/{printer_id}/resume,elegoo_resume_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/elegoo_printers.py,POST,/api/elegoo/printers/{printer_id}/send,elegoo_send_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/elegoo_printers.py,POST,/api/elegoo/printers/{printer_id}/test-connection,elegoo_test_connection_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/flashforge_printers.py,GET,/api/flashforge/printers,flashforge_printers_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/flashforge_printers.py,POST,/api/flashforge/printers,flashforge_register_endpoint,admin,,role:admin
+nopal,backend/api/flashforge_printers.py,POST,/api/flashforge/printers/discover,flashforge_discover_endpoint,admin,,role:admin
+nopal,backend/api/flashforge_printers.py,DELETE,/api/flashforge/printers/{printer_id},flashforge_unregister_endpoint,admin,,role:admin
+nopal,backend/api/flashforge_printers.py,POST,/api/flashforge/printers/{printer_id}/cancel,flashforge_cancel_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/flashforge_printers.py,POST,/api/flashforge/printers/{printer_id}/pause,flashforge_pause_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/flashforge_printers.py,POST,/api/flashforge/printers/{printer_id}/resume,flashforge_resume_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/flashforge_printers.py,POST,/api/flashforge/printers/{printer_id}/send,flashforge_send_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/flashforge_printers.py,POST,/api/flashforge/printers/{printer_id}/test-connection,flashforge_test_connection_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/command,laser_command_endpoint,sesion (admin u operador),action,auth|policy:action
+nopal,backend/api/laser.py,GET,/api/laser/console,laser_console_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/console,laser_console_command_endpoint,sesion (admin u operador),Action.SEND_CONSOLE_COMMAND,auth|policy:Action.SEND_CONSOLE_COMMAND
+nopal,backend/api/laser.py,GET,/api/laser/history,laser_history_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/history/snapshot,laser_history_snapshot_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/home,laser_home_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,GET,/api/laser/info,laser_info_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/job/cancel,laser_job_cancel_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/job/frame,laser_job_frame_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/job/pause,laser_job_pause_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/job/resume,laser_job_resume_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/job/start,laser_job_start_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,GET,/api/laser/job/status,laser_job_status_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,GET,/api/laser/jobs/active,laser_active_jobs_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/jog,laser_jog_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,GET,/api/laser/parser-state,laser_parser_state_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,GET,/api/laser/profiles,laser_profiles_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,GET,/api/laser/queue,laser_queue_list_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/queue/add,laser_queue_add_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/queue/remove,laser_queue_remove_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/queue/start,laser_queue_start_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,GET,/api/laser/registry,laser_registry_list_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/registry,laser_registry_add_endpoint,admin,,role:admin
+nopal,backend/api/laser.py,POST,/api/laser/registry/remove,laser_registry_remove_endpoint,admin,,role:admin
+nopal,backend/api/laser.py,GET,/api/laser/registry/status,laser_registry_status_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,GET,/api/laser/scan,laser_scan_endpoint,admin,,role:admin
+nopal,backend/api/laser.py,GET,/api/laser/scan-ip,laser_scan_ip_endpoint,admin,,role:admin
+nopal,backend/api/laser.py,GET,/api/laser/sd/available,laser_sd_available_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/sd/delete,laser_sd_delete_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,GET,/api/laser/sd/files,laser_sd_files_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/sd/folder,laser_sd_folder_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/sd/format,laser_sd_format_endpoint,admin,,role:admin
+nopal,backend/api/laser.py,POST,/api/laser/sd/run,laser_sd_run_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/sd/upload,laser_sd_upload_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/sd/upload-from-library,laser_sd_upload_from_library_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,GET,/api/laser/sd/upload-progress/{upload_id},laser_sd_upload_progress_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/sd/upload-progress/{upload_id}/clear,laser_sd_upload_progress_clear_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,GET,/api/laser/settings,laser_settings_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/settings,laser_settings_update_endpoint,sesion (admin u operador),Action.GRBL_SETTINGS,auth|policy:Action.GRBL_SETTINGS
+nopal,backend/api/laser.py,GET,/api/laser/status,laser_status_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,GET,/api/laser/usb-ports,laser_usb_ports_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/laser.py,POST,/api/laser/usb-ports/test,laser_usb_test_endpoint,admin,,role:admin
+nopal,backend/api/logging_config.py,GET,/api/logs/config,get_logging_config_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/logging_config.py,PUT,/api/logs/config,update_logging_config_endpoint,sesion (admin u operador),Action.SYSTEM_CONTROL,auth|policy:Action.SYSTEM_CONTROL
+nopal,backend/api/logs.py,GET,/api/logs,get_logs,sesion (admin u operador),,auth
+nopal,backend/api/marlin_printers.py,GET,/api/marlin-printers/console,marlin_printers_console_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/marlin_printers.py,POST,/api/marlin-printers/console,marlin_printers_console_command_endpoint,sesion (admin u operador),Action.SEND_CONSOLE_COMMAND,auth|policy:Action.SEND_CONSOLE_COMMAND
+nopal,backend/api/marlin_printers.py,GET,/api/marlin-printers/discover,marlin_printers_discover_endpoint,admin,,role:admin
+nopal,backend/api/marlin_printers.py,POST,/api/marlin-printers/home,marlin_printers_home_endpoint,sesion (admin u operador),Action.HOME,auth|policy:Action.HOME
+nopal,backend/api/marlin_printers.py,GET,/api/marlin-printers/jobs/active,marlin_printers_active_jobs_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/marlin_printers.py,POST,/api/marlin-printers/jog,marlin_printers_jog_endpoint,sesion (admin u operador),Action.MOVE,auth|policy:Action.MOVE
+nopal,backend/api/marlin_printers.py,GET,/api/marlin-printers/mks-wifi/discover,marlin_mks_wifi_discover_endpoint,admin,,role:admin
+nopal,backend/api/marlin_printers.py,POST,/api/marlin-printers/mks-wifi/test,marlin_mks_wifi_test_endpoint,admin,,role:admin
+nopal,backend/api/marlin_printers.py,POST,/api/marlin-printers/print/cancel,marlin_printers_print_cancel_endpoint,sesion (admin u operador),Action.CANCEL,auth|policy:Action.CANCEL
+nopal,backend/api/marlin_printers.py,POST,/api/marlin-printers/print/pause,marlin_printers_print_pause_endpoint,sesion (admin u operador),Action.PAUSE,auth|policy:Action.PAUSE
+nopal,backend/api/marlin_printers.py,POST,/api/marlin-printers/print/resume,marlin_printers_print_resume_endpoint,sesion (admin u operador),Action.RESUME,auth|policy:Action.RESUME
+nopal,backend/api/marlin_printers.py,POST,/api/marlin-printers/print/start,marlin_printers_print_start_endpoint,sesion (admin u operador),Action.START_JOB,auth|policy:Action.START_JOB
+nopal,backend/api/marlin_printers.py,GET,/api/marlin-printers/print/status,marlin_printers_print_status_endpoint,sesion (admin u operador),Action.VIEW_STATUS,auth|policy:Action.VIEW_STATUS
+nopal,backend/api/marlin_printers.py,GET,/api/marlin-printers/profiles,marlin_printers_profiles_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/marlin_printers.py,GET,/api/marlin-printers/registry,marlin_printers_registry_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/marlin_printers.py,POST,/api/marlin-printers/registry,marlin_printers_registry_add_endpoint,admin,,role:admin
+nopal,backend/api/marlin_printers.py,POST,/api/marlin-printers/registry/remove,marlin_printers_registry_remove_endpoint,admin,,role:admin
+nopal,backend/api/marlin_printers.py,GET,/api/marlin-printers/registry/status,marlin_printers_registry_status_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/marlin_printers.py,GET,/api/marlin-printers/sd/available,marlin_printers_sd_available_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/marlin_printers.py,GET,/api/marlin-printers/sd/files,marlin_printers_sd_files_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/marlin_printers.py,POST,/api/marlin-printers/sd/print/start,marlin_printers_sd_print_start_endpoint,sesion (admin u operador),Action.START_JOB,auth|policy:Action.START_JOB
+nopal,backend/api/marlin_printers.py,POST,/api/marlin-printers/sd/upload-and-print,marlin_printers_sd_upload_and_print_endpoint,sesion (admin u operador),Action.START_JOB,auth|policy:Action.START_JOB
+nopal,backend/api/marlin_printers.py,GET,/api/marlin-printers/status,marlin_printers_status_endpoint,sesion (admin u operador),Action.VIEW_STATUS,auth|policy:Action.VIEW_STATUS
+nopal,backend/api/marlin_printers.py,POST,/api/marlin-printers/temperature-target,marlin_printers_temperature_target_endpoint,sesion (admin u operador),Action.SET_TEMPERATURE,auth|policy:Action.SET_TEMPERATURE
+nopal,backend/api/marlin_printers.py,GET,/api/marlin-printers/temperatures,marlin_printers_temperatures_endpoint,sesion (admin u operador),Action.VIEW_STATUS,auth|policy:Action.VIEW_STATUS
+nopal,backend/api/marlin_printers.py,POST,/api/marlin-printers/usb-ports/test,marlin_usb_test_endpoint,admin,,role:admin
+nopal,backend/api/models.py,GET,/api/browse,browse_folder,sesion (admin u operador),,auth
+nopal,backend/api/models.py,DELETE,/api/files,delete_file,sesion (admin u operador),,auth
+nopal,backend/api/models.py,PATCH,/api/files,rename_file,sesion (admin u operador),,auth
+nopal,backend/api/models.py,POST,/api/files/move,move_file,sesion (admin u operador),,auth
+nopal,backend/api/models.py,DELETE,/api/folders,delete_folder,sesion (admin u operador),,auth
+nopal,backend/api/models.py,PATCH,/api/folders,rename_folder,sesion (admin u operador),,auth
+nopal,backend/api/models.py,POST,/api/folders,create_folder,sesion (admin u operador),,auth
+nopal,backend/api/models.py,GET,/api/gcode/thumbnail,get_gcode_thumbnail,sesion (admin u operador),,auth
+nopal,backend/api/models.py,GET,/api/models,get_models,sesion (admin u operador),,auth
+nopal,backend/api/models.py,GET,/api/models/thumbnail,get_model_thumbnail,sesion (admin u operador),,auth
+nopal,backend/api/notifications.py,GET,/api/notifications,notifications_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/plugins.py,GET,,list_plugins,sesion (admin u operador),,auth
+nopal,backend/api/plugins.py,DELETE,/{plugin_id},uninstall_plugin,admin,,role:admin
+nopal,backend/api/plugins.py,POST,/{plugin_id}/install,install_plugin,admin,,role:admin
+nopal,backend/api/plugins.py,POST,/{plugin_id}/update,update_plugin,admin,,role:admin
+nopal,backend/api/printers.py,GET,/api/printers,get_printers,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,GET,/api/printers/queue/count,get_printers_queue_count,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,GET,/api/printers/recent-files,get_printers_recent_files,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,GET,/api/printers/schedule,get_scheduled_prints_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,POST,/api/printers/schedule,add_scheduled_print_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,DELETE,/api/printers/schedule/{schedule_id},remove_scheduled_print_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,GET,/api/printers/status,get_all_status,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,POST,/api/printers/{port}/cancel,cancel_printer,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,GET,/api/printers/{port}/config-files,printer_config_files_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,GET,/api/printers/{port}/config-files/content,printer_config_file_content_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,POST,/api/printers/{port}/config-files/content,save_printer_config_file_endpoint,sesion (admin u operador),Action.PRINTER_CONFIG,auth|policy:Action.PRINTER_CONFIG
+nopal,backend/api/printers.py,POST,/api/printers/{port}/firmware-restart,firmware_restart_endpoint,sesion (admin u operador),Action.FIRMWARE_RESTART,auth|policy:Action.FIRMWARE_RESTART
+nopal,backend/api/printers.py,POST,/api/printers/{port}/pause,pause_printer,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,GET,/api/printers/{port}/queue,printer_queue_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,POST,/api/printers/{port}/queue/start,printer_queue_start_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,DELETE,/api/printers/{port}/queue/{job_id},printer_queue_remove_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,POST,/api/printers/{port}/restart,restart_printer_endpoint,sesion (admin u operador),Action.RESTART_KLIPPER,auth|policy:Action.RESTART_KLIPPER
+nopal,backend/api/printers.py,POST,/api/printers/{port}/resume,resume_printer,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,POST,/api/printers/{port}/send,send_to_printer_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/printers.py,GET,/api/printers/{printer_name}/status,get_single_status,sesion (admin u operador),,auth
+nopal,backend/api/status.py,GET,/api/status,status,sesion (admin u operador),,auth
+nopal,backend/api/status.py,GET,/api/storage,get_storage,sesion (admin u operador),,auth
+nopal,backend/api/status.py,GET,/api/system/diagnostics,get_diagnostics_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/status.py,GET,/api/system/stats,get_system_stats_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/status.py,GET,/api/system/temperature-presets,get_temperature_presets_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/status.py,POST,/api/system/temperature-presets,set_temperature_presets_endpoint,admin,,role:admin
+nopal,backend/api/status.py,POST,/api/system/temperature-target,set_temperature_target_endpoint,sesion (admin u operador),Action.SET_TEMPERATURE,auth|policy:Action.SET_TEMPERATURE
+nopal,backend/api/status.py,GET,/api/system/temperatures,get_temperatures_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/status.py,GET,/api/system/toolhead,get_toolhead_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/status.py,POST,/api/system/update,update_app_endpoint,admin,,role:admin
+nopal,backend/api/status.py,GET,/api/system/version,get_version_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/system.py,POST,/host/reboot,reboot_host_endpoint,admin,,role:admin
+nopal,backend/api/system.py,POST,/host/shutdown,shutdown_host_endpoint,admin,,role:admin
+nopal,backend/api/system.py,POST,/nopal/restart,restart_nopal_endpoint,admin,,role:admin
+nopal,backend/api/system.py,GET,/services,list_services_endpoint,admin,,role:admin
+nopal,backend/api/system.py,POST,/services/{action},control_service_endpoint,admin,,role:admin
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/accessories,tunascreen_accessories,token-dispositivo,,Depends(require_device_token)
+nopal,backend/api/tunascreen.py,POST,/api/tunascreen/accessories/{accessory_id}/power,tunascreen_accessory_power,token-dispositivo,,Depends(require_device_token)
+nopal,backend/api/tunascreen.py,POST,/api/tunascreen/accessory-scenes/{scene_id}/run,tunascreen_run_accessory_scene,token-dispositivo,,Depends(require_device_token)
+nopal,backend/api/tunascreen.py,POST,/api/tunascreen/action,tunascreen_action,token-dispositivo,,Depends(require_device_token)
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/cameras/{camera_id}/stream,tunascreen_camera_stream,token-dispositivo,,Depends(require_device_token)
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/config,tunascreen_config,token-dispositivo,,Depends(require_device_token)
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/devices,tunascreen_devices,admin,,role:admin
+nopal,backend/api/tunascreen.py,DELETE,/api/tunascreen/devices/{device_id},tunascreen_revoke_device,admin,,role:admin
+nopal,backend/api/tunascreen.py,PUT,/api/tunascreen/devices/{device_id}/scope,tunascreen_device_scope,admin,,role:admin
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/info,tunascreen_info,publico,,
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/machine/{machine_id},tunascreen_machine_detail,token-dispositivo,,Depends(require_device_token)
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/machine/{machine_id}/console,tunascreen_machine_console,token-dispositivo,,Depends(require_device_token)
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/machine/{machine_id}/macros,tunascreen_machine_macros,token-dispositivo,,Depends(require_device_token)
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/machines,tunascreen_machines,token-dispositivo,,Depends(require_device_token)
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/materials,tunascreen_materials,token-dispositivo,,Depends(require_device_token)
+nopal,backend/api/tunascreen.py,POST,/api/tunascreen/materials/active,tunascreen_set_active_material,token-dispositivo,,Depends(require_device_token)
+nopal,backend/api/tunascreen.py,POST,/api/tunascreen/pair/confirm,tunascreen_pair_confirm,publico,,
+nopal,backend/api/tunascreen.py,POST,/api/tunascreen/pair/start,tunascreen_pair_start,admin,,role:admin
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/scope-options,tunascreen_scope_options,admin,,role:admin
+nopal,backend/api/tunascreen.py,WEBSOCKET,/ws/tunascreen,tunascreen_ws,publico,,
+nopal,backend/api/upload.py,POST,/api/upload,upload_model,sesion (admin u operador),,auth
+nopal,backend/main.py,GET,/,home,publico,,
+nopal,backend/main.py,GET,/uploads/{filename:path},protected_upload,sesion (admin u operador),,auth
+nopal,backend/main.py,GET,/view/{filename:path},view_model,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories,accessory_list_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories,accessory_register_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/activity,accessory_activity_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/arduino/ambient-sensor,arduino_ambient_sensor_get_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/arduino/ambient-sensor,arduino_ambient_sensor_set_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/arduino/boards,arduino_boards_list_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/arduino/boards,arduino_boards_add_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,DELETE,/api/accessories/arduino/boards/{board_id},arduino_boards_remove_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,PUT,/api/accessories/arduino/boards/{board_id},arduino_boards_update_info_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,PUT,/api/accessories/arduino/boards/{board_id}/pins/{side}/{index},arduino_boards_update_pin_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/arduino/discover,accessory_arduino_discover_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/arduino/lighting,accessory_arduino_lighting_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/arduino/list-ports,accessory_arduino_list_ports_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/arduino/probe-wifi,accessory_arduino_probe_wifi_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/arduino/relay,accessory_arduino_relay_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/arduino/telemetry,arduino_boards_telemetry_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/cluster/config,cluster_config_get_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/cluster/config,cluster_config_set_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/cluster/config/rotate-token,cluster_rotate_token_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/cluster/event,cluster_event_endpoint,publico,,
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/drivers,accessory_drivers_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/firmware/builds,accessory_firmware_builds_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/firmware/builds/{filename}/download,accessory_firmware_download_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/firmware/flash-ota,accessory_firmware_flash_ota_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/firmware/flash-ota-for/{accessory_id},accessory_firmware_flash_ota_for_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/firmware/flash-usb,accessory_firmware_flash_usb_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/firmware/source,accessory_firmware_source_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/firmware/upload,accessory_firmware_upload_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/led,accessory_led_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/machine-led/config,machine_led_config_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/machine-led/config,machine_led_save_config_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/machine-led/enabled,machine_led_enabled_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/machine-led/state,machine_led_state_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/power,accessory_power_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/remove,accessory_remove_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/rename,accessory_rename_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/scenes,accessory_scenes_list_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/scenes,accessory_scenes_create_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,DELETE,/api/accessories/scenes/{scene_id},accessory_scenes_delete_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,PUT,/api/accessories/scenes/{scene_id},accessory_scenes_update_endpoint,admin,,role:admin
+nopal-plugin-arduino-accessories,backend/router.py,POST,/api/accessories/scenes/{scene_id}/run,accessory_scenes_run_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/status,accessory_status_endpoint,sesion (admin u operador),,auth
+nopal-plugin-arduino-accessories,backend/router.py,GET,/api/accessories/{accessory_id}/firmware-status,accessory_firmware_status_endpoint,sesion (admin u operador),,auth
+nopal-plugin-camera-viewer,backend/router.py,GET,/api/cameras,camera_list_endpoint,sesion (admin u operador),,auth
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras,camera_register_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/onvif,camera_register_onvif_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/remove,camera_remove_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,GET,/api/cameras/usb/discover,camera_usb_discover_endpoint,sesion (admin u operador),,auth
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/usb/register,camera_usb_register_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,GET,/api/cameras/usb/{camera_id}/stream,camera_usb_stream_endpoint,sesion (admin u operador),,auth
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/{camera_id}/capture,camera_capture_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,GET,/api/cameras/{camera_id}/captures,camera_captures_list_endpoint,sesion (admin u operador),,auth
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/{camera_id}/captures/zip,camera_captures_zip_endpoint,sesion (admin u operador),,auth
+nopal-plugin-camera-viewer,backend/router.py,DELETE,/api/cameras/{camera_id}/captures/{filename},camera_capture_delete_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,GET,/api/cameras/{camera_id}/captures/{filename},camera_capture_file_endpoint,sesion (admin u operador),,auth
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/{camera_id}/captures/{filename}/edit,camera_capture_edit_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/{camera_id}/duplicate,camera_duplicate_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,GET,/api/cameras/{camera_id}/focus,camera_focus_get_endpoint,sesion (admin u operador),,auth
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/{camera_id}/focus,camera_focus_set_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,GET,/api/cameras/{camera_id}/health,camera_health_endpoint,sesion (admin u operador),,auth
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/{camera_id}/record/start,camera_record_start_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/{camera_id}/record/stop,camera_record_stop_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,GET,/api/cameras/{camera_id}/recordings,camera_recordings_list_endpoint,sesion (admin u operador),,auth
+nopal-plugin-camera-viewer,backend/router.py,DELETE,/api/cameras/{camera_id}/recordings/{filename},camera_recording_delete_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,GET,/api/cameras/{camera_id}/recordings/{filename},camera_recording_file_endpoint,sesion (admin u operador),,auth
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/{camera_id}/timelapse,camera_timelapse_config_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/{camera_id}/timelapse/assemble,camera_timelapse_assemble_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/{camera_id}/timelapse/assemble-gif,camera_timelapse_assemble_gif_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/{camera_id}/timelapse/pause,camera_timelapse_pause_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/{camera_id}/timelapse/resume,camera_timelapse_resume_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,GET,/api/cameras/{camera_id}/timelapse/stats,camera_timelapse_stats_endpoint,sesion (admin u operador),,auth
+nopal-plugin-camera-viewer,backend/router.py,GET,/api/cameras/{camera_id}/timelapse/videos,camera_timelapse_videos_list_endpoint,sesion (admin u operador),,auth
+nopal-plugin-camera-viewer,backend/router.py,DELETE,/api/cameras/{camera_id}/timelapse/videos/{filename},camera_timelapse_video_delete_endpoint,admin,,role:admin
+nopal-plugin-camera-viewer,backend/router.py,GET,/api/cameras/{camera_id}/timelapse/videos/{filename},camera_timelapse_video_file_endpoint,sesion (admin u operador),,auth
+nopal-plugin-camera-viewer,backend/router.py,POST,/api/cameras/{camera_id}/update,camera_update_endpoint,admin,,role:admin
+nopal-plugin-cotizador,backend/router.py,GET,/api/pricing/machines,pricing_machines_list_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,POST,/api/pricing/machines,pricing_machines_upsert_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,POST,/api/pricing/machines/remove,pricing_machines_remove_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,GET,/api/pricing/materials,pricing_materials_list_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,POST,/api/pricing/materials,pricing_materials_upsert_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,POST,/api/pricing/materials/remove,pricing_materials_remove_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,POST,/api/pricing/quote,pricing_quote_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,GET,/api/pricing/quotes,pricing_quotes_list_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,POST,/api/pricing/quotes,pricing_quotes_save_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,DELETE,/api/pricing/quotes/{quote_id},pricing_quotes_delete_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,GET,/api/pricing/quotes/{quote_id},pricing_quotes_detail_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,PUT,/api/pricing/quotes/{quote_id},pricing_quotes_update_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,GET,/api/pricing/quotes/{quote_id}/pdf,pricing_quote_pdf_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,POST,/api/pricing/quotes/{quote_id}/status,pricing_quotes_status_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,GET,/api/pricing/quotes/{quote_id}/whatsapp-link,pricing_quote_whatsapp_link_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,GET,/api/pricing/settings,pricing_settings_get_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,POST,/api/pricing/settings,pricing_settings_update_endpoint,sesion (admin u operador),,auth
+nopal-plugin-cotizador,backend/router.py,GET,/cotizador/print/{quote_id},print_quote,sesion (admin u operador),,auth
+nopal-plugin-spoolman,backend/router.py,GET,/api/spoolman/alerts,alerts_endpoint,sesion (admin u operador),,auth
+nopal-plugin-spoolman,backend/router.py,DELETE,/api/spoolman/config,delete_config_endpoint,admin,,role:admin
+nopal-plugin-spoolman,backend/router.py,GET,/api/spoolman/config,get_config_endpoint,sesion (admin u operador),,auth
+nopal-plugin-spoolman,backend/router.py,POST,/api/spoolman/config,save_config_endpoint,admin,,role:admin
+nopal-plugin-spoolman,backend/router.py,GET,/api/spoolman/consumption/monthly,consumption_monthly_endpoint,sesion (admin u operador),,auth
+nopal-plugin-spoolman,backend/router.py,GET,/api/spoolman/discover,discover_config_endpoint,sesion (admin u operador),,auth
+nopal-plugin-spoolman,backend/router.py,GET,/api/spoolman/moonraker-check,moonraker_spoolman_check_endpoint,sesion (admin u operador),,auth
+nopal-plugin-spoolman,backend/router.py,GET,/api/spoolman/printers/active-spools,all_active_spools_endpoint,sesion (admin u operador),,auth
+nopal-plugin-spoolman,backend/router.py,DELETE,/api/spoolman/printers/{port}/active-spool,clear_active_spool_endpoint,admin,,role:admin
+nopal-plugin-spoolman,backend/router.py,GET,/api/spoolman/printers/{port}/active-spool,get_active_spool_endpoint,sesion (admin u operador),,auth
+nopal-plugin-spoolman,backend/router.py,POST,/api/spoolman/printers/{port}/active-spool,set_active_spool_endpoint,admin,,role:admin
+nopal-plugin-spoolman,backend/router.py,GET,/api/spoolman/reservations,list_reservations_endpoint,sesion (admin u operador),,auth
+nopal-plugin-spoolman,backend/router.py,POST,/api/spoolman/reservations,create_reservation_endpoint,admin,,role:admin
+nopal-plugin-spoolman,backend/router.py,DELETE,/api/spoolman/reservations/{reservation_id},delete_reservation_endpoint,admin,,role:admin
+nopal-plugin-spoolman,backend/router.py,GET,/api/spoolman/spools,list_spools_endpoint,sesion (admin u operador),,auth
+nopal-plugin-spoolman,backend/router.py,GET,/api/spoolman/spools/{spool_id},get_spool_endpoint,sesion (admin u operador),,auth
+nopal-plugin-spoolman,backend/router.py,GET,/api/spoolman/summary,summary_endpoint,sesion (admin u operador),,auth

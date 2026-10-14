@@ -267,7 +267,7 @@ Orden de prioridad por impacto: **F1 → F2 → F3 → F4 → F5**; F6 puede ava
 1. Dominio y hosting del sitio (el plan asume GitHub Pages por ahora).
 2. Quién mantiene la guía de la app TUNA-Screen y dónde vive su README definitivo.
 3. Si el sitio publica el SDD tal cual (tras verificar) o solo las páginas derivadas.
-4. Si `nopal-demo` pasa a ser la instancia oficial de capturas y ejemplos.
+4. ~~Si `nopal-demo` pasa a ser la instancia oficial de capturas~~ **Revisada tras F2:** la demo se compiló del commit `92e5443` (2026-08-19) y está desactualizada; las capturas deben tomarse de una instancia local de `nopal@main` con datos de prueba (AUDITORIA_04 §6). La demo sigue siendo válida para ejemplos de API de solo lectura.
 5. Si las páginas de la sección 01 se agrupan por tarea (como arriba) o por pantalla de la interfaz.
 
 ### Historial
