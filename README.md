@@ -2,7 +2,7 @@
 
 Sitio de documentación oficial de **NOPAL** y sus extensiones. Hecho con [Docusaurus](https://docusaurus.io/), en español (fuente) e inglés.
 
-> Estado: **F1 (esqueleto), F2 (auditoría) y F3 (generadores y validadores) completas**; ver `auditoria/`. Las secciones contienen páginas esqueleto (`stub: true`) salvo *Inicio*. El contenido real llega por fases; ver `docs/00-inicio/arquitectura-documental.md` §9.
+> Estado: **F1 (esqueleto), F2 (auditoría) y F3 (generadores y validadores), F4 y F5 (contenido inicial) completas**; ver `auditoria/`. Las secciones contienen páginas esqueleto (`stub: true`) salvo *Inicio*. El contenido real llega por fases; ver `docs/00-inicio/arquitectura-documental.md` §9.
 
 ## Reglas
 
