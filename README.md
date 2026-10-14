@@ -29,6 +29,12 @@ npm start
 npm run start:en
 ```
 
+> **Importante:** el servidor de desarrollo sirve **un solo idioma**. `npm start` muestra español; para ver inglés usa `npm run start:en`. Si estando en `npm start` eliges *English* en el selector, la página falla o muestra 404: no es un error del contenido. Para ver **ambos idiomas juntos**, con el selector funcionando, usa:
+
+```bash
+npm run preview
+```
+
 ```bash
 npm run check
 ```

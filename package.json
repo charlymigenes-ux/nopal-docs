@@ -17,7 +17,8 @@
     "gen:routes": "python -I scripts/extract_routes.py \"${NOPAL_SOURCES:-.sources}\" generated/routes.json",
     "gen": "npm run gen:routes && node scripts/gen-docs.mjs",
     "check:sources": "node scripts/check-manifests.mjs && node scripts/check-routes.mjs",
-    "check:scope": "node scripts/check-scope.mjs"
+    "check:scope": "node scripts/check-scope.mjs",
+    "preview": "docusaurus build && docusaurus serve"
   },
   "dependencies": {
     "@docusaurus/core": "^3.10.2",
