@@ -84,4 +84,3 @@ Copia la de `templates/` que corresponda al tipo de página y rellena el front-m
 ## Pendiente (según las fases)
 
 - Búsqueda en el sitio: se añade al elegir plugin de búsqueda (decisión abierta).
-- Logo: el actual es **provisional**.

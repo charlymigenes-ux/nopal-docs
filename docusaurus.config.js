@@ -10,7 +10,7 @@ const GH_REPO = 'nopal-docs';
 const config = {
   title: 'NOPAL Docs',
   tagline: 'Documentación oficial de NOPAL y sus extensiones',
-  favicon: 'img/favicon.svg',
+  favicon: 'img/favicon.png',
 
   url: `https://${GH_USER}.github.io`,
   baseUrl: `/${GH_REPO}/`,
@@ -64,7 +64,7 @@ const config = {
       },
       navbar: {
         title: 'NOPAL',
-        logo: { alt: 'NOPAL', src: 'img/logo.svg' },
+        logo: { alt: 'NOPAL', src: 'img/logo.png' },
         items: [
           { to: '/01-usuario', label: 'Usuario', position: 'left' },
           { to: '/02-administracion', label: 'Administración', position: 'left' },
