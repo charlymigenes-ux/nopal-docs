@@ -39,31 +39,31 @@ matriz-led,backend/router.py,GET,/api/plugins/matriz-led/stats,get_stats_endpoin
 matriz-led,backend/router.py,GET,/api/plugins/matriz-led/status,get_status_endpoint,sesion (admin u operador),,auth
 matriz-led,backend/router.py,POST,/api/plugins/matriz-led/text,send_text_endpoint,sesion (admin u operador),,auth
 matriz-led,backend/router.py,GET,/api/plugins/matriz-led/text-sizes,list_text_sizes_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/ai.py,GET,/actions,list_ai_actions_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/ai.py,POST,/actions/{token}/cancel,cancel_ai_action_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/ai.py,POST,/actions/{token}/confirm,confirm_ai_action_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/ai.py,POST,/ask,ask_ai_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/ai.py,GET,/config,get_ai_config_endpoint,admin,,role:admin
-nopal,backend/api/ai.py,PUT,/config,save_ai_config_endpoint,admin,,role:admin
-nopal,backend/api/ai.py,DELETE,/conversations,clear_conversations_endpoint,sesion (admin u operador),Action.CLEAR_ALL_CONVERSATIONS,auth|policy:Action.CLEAR_ALL_CONVERSATIONS
-nopal,backend/api/ai.py,GET,/conversations,list_conversations_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/ai.py,DELETE,/conversations/{conversation_id},delete_conversation_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/ai.py,GET,/conversations/{conversation_id},get_conversation_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/ai.py,PUT,/conversations/{conversation_id},rename_conversation_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/ai.py,POST,/enabled,set_ai_enabled_endpoint,admin,,role:admin
-nopal,backend/api/ai.py,GET,/presets,ai_presets_endpoint,admin,,role:admin
-nopal,backend/api/ai.py,GET,/providers,list_ai_providers_endpoint,admin,,role:admin
-nopal,backend/api/ai.py,POST,/providers,create_ai_provider_endpoint,admin,,role:admin
-nopal,backend/api/ai.py,DELETE,/providers/{provider_id},delete_ai_provider_endpoint,admin,,role:admin
-nopal,backend/api/ai.py,PUT,/providers/{provider_id},update_ai_provider_endpoint,admin,,role:admin
-nopal,backend/api/ai.py,POST,/providers/{provider_id}/activate,activate_ai_provider_endpoint,admin,,role:admin
-nopal,backend/api/ai.py,GET,/status,ai_status_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/ai.py,GET,/suggestions,get_ai_suggestions_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/ai.py,PUT,/suggestions,save_ai_suggestions_endpoint,admin,,role:admin
-nopal,backend/api/ai.py,POST,/test,test_ai_connection_endpoint,admin,,role:admin
-nopal,backend/api/ai.py,GET,/tiers,ai_tiers_endpoint,admin,,role:admin
-nopal,backend/api/ai.py,GET,/tools,list_ai_tools_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/ai.py,POST,/tools/{tool_name},call_ai_tool_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,GET,/api/ai/actions,list_ai_actions_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,POST,/api/ai/actions/{token}/cancel,cancel_ai_action_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,POST,/api/ai/actions/{token}/confirm,confirm_ai_action_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,POST,/api/ai/ask,ask_ai_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,GET,/api/ai/config,get_ai_config_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,PUT,/api/ai/config,save_ai_config_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,DELETE,/api/ai/conversations,clear_conversations_endpoint,sesion (admin u operador),Action.CLEAR_ALL_CONVERSATIONS,auth|policy:Action.CLEAR_ALL_CONVERSATIONS
+nopal,backend/api/ai.py,GET,/api/ai/conversations,list_conversations_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,DELETE,/api/ai/conversations/{conversation_id},delete_conversation_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,GET,/api/ai/conversations/{conversation_id},get_conversation_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,PUT,/api/ai/conversations/{conversation_id},rename_conversation_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,POST,/api/ai/enabled,set_ai_enabled_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,GET,/api/ai/presets,ai_presets_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,GET,/api/ai/providers,list_ai_providers_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,POST,/api/ai/providers,create_ai_provider_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,DELETE,/api/ai/providers/{provider_id},delete_ai_provider_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,PUT,/api/ai/providers/{provider_id},update_ai_provider_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,POST,/api/ai/providers/{provider_id}/activate,activate_ai_provider_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,GET,/api/ai/status,ai_status_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,GET,/api/ai/suggestions,get_ai_suggestions_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,PUT,/api/ai/suggestions,save_ai_suggestions_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,POST,/api/ai/test,test_ai_connection_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,GET,/api/ai/tiers,ai_tiers_endpoint,admin,,role:admin
+nopal,backend/api/ai.py,GET,/api/ai/tools,list_ai_tools_endpoint,sesion (admin u operador),,auth
+nopal,backend/api/ai.py,POST,/api/ai/tools/{tool_name},call_ai_tool_endpoint,sesion (admin u operador),,auth
 nopal,backend/api/auth.py,POST,/api/auth/login,login_endpoint,publico,,
 nopal,backend/api/auth.py,POST,/api/auth/logout,logout_endpoint,publico,,
 nopal,backend/api/auth.py,GET,/api/auth/me,me_endpoint,sesion (admin u operador),,auth
@@ -82,10 +82,10 @@ nopal,backend/api/bambu_printers.py,POST,/api/bambu/printers/{printer_id}/pause,
 nopal,backend/api/bambu_printers.py,POST,/api/bambu/printers/{printer_id}/resume,bambu_resume_endpoint,sesion (admin u operador),,auth
 nopal,backend/api/bambu_printers.py,POST,/api/bambu/printers/{printer_id}/send,bambu_send_endpoint,sesion (admin u operador),,auth
 nopal,backend/api/bambu_printers.py,POST,/api/bambu/printers/{printer_id}/test-connection,bambu_test_connection_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/config_backup.py,POST,/export,export_endpoint,admin,,role:admin
-nopal,backend/api/config_backup.py,GET,/groups,list_groups_endpoint,admin,,role:admin
-nopal,backend/api/config_backup.py,POST,/import,import_endpoint,admin,,role:admin
-nopal,backend/api/config_backup.py,POST,/inspect,inspect_endpoint,admin,,role:admin
+nopal,backend/api/config_backup.py,POST,/api/config-backup/export,export_endpoint,admin,,role:admin
+nopal,backend/api/config_backup.py,GET,/api/config-backup/groups,list_groups_endpoint,admin,,role:admin
+nopal,backend/api/config_backup.py,POST,/api/config-backup/import,import_endpoint,admin,,role:admin
+nopal,backend/api/config_backup.py,POST,/api/config-backup/inspect,inspect_endpoint,admin,,role:admin
 nopal,backend/api/console.py,POST,/api/console/command,send_console_command_endpoint,sesion (admin u operador),Action.SEND_CONSOLE_COMMAND,auth|policy:Action.SEND_CONSOLE_COMMAND
 nopal,backend/api/console.py,GET,/api/console/messages,get_console_messages_endpoint,sesion (admin u operador),,auth
 nopal,backend/api/console.py,GET,/api/macros,get_macros_endpoint,sesion (admin u operador),,auth
@@ -192,10 +192,10 @@ nopal,backend/api/models.py,GET,/api/gcode/thumbnail,get_gcode_thumbnail,sesion 
 nopal,backend/api/models.py,GET,/api/models,get_models,sesion (admin u operador),,auth
 nopal,backend/api/models.py,GET,/api/models/thumbnail,get_model_thumbnail,sesion (admin u operador),,auth
 nopal,backend/api/notifications.py,GET,/api/notifications,notifications_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/plugins.py,GET,,list_plugins,sesion (admin u operador),,auth
-nopal,backend/api/plugins.py,DELETE,/{plugin_id},uninstall_plugin,admin,,role:admin
-nopal,backend/api/plugins.py,POST,/{plugin_id}/install,install_plugin,admin,,role:admin
-nopal,backend/api/plugins.py,POST,/{plugin_id}/update,update_plugin,admin,,role:admin
+nopal,backend/api/plugins.py,GET,/api/plugins,list_plugins,sesion (admin u operador),,auth
+nopal,backend/api/plugins.py,DELETE,/api/plugins/{plugin_id},uninstall_plugin,admin,,role:admin
+nopal,backend/api/plugins.py,POST,/api/plugins/{plugin_id}/install,install_plugin,admin,,role:admin
+nopal,backend/api/plugins.py,POST,/api/plugins/{plugin_id}/update,update_plugin,admin,,role:admin
 nopal,backend/api/printers.py,GET,/api/printers,get_printers,sesion (admin u operador),,auth
 nopal,backend/api/printers.py,GET,/api/printers/queue/count,get_printers_queue_count,sesion (admin u operador),,auth
 nopal,backend/api/printers.py,GET,/api/printers/recent-files,get_printers_recent_files,sesion (admin u operador),,auth
@@ -227,27 +227,27 @@ nopal,backend/api/status.py,GET,/api/system/temperatures,get_temperatures_endpoi
 nopal,backend/api/status.py,GET,/api/system/toolhead,get_toolhead_endpoint,sesion (admin u operador),,auth
 nopal,backend/api/status.py,POST,/api/system/update,update_app_endpoint,admin,,role:admin
 nopal,backend/api/status.py,GET,/api/system/version,get_version_endpoint,sesion (admin u operador),,auth
-nopal,backend/api/system.py,POST,/host/reboot,reboot_host_endpoint,admin,,role:admin
-nopal,backend/api/system.py,POST,/host/shutdown,shutdown_host_endpoint,admin,,role:admin
-nopal,backend/api/system.py,POST,/nopal/restart,restart_nopal_endpoint,admin,,role:admin
-nopal,backend/api/system.py,GET,/services,list_services_endpoint,admin,,role:admin
-nopal,backend/api/system.py,POST,/services/{action},control_service_endpoint,admin,,role:admin
-nopal,backend/api/tunascreen.py,GET,/api/tunascreen/accessories,tunascreen_accessories,token-dispositivo,,Depends(require_device_token)
-nopal,backend/api/tunascreen.py,POST,/api/tunascreen/accessories/{accessory_id}/power,tunascreen_accessory_power,token-dispositivo,,Depends(require_device_token)
-nopal,backend/api/tunascreen.py,POST,/api/tunascreen/accessory-scenes/{scene_id}/run,tunascreen_run_accessory_scene,token-dispositivo,,Depends(require_device_token)
-nopal,backend/api/tunascreen.py,POST,/api/tunascreen/action,tunascreen_action,token-dispositivo,,Depends(require_device_token)
-nopal,backend/api/tunascreen.py,GET,/api/tunascreen/cameras/{camera_id}/stream,tunascreen_camera_stream,token-dispositivo,,Depends(require_device_token)
-nopal,backend/api/tunascreen.py,GET,/api/tunascreen/config,tunascreen_config,token-dispositivo,,Depends(require_device_token)
+nopal,backend/api/system.py,POST,/api/system/host/reboot,reboot_host_endpoint,admin,,role:admin
+nopal,backend/api/system.py,POST,/api/system/host/shutdown,shutdown_host_endpoint,admin,,role:admin
+nopal,backend/api/system.py,POST,/api/system/nopal/restart,restart_nopal_endpoint,admin,,role:admin
+nopal,backend/api/system.py,GET,/api/system/services,list_services_endpoint,admin,,role:admin
+nopal,backend/api/system.py,POST,/api/system/services/{action},control_service_endpoint,admin,,role:admin
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/accessories,tunascreen_accessories,token-dispositivo,,device-token
+nopal,backend/api/tunascreen.py,POST,/api/tunascreen/accessories/{accessory_id}/power,tunascreen_accessory_power,token-dispositivo,,device-token
+nopal,backend/api/tunascreen.py,POST,/api/tunascreen/accessory-scenes/{scene_id}/run,tunascreen_run_accessory_scene,token-dispositivo,,device-token
+nopal,backend/api/tunascreen.py,POST,/api/tunascreen/action,tunascreen_action,token-dispositivo,,device-token
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/cameras/{camera_id}/stream,tunascreen_camera_stream,token-dispositivo,,device-token
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/config,tunascreen_config,token-dispositivo,,device-token
 nopal,backend/api/tunascreen.py,GET,/api/tunascreen/devices,tunascreen_devices,admin,,role:admin
 nopal,backend/api/tunascreen.py,DELETE,/api/tunascreen/devices/{device_id},tunascreen_revoke_device,admin,,role:admin
 nopal,backend/api/tunascreen.py,PUT,/api/tunascreen/devices/{device_id}/scope,tunascreen_device_scope,admin,,role:admin
 nopal,backend/api/tunascreen.py,GET,/api/tunascreen/info,tunascreen_info,publico,,
-nopal,backend/api/tunascreen.py,GET,/api/tunascreen/machine/{machine_id},tunascreen_machine_detail,token-dispositivo,,Depends(require_device_token)
-nopal,backend/api/tunascreen.py,GET,/api/tunascreen/machine/{machine_id}/console,tunascreen_machine_console,token-dispositivo,,Depends(require_device_token)
-nopal,backend/api/tunascreen.py,GET,/api/tunascreen/machine/{machine_id}/macros,tunascreen_machine_macros,token-dispositivo,,Depends(require_device_token)
-nopal,backend/api/tunascreen.py,GET,/api/tunascreen/machines,tunascreen_machines,token-dispositivo,,Depends(require_device_token)
-nopal,backend/api/tunascreen.py,GET,/api/tunascreen/materials,tunascreen_materials,token-dispositivo,,Depends(require_device_token)
-nopal,backend/api/tunascreen.py,POST,/api/tunascreen/materials/active,tunascreen_set_active_material,token-dispositivo,,Depends(require_device_token)
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/machine/{machine_id},tunascreen_machine_detail,token-dispositivo,,device-token
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/machine/{machine_id}/console,tunascreen_machine_console,token-dispositivo,,device-token
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/machine/{machine_id}/macros,tunascreen_machine_macros,token-dispositivo,,device-token
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/machines,tunascreen_machines,token-dispositivo,,device-token
+nopal,backend/api/tunascreen.py,GET,/api/tunascreen/materials,tunascreen_materials,token-dispositivo,,device-token
+nopal,backend/api/tunascreen.py,POST,/api/tunascreen/materials/active,tunascreen_set_active_material,token-dispositivo,,device-token
 nopal,backend/api/tunascreen.py,POST,/api/tunascreen/pair/confirm,tunascreen_pair_confirm,publico,,
 nopal,backend/api/tunascreen.py,POST,/api/tunascreen/pair/start,tunascreen_pair_start,admin,,role:admin
 nopal,backend/api/tunascreen.py,GET,/api/tunascreen/scope-options,tunascreen_scope_options,admin,,role:admin

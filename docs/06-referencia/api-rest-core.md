@@ -42,31 +42,31 @@ Inventario de las rutas de NOPAL obtenido por **análisis estático** del códig
 
 | Método | Ruta | Acceso | Política | Descripción |
 |---|---|---|---|---|
-| GET | `/actions` | Sesión (admin u operador) | — | Acciones que ESTE usuario puede ejecutar por medio de la IA. |
-| POST | `/actions/{token}/cancel` | Sesión (admin u operador) | — | — |
-| POST | `/actions/{token}/confirm` | Sesión (admin u operador) | — | Ejecuta una acción de riesgo que quedó esperando confirmación. |
-| POST | `/ask` | Sesión (admin u operador) | — | Pregunta en lenguaje natural sobre el taller. |
-| GET | `/config` | Solo admin | — | Configuración vigente, sin la API key (solo si está puesta o no). |
-| PUT | `/config` | Solo admin | — | — |
-| GET | `/conversations` | Sesión (admin u operador) | — | Listado sin los mensajes: una conversación larga no tiene por qué viajar entera solo para pintar la barra lateral. |
-| DELETE | `/conversations` | Sesión (admin u operador) | `CLEAR_ALL_CONVERSATIONS` | Borrar el historial completo (C-4): operación de almacenamiento solo para admin. Afecta lo que vieron todos los usuarios, pero no da acceso… |
-| GET | `/conversations/{conversation_id}` | Sesión (admin u operador) | — | — |
-| PUT | `/conversations/{conversation_id}` | Sesión (admin u operador) | — | — |
-| DELETE | `/conversations/{conversation_id}` | Sesión (admin u operador) | — | — |
-| POST | `/enabled` | Solo admin | — | Enciende o apaga la capa sin tocar el registro de IAs guardadas. |
-| GET | `/presets` | Solo admin | — | Proveedores conocidos para poblar el selector de la interfaz. |
-| GET | `/providers` | Solo admin | — | Las IAs guardadas, sin sus claves. Marca cuál está activa. |
-| POST | `/providers` | Solo admin | — | Agrega una IA al registro. La primera que se agrega queda activa. |
-| PUT | `/providers/{provider_id}` | Solo admin | — | — |
-| DELETE | `/providers/{provider_id}` | Solo admin | — | Borrar la IA activa pasa la activación a la primera que quede; si no queda ninguna, la capa se apaga sola en vez de apuntar a la nada. |
-| POST | `/providers/{provider_id}/activate` | Solo admin | — | — |
-| GET | `/status` | Sesión (admin u operador) | — | Estado resumido para pintar el indicador de la UI. No contacta al servidor de IA (eso es /test, que sí cuesta una petición de red). |
-| GET | `/suggestions` | Sesión (admin u operador) | — | Preguntas rápidas del asistente. Lista vacía = usar las de fábrica, que el frontend traduce; las guardadas van tal cual. |
-| PUT | `/suggestions` | Solo admin | — | — |
-| POST | `/test` | Solo admin | — | Prueba la conexión contra el servidor de IA. |
-| GET | `/tiers` | Solo admin | — | Niveles del modo automático y cómo se encadenan si uno falla. La UI los pinta; los nombres de modelo salen de la configuración, no de acá. |
-| GET | `/tools` | Sesión (admin u operador) | — | Catálogo de herramientas de solo lectura que se le ofrecen al modelo. |
-| POST | `/tools/{tool_name}` | Sesión (admin u operador) | — | Ejecuta una herramienta directamente, sin pasar por el modelo. |
+| GET | `/api/ai/actions` | Sesión (admin u operador) | — | Acciones que ESTE usuario puede ejecutar por medio de la IA. |
+| POST | `/api/ai/actions/{token}/cancel` | Sesión (admin u operador) | — | — |
+| POST | `/api/ai/actions/{token}/confirm` | Sesión (admin u operador) | — | Ejecuta una acción de riesgo que quedó esperando confirmación. |
+| POST | `/api/ai/ask` | Sesión (admin u operador) | — | Pregunta en lenguaje natural sobre el taller. |
+| GET | `/api/ai/config` | Solo admin | — | Configuración vigente, sin la API key (solo si está puesta o no). |
+| PUT | `/api/ai/config` | Solo admin | — | — |
+| GET | `/api/ai/conversations` | Sesión (admin u operador) | — | Listado sin los mensajes: una conversación larga no tiene por qué viajar entera solo para pintar la barra lateral. |
+| DELETE | `/api/ai/conversations` | Sesión (admin u operador) | `CLEAR_ALL_CONVERSATIONS` | Borrar el historial completo (C-4): operación de almacenamiento solo para admin. Afecta lo que vieron todos los usuarios, pero no da acceso… |
+| GET | `/api/ai/conversations/{conversation_id}` | Sesión (admin u operador) | — | — |
+| PUT | `/api/ai/conversations/{conversation_id}` | Sesión (admin u operador) | — | — |
+| DELETE | `/api/ai/conversations/{conversation_id}` | Sesión (admin u operador) | — | — |
+| POST | `/api/ai/enabled` | Solo admin | — | Enciende o apaga la capa sin tocar el registro de IAs guardadas. |
+| GET | `/api/ai/presets` | Solo admin | — | Proveedores conocidos para poblar el selector de la interfaz. |
+| GET | `/api/ai/providers` | Solo admin | — | Las IAs guardadas, sin sus claves. Marca cuál está activa. |
+| POST | `/api/ai/providers` | Solo admin | — | Agrega una IA al registro. La primera que se agrega queda activa. |
+| PUT | `/api/ai/providers/{provider_id}` | Solo admin | — | — |
+| DELETE | `/api/ai/providers/{provider_id}` | Solo admin | — | Borrar la IA activa pasa la activación a la primera que quede; si no queda ninguna, la capa se apaga sola en vez de apuntar a la nada. |
+| POST | `/api/ai/providers/{provider_id}/activate` | Solo admin | — | — |
+| GET | `/api/ai/status` | Sesión (admin u operador) | — | Estado resumido para pintar el indicador de la UI. No contacta al servidor de IA (eso es /test, que sí cuesta una petición de red). |
+| GET | `/api/ai/suggestions` | Sesión (admin u operador) | — | Preguntas rápidas del asistente. Lista vacía = usar las de fábrica, que el frontend traduce; las guardadas van tal cual. |
+| PUT | `/api/ai/suggestions` | Solo admin | — | — |
+| POST | `/api/ai/test` | Solo admin | — | Prueba la conexión contra el servidor de IA. |
+| GET | `/api/ai/tiers` | Solo admin | — | Niveles del modo automático y cómo se encadenan si uno falla. La UI los pinta; los nombres de modelo salen de la configuración, no de acá. |
+| GET | `/api/ai/tools` | Sesión (admin u operador) | — | Catálogo de herramientas de solo lectura que se le ofrecen al modelo. |
+| POST | `/api/ai/tools/{tool_name}` | Sesión (admin u operador) | — | Ejecuta una herramienta directamente, sin pasar por el modelo. |
 
 
 ## Autenticación y usuarios
@@ -109,10 +109,10 @@ Inventario de las rutas de NOPAL obtenido por **análisis estático** del códig
 
 | Método | Ruta | Acceso | Política | Descripción |
 |---|---|---|---|---|
-| POST | `/export` | Solo admin | — | — |
-| GET | `/groups` | Solo admin | — | Qué se puede respaldar, y cuáles existen en esta instalación. |
-| POST | `/import` | Solo admin | — | — |
-| POST | `/inspect` | Solo admin | — | Qué trae el respaldo, sin escribir nada. La persona tiene derecho a ver qué va a sobrescribir antes de aceptarlo. |
+| POST | `/api/config-backup/export` | Solo admin | — | — |
+| GET | `/api/config-backup/groups` | Solo admin | — | Qué se puede respaldar, y cuáles existen en esta instalación. |
+| POST | `/api/config-backup/import` | Solo admin | — | — |
+| POST | `/api/config-backup/inspect` | Solo admin | — | Qué trae el respaldo, sin escribir nada. La persona tiene derecho a ver qué va a sobrescribir antes de aceptarlo. |
 
 
 ## Consola y macros
@@ -326,10 +326,10 @@ Inventario de las rutas de NOPAL obtenido por **análisis estático** del códig
 
 | Método | Ruta | Acceso | Política | Descripción |
 |---|---|---|---|---|
-| GET | `` | Sesión (admin u operador) | — | — |
-| DELETE | `/{plugin_id}` | Solo admin | — | — |
-| POST | `/{plugin_id}/install` | Solo admin | — | — |
-| POST | `/{plugin_id}/update` | Solo admin | — | — |
+| GET | `/api/plugins` | Sesión (admin u operador) | — | — |
+| DELETE | `/api/plugins/{plugin_id}` | Solo admin | — | — |
+| POST | `/api/plugins/{plugin_id}/install` | Solo admin | — | — |
+| POST | `/api/plugins/{plugin_id}/update` | Solo admin | — | — |
 
 
 ## Impresoras Klipper / Moonraker
@@ -385,11 +385,11 @@ Inventario de las rutas de NOPAL obtenido por **análisis estático** del códig
 
 | Método | Ruta | Acceso | Política | Descripción |
 |---|---|---|---|---|
-| POST | `/host/reboot` | Solo admin | — | — |
-| POST | `/host/shutdown` | Solo admin | — | — |
-| POST | `/nopal/restart` | Solo admin | — | Reinicia el propio panel NOPAL (no el host ni Klipper). No afecta impresiones ni conexiones de Klipper/Moonraker -- solo el panel queda ina… |
-| GET | `/services` | Solo admin | — | Servicios systemd de Klipper/Moonraker/Crowsnest detectados en el host. |
-| POST | `/services/{action}` | Solo admin | — | — |
+| POST | `/api/system/host/reboot` | Solo admin | — | — |
+| POST | `/api/system/host/shutdown` | Solo admin | — | — |
+| POST | `/api/system/nopal/restart` | Solo admin | — | Reinicia el propio panel NOPAL (no el host ni Klipper). No afecta impresiones ni conexiones de Klipper/Moonraker -- solo el panel queda ina… |
+| GET | `/api/system/services` | Solo admin | — | Servicios systemd de Klipper/Moonraker/Crowsnest detectados en el host. |
+| POST | `/api/system/services/{action}` | Solo admin | — | — |
 
 
 ## Subida de archivos

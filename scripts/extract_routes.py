@@ -67,12 +67,27 @@ def access_of(raw: list) -> str:
     return "session"
 
 
+def router_prefix(tree: ast.AST) -> str:
+    """Prefijo de `router = APIRouter(prefix=...)` a nivel de módulo (vacío si no hay)."""
+    for node in getattr(tree, 'body', []):
+        if (
+            isinstance(node, ast.Assign)
+            and isinstance(node.value, ast.Call)
+            and getattr(node.value.func, 'id', None) == 'APIRouter'
+        ):
+            for kw in node.value.keywords:
+                if kw.arg == 'prefix' and isinstance(kw.value, ast.Constant):
+                    return str(kw.value.value)
+    return ''
+
+
 def scan_file(repo: str, root: Path, pyfile: Path, rows: list) -> None:
     try:
         tree = ast.parse(pyfile.read_text(encoding="utf-8"))
     except Exception as e:  # archivo ilegible: se informa, no se aborta
         print(f"AVISO no se pudo analizar {pyfile}: {e}", file=sys.stderr)
         return
+    prefix = router_prefix(tree)
     for fn in ast.walk(tree):
         if not isinstance(fn, (ast.FunctionDef, ast.AsyncFunctionDef)):
             continue
@@ -86,6 +101,7 @@ def scan_file(repo: str, root: Path, pyfile: Path, rows: list) -> None:
                 continue
             arg = dec.args[0]
             path = arg.value if isinstance(arg, ast.Constant) else ast.unparse(arg)
+            path = prefix + path
             doc = (ast.get_docstring(fn) or "").strip().split("\n\n")[0].replace("\n", " ")
             raw = auth_of(fn)
             rows.append(
@@ -104,11 +120,13 @@ def scan_file(repo: str, root: Path, pyfile: Path, rows: list) -> None:
 
 
 def main() -> int:
-    if len(sys.argv) != 3:
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    include_all = "--all" in sys.argv  # solo para auditoría interna: no aplica exclusiones de alcance
+    if len(args) != 2:
         print(__doc__)
         return 2
-    sources = Path(sys.argv[1]).resolve()
-    out = Path(sys.argv[2])
+    sources = Path(args[0]).resolve()
+    out = Path(args[1])
     scope = json.loads((HERE / "data" / "scope.json").read_text(encoding="utf-8"))
     excluded_files = set(scope["excluded_core_files"])
     excluded_prefixes = tuple(scope["excluded_route_prefixes"])
@@ -133,11 +151,12 @@ def main() -> int:
         for f in sorted(files):
             if "tests" in f.parts or "__pycache__" in f.parts:
                 continue
-            if name == "nopal" and f.name in excluded_files:
+            if name == "nopal" and f.name in excluded_files and not include_all:
                 continue
             scan_file(name, repo_dir, f, rows)
 
-    rows = [r for r in rows if not r["path"].startswith(excluded_prefixes)]
+    if not include_all:
+        rows = [r for r in rows if not r["path"].startswith(excluded_prefixes)]
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(
         json.dumps({"repos": repos, "routes": rows}, ensure_ascii=False, indent=1),
