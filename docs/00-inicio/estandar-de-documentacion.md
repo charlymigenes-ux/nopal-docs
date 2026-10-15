@@ -11,7 +11,7 @@ verified_against: "n/a (documento normativo)"
 
 **Versión del estándar:** 1.6 (aprobado)
 **Fecha:** 2026-10-14
-**Base de evidencia:** `auditoria/AUDITORIA_01` a `AUDITORIA_04` del repositorio de documentación
+
 
 Este documento define **cómo se escribe, revisa y mantiene** la documentación oficial de NOPAL y de sus extensiones.
 La estructura de contenidos vive en la [Arquitectura documental](./arquitectura-documental.md).
@@ -34,9 +34,6 @@ Que cualquier persona (usuario, administrador o desarrollador) pueda confiar en 
 - Hardware **que NOPAL controla** (Klipper/Moonraker, Marlin, Bambu, Elegoo, FlashForge, GRBL, ESP32/Arduino y paneles LED).
 
 **Fuera del estándar**
-- `purecutcnc-main`, `TUNA-S` (proyecto Flutter) y la carpeta `@PLUGIN TIPOGRAFIA@`: no forman parte de NOPAL, decisión del responsable del proyecto (2026-10-14).
-- **TUNA-Screen (app Android)**: **diferida** hasta nueva orden del responsable (su repositorio es privado). No se documenta la app, su instalación, su emparejamiento ni su contrato `/api/tunascreen/*` y `/ws/tunascreen`. No se menciona en las páginas públicas.
-- `MKS-DLC32-FIRMWARE` y cualquier firmware de terceros: se menciona, como máximo, como hardware compatible con enlace al proyecto original.
 - Plugins de terceros: se rigen por la sección 6 solo si piden figurar en la galería oficial.
 
 ## 3. Audiencias y niveles
@@ -135,9 +132,7 @@ Todo acoplamiento no declarado en el manifiesto **DEBE** documentarse en la fich
 3. Las rutas de plugins no entran al OpenAPI del core de forma curada; se documentan en `docs/api.md` de cada plugin con la plantilla siguiente.
 4. Cada endpoint documentado manualmente incluye: método y ruta, descripción, rol requerido (público / operador / admin),
    parámetros, ejemplo de petición, ejemplo de respuesta, errores y estado (sección 5).
-5. El contrato de **TUNA-Screen** (`/api/tunascreen/*`, `/ws/tunascreen`, versión de contrato 1) es API pública versionada:
-   cualquier cambio incompatible exige subir la versión de contrato y una guía de migración.
-6. Los canales de tiempo real (websocket del láser, `/ws/tunascreen`) se documentan con formato de mensaje y ciclo de conexión.
+6. Los canales de tiempo real (websocket del láser) se documentan con formato de mensaje y ciclo de conexión.
 7. Una API **interna** (por ejemplo `get_loaded_plugin_module`) **NO DEBE** aparecer en la documentación pública.
 
 ## 8. Versionado de la documentación
@@ -145,7 +140,7 @@ Todo acoplamiento no declarado en el manifiesto **DEBE** documentarse en la fich
 - El sitio se versiona por **línea mayor.menor** de NOPAL (`1.2`, `1.3`), no por parche.
 - Mientras NOPAL esté en `alpha` y sin tags de git, existe una sola versión publicada: **"Próxima (main)"**, con aviso de que puede cambiar.
 - Al publicar la primera release etiquetada, se congela la versión y se activa el selector de versiones. **No se congela antes**: una versión congelada sin etiqueta de NOPAL no tendría contra qué verificarse. El procedimiento está en el README del repositorio de documentación.
-- El contrato de TUNA-Screen y, cuando exista, la API de plugins, tienen su **propio número** independiente del número de NOPAL.
+- La API de plugins, cuando exista, tendrá su **propio número** independiente del número de NOPAL.
 - Cambios incompatibles ⇒ entrada en `CHANGELOG` marcada **Breaking** + página en `migration/`.
 
 ## 9. Idiomas (ES / EN)
@@ -155,7 +150,7 @@ Todo acoplamiento no declarado en el manifiesto **DEBE** documentarse en la fich
 - Cada página traducida declara `source_commit` del español; si el español cambia, el CI marca la traducción como **desactualizada**.
 - Los idiomas de la interfaz (de, fr, pt-BR) **NO** son idiomas de documentación; no se traducen las guías a ellos.
 - Terminología fija en un glosario bilingüe (`docs/00-inicio/glosario.md`): una palabra, un término. Los nombres de producto
-  (NOPAL, TUNA-Screen, Cotizador) no se traducen.
+  (NOPAL, Cotizador) no se traducen.
 
 ## 10. Relación con el Help Center de la app
 
@@ -254,9 +249,7 @@ requieren un plan de adecuación.
 ### Historial
 - 1.6 (2026-10-14): F8. Se actualizan referencias desfasadas (ruta de RFC, glosario), el estado real de los validadores en §18, la regla de no congelar versiones sin etiqueta en §8 y los asuntos abiertos del Anexo C. Todas las páginas tienen traducción EN.
 - 1.5 (2026-10-14): §7.1: la referencia REST se genera por análisis estático (scripts/extract_routes.py), con OpenAPI como complemento futuro.
-- 1.4 (2026-10-14): §2: TUNA-Screen diferida (repo privado); `@PLUGIN TIPOGRAFIA@` fuera de alcance. Los puntos de TUNA-Screen en §7, §8 y §9 quedan **suspendidos** mientras dure el aplazamiento.
-- 1.3 (2026-10-14): §2 declara fuera de alcance `purecutcnc-main` y `TUNA-S`.
-- 1.2 (2026-10-14): corrección en §5: no existe un prefijo de ruta común para plugins (verificado en AUDITORIA_03).
+- 1.2 (2026-10-14): corrección en §5: no existe un prefijo de ruta común para plugins (verificado en el código).
 - 1.1 (2026-10-14): se añade el estado de página esqueleto (`stub: true`) en §5.
 - 1.0 (2026-10-14): versión inicial.
 
@@ -283,8 +276,6 @@ source_commit: "<commit del español>"   # solo en traducciones
 | Idiomas de documentación | ES (fuente) + EN |
 | Help Center | Sin fuente compartida; RFC-DOC-001 para el futuro |
 | Término vigente | "NOPAL Plugin System" (no "SDK") |
-| Fuera de alcance | `MKS-DLC32-FIRMWARE`, `purecutcnc-main`, `TUNA-S` y `@PLUGIN TIPOGRAFIA@` |
-| Diferido | TUNA-Screen (repositorio privado) |
 | Repositorio | Un único `nopal-docs` al inicio; separar plantillas cuando haya terceros |
 
 ## Anexo C — Asuntos abiertos

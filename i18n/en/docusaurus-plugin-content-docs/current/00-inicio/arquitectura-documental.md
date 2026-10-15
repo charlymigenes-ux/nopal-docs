@@ -11,9 +11,8 @@ source_commit: "f0c1f27"
 # NOPAL Documentation Architecture
 
 **Version:** 1.1 (approved) · **Date:** 2026-10-14
-> **Deferral (2026-10-14):** everything related to TUNA-Screen (user guide, installation, pairing, contract v1, `/ws/tunascreen` real time) is **deferred** until further notice from the owner. The rows and phases that mention it read as suspended.
 
-**Depends on:** the [Documentation Standard](./estandar-de-documentacion.md) v1.6 · **Evidence:** `auditoria/`
+**Depends on:** the [Documentation Standard](./estandar-de-documentacion.md) v1.6
 
 It defines **what documentation exists, where it lives, where each page comes from and in what order it is built**.
 The writing and review rules are in the Standard; here they are only applied.
@@ -70,7 +69,6 @@ nopal-docs
 │   ├── Job history                                      [W]
 │   ├── Plugin gallery: install, enable, remove          [W]
 │   ├── NOPAL Intelligence (AI)                          [W] status: experimental
-│   ├── TUNA-Screen: install, pair, kiosk mode           [W]
 │   ├── General settings, language and theme             [W]
 │   └── Troubleshooting (by brand and by symptom)        [W]
 │
@@ -119,13 +117,12 @@ nopal-docs
 │
 ├── 06 Reference
 │   ├── Core REST API (static analysis)                  [G]
-│   ├── TUNA-Screen contract v1 (REST + WebSocket)       [W] from `TUNASCREEN_API.md`
 │   ├── Each plugin's API                                [A]
 │   ├── State and configuration JSON files               [G/W]
 │   ├── Roles and authorization per endpoint             [G]
 │   ├── Environment variables, scripts, CLI              [W]
 │   ├── Error codes                                      [W]
-│   └── Real time: laser WebSocket and `/ws/tunascreen`  [W]
+│   └── Real time: laser WebSocket  [W]
 │
 ├── 07 RFC
 │   ├── Index and process
@@ -163,7 +160,6 @@ The map above is the **plan**. This is what exists today:
 | 07 RFC | 7 RFCs as drafts | — |
 | 08 Project | Roadmap, change history (generated), versioning, migration, license | — |
 
-The TUNA-Screen items of the plan remain **deferred** (see the notice at the start).
 
 ## 4. Where each piece lives
 
@@ -171,9 +167,7 @@ The TUNA-Screen items of the plan remain **deferred** (see the notice at the sta
 |---|---|---|---|
 | Site and central content (01, 02, 04, 05, 07, 08) | `nopal-docs` | Documentation owner | Direct |
 | Core REST reference | `nopal` (code) | Endpoint author | Static analysis script in CI |
-| TUNA-Screen contract | `nopal` (`docs/TUNASCREEN_API.md`) | Contract author | Migrated to `nopal-docs`; the original stays as a pointer |
 | Each plugin's sheet and API | plugin repo | Plugin maintainer | Script reads manifest and `docs/` in CI |
-| TUNA-Screen guide (app) | Android app repo | App maintainer | Written in `nopal-docs` on top of the contract; the app ships its README |
 | In-app Help Center | `nopal` (`app.js`, `translations*.js`) | Core maintainer | Link only |
 | Screenshots | A local instance of `nopal@main` (the demo is outdated) | Documentation owner | Generated, versioned with the page |
 
@@ -191,7 +185,7 @@ nopal-docs/
 ├── src/                          StatusBanner, accessible code themes, accessibility module
 ├── examples/hello-nopal/         tutorial plugin: the tested code
 ├── plugin-docs/<repo>/docs/      draft docs/ for each plugin
-├── auditoria/                    code audits and the tested-hardware form
+├── auditoria/                    tested-hardware form
 ├── generated/                    script output (not versioned)
 ├── scripts/
 │   ├── fetch-sources            clones or updates (read-only) the in-scope repos
@@ -220,7 +214,6 @@ Map of what is reused, and under what condition (Standard §4.5: they are inputs
 |---|---|---|---|
 | `docs/manual/NOPAL_Manual_Usuario.md` (14 chapters) | 445 | Section 01 | Split by chapter into pages; verify against the current UI; chapters 3, 4, 6 and 10 are the most likely to be outdated |
 | `docs/SDD.md` v0.44 | 2106 | Sections 05 and 07 | Its structure already distinguishes `CURRENT` and `PROPOSED`: sections 5–21 feed 05; 22–28 feed 07. Verify every claim |
-| `docs/TUNASCREEN_API.md` | 122 | Section 06 | Migrate as contract v1; add examples and errors |
 | `docs/NOPAL_INTELLIGENCE.md` | 292 | 01 (user) and 05 | Separate usage from architecture; mark the status |
 | `docs/MODO_IA_PLAN.md` | 215 | 07 RFC | It is a plan, not a feature |
 | `README.md` / `README.es.md` | 363 / 339 | 00 and installation | Source of the overview; the GitHub README becomes a summary with a link |
@@ -259,10 +252,10 @@ Each plugin delivers what Standard §6.2 requires. Starting situation (from the 
 |---|---|---|
 | **F0** | Standard + Architecture + audits (done) | Approved |
 | **F1** | `nopal-docs` skeleton: Docusaurus ES/EN, templates, front matter, theme with the design system, CI with links and front matter | Empty site published on GitHub Pages |
-| **F2** | Remaining audit (pending items A–G of AUDITORIA_02) | Complete inventory of routes, state files, roles and drivers |
+| **F2** | Remaining audit | Complete inventory of routes, state files, roles and drivers |
 | **F3** | Generators: REST reference, plugin sheets, manifest matrix, validators | Green build with real data — **completed 2026-10-14** (the reference uses static analysis; see Standard §7.1) |
 | **F4** | Highest-value content: 00 Start, installation, first machine, compatibility matrix, troubleshooting | A new user installs and connects a machine using only the site |
-| **F5** | Administration and Plugin system (implemented). The TUNA-Screen contract stays deferred | A developer understands how a plugin is loaded without reading the core's code — **completed 2026-10-14**, except "Add a driver", the first-plugin tutorial (F6) and the design system |
+| **F5** | Administration and Plugin system (implemented). | A developer understands how a plugin is loaded without reading the core's code — **completed 2026-10-14**, except "Add a driver", the first-plugin tutorial (F6) and the design system |
 | **F6** | Each plugin's `docs/` (drafts) and the "Hello NOPAL" tutorial | The 8 plugins have a draft per Standard §6.2 — **completed 2026-10-14** as **drafts** in `plugin-docs/`; the per-plugin `CHANGELOG` and the author copying them to each repo are still missing |
 | **F7** | Initial RFCs, real changelog, migration | Roadmap and RFCs published — **completed 2026-10-14**: 7 RFCs as drafts, change history generated from git, migration guide. EN translation done in F8 |
 | **F8** | Complete EN translation, accessibility, links and metrics | ES/EN parity — **completed 2026-10-14**: every page has an EN translation; axe-core accessibility audit (contrast, in-text links, code, keyboard-focusable tables fixed); external link check; health report. **No version was frozen**: without a NOPAL tag there is nothing to verify it against (Standard §8) |
@@ -292,7 +285,6 @@ Priority by impact: **F1 → F2 → F3 → F4 → F5**; F6 can proceed in parall
 ## 12. Decisions and open items
 
 1. The site's domain and hosting (GitHub Pages is assumed for now). **Open.**
-2. Who maintains the TUNA-Screen guide. **Deferred** along with the rest of TUNA-Screen.
 3. ~~Whether the site publishes the SDD as is or only derived pages~~ **Resolved:** only derived pages; the SDD is an input.
 4. ~~Whether `nopal-demo` is the official screenshot instance~~ **Resolved:** no. The demo was built from commit `92e5443` (2026-08-19). Screenshots are taken from a local instance of `nopal@main`. The demo is useful for read-only API examples.
 5. ~~Whether the User pages are grouped by task or by interface screen~~ **Resolved:** by task.

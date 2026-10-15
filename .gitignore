@@ -6,3 +6,7 @@ generated/*
 !generated/.gitkeep
 .DS_Store
 .sources/
+
+# Auditorías internas de trabajo (solo locales); el formulario de hardware sí se versiona
+auditoria/*
+!auditoria/HARDWARE_PROBADO.md
