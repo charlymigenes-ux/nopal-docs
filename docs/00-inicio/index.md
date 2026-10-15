@@ -5,7 +5,7 @@ slug: /
 audience: user
 type: explanation
 status: implemented
-verified_against: "1.2.0-alpha.1 @ main 2026-10-14"
+verified_against: "nopal@4346f72 (2026-10-07)"
 source_commit: ""
 ---
 

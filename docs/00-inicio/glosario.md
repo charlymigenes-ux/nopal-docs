@@ -4,7 +4,7 @@ sidebar_label: Glosario
 audience: reference
 type: reference
 status: implemented
-verified_against: "1.2.0-alpha.1 @ main 2026-10-14"
+verified_against: "nopal@4346f72 (2026-10-07)"
 ---
 
 # Glosario ES / EN

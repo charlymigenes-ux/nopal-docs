@@ -6,7 +6,7 @@ import path from 'node:path';
 import { ROOT, walkDocs } from './lib/common.mjs';
 
 const strict = process.argv.includes('--strict');
-const IGNORE = /^https?:\/\/(localhost|127\.0\.0\.1|0\.0\.0\.0|<)/;
+const IGNORE = /^https?:\/\/(localhost|tu-dominio|your-domain|127\.0\.0\.1|0\.0\.0\.0|<)/;
 const URL_RE = /https?:\/\/[^\s)<>\]"'`]+/g;
 
 const dirs = [path.join(ROOT, 'docs'), path.join(ROOT, 'i18n'), path.join(ROOT, 'plugin-docs')];
