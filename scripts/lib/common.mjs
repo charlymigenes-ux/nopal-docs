@@ -84,3 +84,15 @@ export function* walkDocs(dir) {
 export function normalizeRoute(p) {
   return p.replace(/\{[^}]+\}/g, '{}').replace(/\/+$/, '');
 }
+
+// Lo excluido del alcance se reconoce por huella: SHA-256 de cada palabra (minúsculas, partiendo
+// por todo lo que no sea letra o cifra). Así scope.json no nombra lo que no debe nombrarse.
+import crypto from 'node:crypto';
+const FORBIDDEN = new Set(scope.forbidden_token_hashes);
+export function forbiddenTokens(text) {
+  const hits = new Set();
+  for (const tok of String(text).toLowerCase().split(/[^a-z0-9]+/)) {
+    if (tok && FORBIDDEN.has(crypto.createHash('sha256').update(tok).digest('hex'))) hits.add(tok);
+  }
+  return [...hits];
+}

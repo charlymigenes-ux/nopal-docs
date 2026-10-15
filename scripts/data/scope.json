@@ -1,5 +1,5 @@
 {
-  "_comment": "Alcance de la documentación (Standard §2). Es la única fuente de qué se incluye, se omite o se prohíbe mencionar.",
+  "_comment": "Alcance de la documentación (Standard §2). Es la única fuente de qué se incluye. Lo excluido se identifica por huella (SHA-256 de cada palabra, en minúsculas) para no nombrarlo en un archivo público.",
   "included_repos": [
     "nopal",
     "nopal-demo",
@@ -47,31 +47,17 @@
     }
   ],
   "github_owner": "charlymigenes-ux",
-  "excluded_core_files": [
-    "tunascreen.py"
-  ],
-  "excluded_route_prefixes": [
-    "/api/tunascreen",
-    "/ws/tunascreen"
-  ],
-  "forbidden_terms_in_public_pages": [
-    "TUNA-Screen",
-    "TUNA-S",
-    "tunascreen",
-    "TUNASCREEN",
-    "MKS-DLC32",
-    "purecutcnc"
-  ],
-  "forbidden_terms_exempt_paths": [
-    "docs/00-inicio/estandar-de-documentacion.md",
-    "docs/00-inicio/arquitectura-documental.md",
-    "i18n/en/docusaurus-plugin-content-docs/current/00-inicio/estandar-de-documentacion.md",
-    "i18n/en/docusaurus-plugin-content-docs/current/00-inicio/arquitectura-documental.md"
-  ],
   "full_history_repos": [
     "nopal"
   ],
   "removed_routes_documented": [
     "/api/laser/host"
-  ]
+  ],
+  "forbidden_token_hashes": [
+    "32d6e4a20c1cd7a5aabd13bbea315a557c08ea5a944b15345b89b0d713027b6c",
+    "d645e81c888b05786e15ac7c9d2ced350ce9768d372c2648d3138b641cc31a9c",
+    "23bd496109bdc441514d548c845524f01e3e7854e79246fc267c1c7143a387bb",
+    "6f0fc426d89e6117c2ab42bf7b0fb290f96969735ee7f617b3ce150866720676"
+  ],
+  "forbidden_exempt_paths": []
 }

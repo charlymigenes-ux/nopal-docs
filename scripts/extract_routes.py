@@ -13,6 +13,7 @@ Límite conocido: no ve comprobaciones de rol hechas dentro del cuerpo de una fu
 cambios dinámicos. Lo detectado crudo queda en `raw_auth` para poder revisarlo.
 """
 import ast
+import hashlib
 import json
 import re
 import subprocess
@@ -128,8 +129,11 @@ def main() -> int:
     sources = Path(args[0]).resolve()
     out = Path(args[1])
     scope = json.loads((HERE / "data" / "scope.json").read_text(encoding="utf-8"))
-    excluded_files = set(scope["excluded_core_files"])
-    excluded_prefixes = tuple(scope["excluded_route_prefixes"])
+    forbidden = set(scope["forbidden_token_hashes"])
+
+    def is_excluded(text: str) -> bool:
+        toks = re.split(r"[^a-z0-9]+", text.lower())
+        return any(hashlib.sha256(t.encode()).hexdigest() in forbidden for t in toks if t)
 
     rows: list = []
     repos: dict = {}
@@ -151,12 +155,12 @@ def main() -> int:
         for f in sorted(files):
             if "tests" in f.parts or "__pycache__" in f.parts:
                 continue
-            if name == "nopal" and f.name in excluded_files and not include_all:
+            if name == "nopal" and is_excluded(f.name) and not include_all:
                 continue
             scan_file(name, repo_dir, f, rows)
 
     if not include_all:
-        rows = [r for r in rows if not r["path"].startswith(excluded_prefixes)]
+        rows = [r for r in rows if not is_excluded(r["path"])]
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(
         json.dumps({"repos": repos, "routes": rows}, ensure_ascii=False, indent=1),

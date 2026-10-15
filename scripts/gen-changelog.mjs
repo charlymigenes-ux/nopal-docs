@@ -6,7 +6,7 @@
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, SOURCES, scope } from './lib/common.mjs';
+import { ROOT, SOURCES, forbiddenTokens } from './lib/common.mjs';
 
 const repo = path.join(SOURCES, 'nopal');
 const git = (...args) => execFileSync('git', ['-C', repo, ...args], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }).trim();
@@ -21,7 +21,6 @@ if (Number(git('rev-list', '--count', 'HEAD')) < 50) {
 const BOUNDARY = '90745ec'; // "release-1.1.0" (2026-07-15)
 const boundaryTs = Number(git('show', '-s', '--format=%ct', BOUNDARY));
 
-const forbidden = [...scope.forbidden_terms_in_public_pages.map((t) => t.toLowerCase()), 'tuna'];
 
 const head = git('log', '-1', '--format=%h\t%cs').split('\t');
 const rows = git('log', '--no-merges', '--format=%h\x1f%cs\x1f%ct\x1f%s')
@@ -34,7 +33,7 @@ const rows = git('log', '--no-merges', '--format=%h\x1f%cs\x1f%ct\x1f%s')
 
 let omitted = 0;
 const commits = rows.filter((r) => {
-  const hit = forbidden.some((t) => r.subject.toLowerCase().includes(t));
+  const hit = forbiddenTokens(r.subject).length > 0;
   if (hit) omitted++;
   return !hit;
 });
