@@ -229,7 +229,7 @@ A **code** PR that changes public behavior (route, manifest field, websocket mes
 | API routes | Routes cited in written pages exist in the code; the generated reference is up to date | Implemented |
 | ES/EN | Page parity and `source_commit` present | Implemented; it does **not** check that the `source_commit` is still current |
 | Style | Glossary, markdownlint and spelling | **Pending** |
-| Screenshots | Referenced files exist and have a valid name | **Pending** (there are no screenshots yet) |
+| Screenshots | Referenced files exist and have a valid name | Implemented (`npm run check:capturas`); screenshots are taken following `capturas/LISTA_DE_CAPTURAS.md` |
 | Accessibility | axe-core audit of the main pages, in light and dark | Done **by hand** in F8; not in CI |
 
 ## 19. Roles

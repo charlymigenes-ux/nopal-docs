@@ -10,7 +10,7 @@
     "build": "docusaurus build",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
-    "check": "node scripts/check-frontmatter.mjs && node scripts/check-scope.mjs && node scripts/check-examples.mjs && node scripts/check-i18n.mjs",
+    "check": "node scripts/check-frontmatter.mjs && node scripts/check-scope.mjs && node scripts/check-examples.mjs && node scripts/check-i18n.mjs && node scripts/check-capturas.mjs",
     "check:frontmatter": "node scripts/check-frontmatter.mjs",
     "check:i18n": "node scripts/check-i18n.mjs",
     "fetch": "node scripts/fetch-sources.mjs",
@@ -23,7 +23,8 @@
     "gen:changelog": "node scripts/gen-changelog.mjs",
     "check:external": "node scripts/check-external-links.mjs",
     "report": "node scripts/report-health.mjs",
-    "docs:version": "docusaurus docs:version"
+    "docs:version": "docusaurus docs:version",
+    "check:capturas": "node scripts/check-capturas.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "^3.10.2",

@@ -229,7 +229,7 @@ Un PR de **código** que cambia comportamiento público (ruta, campo de manifies
 | Rutas de API | Las rutas citadas en páginas escritas existen en el código; la referencia generada está al día | Implementado |
 | ES/EN | Paridad de páginas y `source_commit` presente | Implementado; **no** comprueba que el `source_commit` siga vigente |
 | Estilo | Glosario, markdownlint y ortografía | **Pendiente** |
-| Capturas | Existen los archivos referenciados y tienen nombre válido | **Pendiente** (aún no hay capturas) |
+| Capturas | Existen los archivos referenciados y tienen nombre válido | Implementado (`npm run check:capturas`); las capturas se toman según `capturas/LISTA_DE_CAPTURAS.md` |
 | Accesibilidad | Auditoría con axe-core de las páginas principales, en claro y oscuro | Hecha **a mano** en F8; no está en el CI |
 
 ## 19. Roles
