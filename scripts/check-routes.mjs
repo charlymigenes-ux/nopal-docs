@@ -19,7 +19,7 @@ const errors = [];
 for (const file of walkDocs(path.join(ROOT, 'docs'))) {
   const rel = path.relative(path.join(ROOT, 'docs'), file).replaceAll('\\', '/');
   // Los documentos normativos describen reglas, no rutas de la API.
-  if (scope.forbidden_terms_exempt_paths.includes(`docs/${rel}`)) continue;
+  if ((scope.forbidden_exempt_paths || []).includes(`docs/${rel}`)) continue;
   const { data: fm, content } = matter(fs.readFileSync(file, 'utf8'));
   if (fm.generated === true || fm.stub === true || fm.status === 'rfc' || rel.startsWith('07-rfc/')) continue;
   // Rutas entre acentos graves que empiezan por /api/ (con o sin método delante).
