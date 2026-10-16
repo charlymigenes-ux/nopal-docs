@@ -4,18 +4,18 @@ sidebar_label: Creador de formas
 audience: user
 type: reference
 status: implemented
-verified_against: "nopal@4346f72; nopal-plugin-shape-creator@7e88b19"
+verified_against: "nopal@4346f72; nopal-plugin-shape-creator@bbf1157"
 generated: true
 plugin_id: shape-creator
 plugin_version: "1.2.0"
-source_commit: "7e88b19"
+source_commit: "bbf1157"
 ---
 
 # Creador de formas
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-shape-creator@7e88b19`, `nopal@4346f72`).
+Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-shape-creator@bbf1157`, `nopal@4346f72`).
 :::
 
 Crea rectángulos, círculos, polígonos y formas paramétricas listas para láser o CNC.
@@ -35,7 +35,7 @@ Crea rectángulos, círculos, polígonos y formas paramétricas listas para lás
 | UI | `frontend/shape-creator.js` · section `shape-creator` |
 | Repository | [nopal-plugin-shape-creator](https://github.com/charlymigenes-ux/nopal-plugin-shape-creator) |
 | Own tests | No |
-| Own `docs/` folder | No |
+| Own `docs/` folder | Yes |
 
 ## Declared permissions
 

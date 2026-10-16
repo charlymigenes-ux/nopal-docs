@@ -1,7 +1,7 @@
 ---
 title: Matriz LED: API
 status: draft
-verified_against: "matriz-led@e6c62d8 (0.10.0) · nopal@4346f72"
+verified_against: "matriz-led@bd7e521 (0.10.0) · nopal@4346f72"
 generated: true
 ---
 

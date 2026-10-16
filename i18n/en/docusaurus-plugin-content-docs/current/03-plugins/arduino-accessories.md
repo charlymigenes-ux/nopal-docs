@@ -4,18 +4,18 @@ sidebar_label: Automatización de Taller
 audience: user
 type: reference
 status: implemented
-verified_against: "nopal@4346f72; nopal-plugin-arduino-accessories@d3a044c"
+verified_against: "nopal@4346f72; nopal-plugin-arduino-accessories@7d81164"
 generated: true
 plugin_id: arduino-accessories
 plugin_version: "2.6.0"
-source_commit: "d3a044c"
+source_commit: "7d81164"
 ---
 
 # Automatización de Taller
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-arduino-accessories@d3a044c`, `nopal@4346f72`).
+Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-arduino-accessories@7d81164`, `nopal@4346f72`).
 :::
 
 Control unificado del taller para placas Arduino/ESP32: relés, iluminación, telemetría, escenas, mapas de pines y automatizaciones por máquina.
@@ -35,7 +35,7 @@ Control unificado del taller para placas Arduino/ESP32: relés, iluminación, te
 | UI | `frontend/arduino-accessories.js` · section `arduino-accessories` |
 | Repository | [nopal-plugin-arduino-accessories](https://github.com/charlymigenes-ux/nopal-plugin-arduino-accessories) |
 | Own tests | Yes |
-| Own `docs/` folder | No |
+| Own `docs/` folder | Yes |
 
 ## Declared permissions
 

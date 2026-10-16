@@ -4,18 +4,18 @@ sidebar_label: Herramientas SVG
 audience: user
 type: reference
 status: implemented
-verified_against: "nopal@4346f72; nopal-plugin-svg-toolkit@3b55e05"
+verified_against: "nopal@4346f72; nopal-plugin-svg-toolkit@f78ba10"
 generated: true
 plugin_id: svg-toolkit
 plugin_version: "0.9.0"
-source_commit: "3b55e05"
+source_commit: "f78ba10"
 ---
 
 # Herramientas SVG
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-svg-toolkit@3b55e05`, `nopal@4346f72`).
+Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-svg-toolkit@f78ba10`, `nopal@4346f72`).
 :::
 
 Limpia, une y simplifica trazos SVG antes de enviarlos a producción.
@@ -35,7 +35,7 @@ Limpia, une y simplifica trazos SVG antes de enviarlos a producción.
 | UI | `frontend/svg-toolkit.js` · section `svg-toolkit` |
 | Repository | [nopal-plugin-svg-toolkit](https://github.com/charlymigenes-ux/nopal-plugin-svg-toolkit) |
 | Own tests | Yes |
-| Own `docs/` folder | No |
+| Own `docs/` folder | Yes |
 
 ## Declared permissions
 

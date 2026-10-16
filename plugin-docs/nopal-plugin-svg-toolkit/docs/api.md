@@ -1,7 +1,7 @@
 ---
 title: Herramientas SVG: API
 status: draft
-verified_against: "nopal-plugin-svg-toolkit@3b55e05 (0.9.0) · nopal@4346f72"
+verified_against: "nopal-plugin-svg-toolkit@f78ba10 (0.9.0) · nopal@4346f72"
 generated: true
 ---
 

@@ -37,7 +37,9 @@ jobs:
       # Páginas generadas (referencia REST, fichas y matriz de plugins).
       - run: npm run gen
       # Las páginas generadas versionadas deben estar al día con el código fuente.
+      # En la ejecución semanal no se exige: los repos fuente pueden haber cambiado y el sitio se publica regenerado.
       - name: Las páginas generadas están actualizadas
+        if: github.event_name != 'schedule'
         run: git diff --exit-code -- docs i18n plugin-docs ':(exclude)docs/08-proyecto/changelog.md' ':(exclude)i18n/en/docusaurus-plugin-content-docs/current/08-proyecto/changelog.md'
 
       # Standard §18: validadores antes de compilar.
