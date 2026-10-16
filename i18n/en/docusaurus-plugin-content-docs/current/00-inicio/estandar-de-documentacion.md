@@ -285,4 +285,4 @@ source_commit: "<Spanish commit>"   # translations only
 3. ~~Decide whether `nopal-demo` is the official instance for screenshots~~ **Resolved:** no; the demo was built from an earlier version. Screenshots must be taken from a local instance of `nopal@main`.
 4. Define the human owner of each role in section 19. **Open.**
 5. Decide how the interface translations (de, fr, pt-BR) are handled in the user guide. **Open.**
-6. List of hardware tested by the author (`auditoria/HARDWARE_PROBADO.md`). **Open.**
+6. List of tested hardware: the documentation team does not have the machines; it is filled in with user reports (the "Tested hardware" issue template). **Open.**

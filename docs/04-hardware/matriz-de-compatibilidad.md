@@ -13,7 +13,7 @@ verified_against: "nopal@4346f72 (2026-10-07)"
 Esta página separa dos cosas que no deben confundirse:
 
 1. **Qué puede hacer NOPAL con cada familia de máquina.** Sale del código: los drivers y las rutas de la API. Es **verificable**.
-2. **Qué modelos concretos se han probado.** No consta en el código. Mientras el autor no aporte esa lista, ningún modelo se declara "compatible": se marca **no verificado**.
+2. **Qué modelos concretos se han probado.** No consta en el código. Mientras no haya reportes de pruebas reales, ningún modelo se declara "compatible": se marca **no verificado**.
 
 ## 1. Capacidades por familia
 
@@ -91,5 +91,9 @@ El propio código aclara que los datos salen de **fichas técnicas públicas o d
 | Todos los demás | **No verificado** por esta documentación |
 
 :::info Pendiente
-La lista de hardware **realmente probado** debe aportarla el autor del proyecto. Cuando exista, esta tabla pasará de "no verificado" a estados concretos (estable, beta o no soportado).
+El equipo de documentación **no dispone de estas máquinas**, así que no puede probarlas. La tabla seguirá en "no verificado" hasta que alguien que las use lo confirme.
 :::
+
+### Reporta tu hardware
+
+Si usas NOPAL con un modelo concreto, cuéntanos qué funciona y qué no, abriendo un *issue* con la plantilla **Hardware probado** en el repositorio de la documentación. Indica modelo, firmware y qué funciones viste funcionar. Con tu reporte la fila pasará a estable, beta, parcial o no soportado.

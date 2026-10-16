@@ -1,0 +1,56 @@
+name: Hardware probado / Tested hardware
+description: Cuéntanos qué máquina usas con NOPAL y qué funciones viste funcionar. / Tell us which machine you use with NOPAL and which functions you saw working.
+title: "[Hardware] "
+labels: ["hardware"]
+body:
+  - type: input
+    id: modelo
+    attributes:
+      label: Modelo / Model
+      placeholder: "Anet ET4 Pro, Elegoo Neptune 4 Pro, Bambu Lab A1…"
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Firmware y versión / Firmware and version
+      placeholder: "Marlin 2.1.2.7, Klipper v0.12…"
+    validations:
+      required: true
+  - type: input
+    id: nopal
+    attributes:
+      label: Versión de NOPAL / NOPAL version
+      description: "Configuración → Acerca de NOPAL / Settings → About NOPAL"
+    validations:
+      required: true
+  - type: dropdown
+    id: estado
+    attributes:
+      label: Estado general / Overall status
+      options:
+        - estable (la uso a diario) / stable (daily use)
+        - beta (funciona, con fallos conocidos) / beta (works, known issues)
+        - parcial (solo algunas funciones) / partial (some functions only)
+        - no soportado (no funciona) / unsupported (does not work)
+    validations:
+      required: true
+  - type: checkboxes
+    id: funciones
+    attributes:
+      label: Funciones que viste funcionar / Functions you saw working
+      description: Marca solo las que comprobaste tú. / Tick only what you checked yourself.
+      options:
+        - label: Estado en vivo / Live status
+        - label: Pausar, reanudar, cancelar / Pause, resume, cancel
+        - label: Iniciar un trabajo / Start a job
+        - label: Mover y home / Jog and home
+        - label: Consola / Console
+        - label: Temperatura / Temperature
+        - label: Tarjeta SD / SD card
+        - label: Cámara / Camera
+  - type: textarea
+    id: notas
+    attributes:
+      label: Notas / Notes
+      description: Fallos conocidos, ajustes necesarios… / Known issues, needed tweaks…

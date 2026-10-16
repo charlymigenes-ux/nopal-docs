@@ -285,4 +285,4 @@ source_commit: "<commit del español>"   # solo en traducciones
 3. ~~Decidir si `nopal-demo` es la instancia oficial para capturas~~ **Resuelto:** no; la demo se compiló de una versión anterior. Las capturas deben tomarse de una instancia local de `nopal@main`.
 4. Definir el responsable humano de cada rol de la sección 19. **Abierto.**
 5. Decidir cómo se tratan las traducciones de la interfaz (de, fr, pt-BR) en la guía de usuario. **Abierto.**
-6. Lista de hardware probado por el autor (`auditoria/HARDWARE_PROBADO.md`). **Abierto.**
+6. Lista de hardware probado: el equipo de documentación no dispone de las máquinas; se completa con reportes de usuarios (plantilla de *issue* «Hardware probado»). **Abierto.**

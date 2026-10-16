@@ -14,7 +14,7 @@ source_commit: "4346f72"
 This page separates two things that must not be confused:
 
 1. **What NOPAL can do with each machine family.** It comes from the code: the drivers and the API routes. It is **verifiable**.
-2. **Which specific models have been tested.** This is not in the code. Until the author provides that list, no model is declared "compatible": they are marked **not verified**.
+2. **Which specific models have been tested.** This is not in the code. Until real test reports exist, no model is declared "compatible": they are marked **not verified**.
 
 ## 1. Capabilities by family
 
@@ -92,5 +92,9 @@ The code itself states that the data comes from **public datasheets or third-par
 | All the others | **Not verified** by this documentation |
 
 :::info Pending
-The list of **really tested** hardware must be provided by the project author. Once it exists, this table will move from "not verified" to concrete states (stable, beta or unsupported).
+The documentation team **does not have these machines**, so it cannot test them. The table stays at "not verified" until someone who uses them confirms it.
 :::
+
+### Report your hardware
+
+If you use NOPAL with a specific model, tell us what works and what does not by opening an issue with the **Tested hardware** template in the documentation repository. Include model, firmware and which functions you saw working. With your report the row moves to stable, beta, partial or unsupported.
