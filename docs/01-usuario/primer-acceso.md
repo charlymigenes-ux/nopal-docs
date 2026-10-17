@@ -39,12 +39,20 @@ Si las contraseñas no coinciden verás *"Las contraseñas no coinciden"*.
 Esta pantalla solo aparece mientras no exista ningún usuario. La primera persona que la complete queda como administrador de la instalación.
 :::
 
+![Formulario de configuración inicial para crear la cuenta de administrador](/img/capturas/es/acceso-primer-arranque-1.2.0-alpha.1.png)
+
+*Captura de NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
 ## 3. Entra en otras ocasiones
 
 Desde ahora verás **Iniciar sesión**: escribe tu usuario y contraseña y pulsa **Entrar**.
 
 - Con credenciales incorrectas verás *"Usuario o contraseña incorrectos"*.
 - Tras **5 intentos fallidos en 5 minutos** NOPAL responde *"Demasiados intentos; vuelve a intentarlo en unos minutos"*.
+
+![Pantalla de inicio de sesión de NOPAL](/img/capturas/es/acceso-login-1.2.0-alpha.1.png)
+
+*Captura de NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
 
 ## 4. Elige el idioma
 

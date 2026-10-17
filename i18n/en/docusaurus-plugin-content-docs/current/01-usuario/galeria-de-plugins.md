@@ -26,6 +26,10 @@ The Gallery **does not appear** for the operator role, and installing, updating 
 
 If the plugin needs a Python version your machine does not meet, NOPAL rejects it with an error.
 
+![Plugin gallery with the plugins available to install](/img/capturas/en/plugins-galeria-1.2.0-alpha.1.png)
+
+*NOPAL 1.2.0-alpha.1 screenshot · English interface · NOPAL Style theme.*
+
 ## Update
 
 Click update on the plugin. If only the frontend changed, the screen reloads. If the backend changed too, NOPAL shows a warning: restart to apply the changes.

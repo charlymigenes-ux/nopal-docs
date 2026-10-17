@@ -40,12 +40,20 @@ If the passwords do not match you will see *"Passwords do not match"*.
 This screen only appears while no user exists. Whoever completes it first becomes the installation's administrator.
 :::
 
+![Initial setup form to create the administrator account](/img/capturas/en/acceso-primer-arranque-1.2.0-alpha.1.png)
+
+*NOPAL 1.2.0-alpha.1 screenshot · English interface · NOPAL Style theme.*
+
 ## 3. Sign in on other occasions
 
 From now on you will see **Sign in**: enter your username and password and click **Sign in**.
 
 - With wrong credentials you will see *"Incorrect username or password"*.
 - After **5 failed attempts in 5 minutes** NOPAL answers *"Demasiados intentos; vuelve a intentarlo en unos minutos"* (too many attempts; try again in a few minutes).
+
+![NOPAL sign-in screen](/img/capturas/en/acceso-login-1.2.0-alpha.1.png)
+
+*NOPAL 1.2.0-alpha.1 screenshot · English interface · NOPAL Style theme.*
 
 ## 4. Choose the language
 

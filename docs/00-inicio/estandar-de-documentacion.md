@@ -163,6 +163,7 @@ Decisión vigente: **sin fuente compartida** (el Help Center vive en `app.js` + 
 ## 11. Capturas y diagramas
 
 - Todas las capturas se toman con el tema **NOPAL Style** y el tercer fondo de Modo IA. Toda captura declara versión de NOPAL, idioma de la interfaz y tema. Se guarda con nombre `area-vista-version.png`.
+- Una captura tomada en un sistema con máquinas, trabajos o IA reales **DEBE** declararlo en su pie de figura («Captura de un sistema en funcionamiento»); una tomada en una instalación nueva sin máquinas no lo dice.
 - Las capturas **DEBEN** regenerarse (idealmente con Playwright sobre `nopal-demo`) cuando cambia la pantalla que muestran.
 - Sin datos reales: nombres de máquinas, IPs, tokens y correos son de demostración.
 - Los diagramas se escriben como texto (Mermaid) para que se revisen en el PR. Imagen binaria solo si Mermaid no alcanza.

@@ -26,6 +26,10 @@ It is under **Tools → G-Code Editor**. It lets you **open, edit and download**
 Changes only exist in the browser until you click **Download**. The editor does not overwrite the library file. If you want to use the edited file on a machine, download it and **upload it again** to the library.
 :::
 
+![G-Code Editor with the file open on the Code tab and the file analysis panel](/img/capturas/en/editor-codigo-1.2.0-alpha.1.png)
+
+*NOPAL 1.2.0-alpha.1 screenshot · English interface · NOPAL Style theme.*
+
 ## The two tabs
 
 - **Code**: the file's text, with the line count. Type or modify the G-code directly.

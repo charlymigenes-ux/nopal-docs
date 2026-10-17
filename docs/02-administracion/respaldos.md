@@ -36,6 +36,10 @@ Tú eliges qué grupos se exportan. Los principales:
 
 Los archivos que no existan en tu instalación se omiten sin error: quien no tiene láser no tiene `laser_registry.json`.
 
+![Tarjeta de respaldo de configuración con el campo de frase de cifrado y los botones Exportar e Importar](/img/capturas/es/admin-respaldos-1.2.0-alpha.1.png)
+
+*Captura de NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
 ## Cifrado
 
 Si eliges un grupo **sensible** (usuarios o la clave de la IA) NOPAL **exige una frase de cifrado** y cifra el archivo con **Fernet** (AES-128-CBC + HMAC), con una clave derivada de tu frase mediante **scrypt** y una sal aleatoria por archivo.

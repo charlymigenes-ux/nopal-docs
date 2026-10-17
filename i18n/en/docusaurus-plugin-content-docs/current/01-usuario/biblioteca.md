@@ -27,6 +27,10 @@ The library stores your files on the server, in folders, and is the starting poi
 
 They are stored in the `uploads/models` and `uploads/gcode` folders of the NOPAL installation.
 
+![3D Printing library with a model selected and its detail panel](/img/capturas/en/biblioteca-modelos-1.2.0-alpha.1.png)
+
+*NOPAL 1.2.0-alpha.1 screenshot · English interface · NOPAL Style theme.*
+
 ## Upload files
 
 - Click **Upload file**, or **drag files from your computer** into the window.

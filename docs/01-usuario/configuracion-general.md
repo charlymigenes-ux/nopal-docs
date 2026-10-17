@@ -32,9 +32,17 @@ Idioma, tema y demás ajustes de interfaz se guardan en el navegador (`localStor
 
 **Personalizar página de Configuración** permite elegir qué grupos de tarjetas se muestran según el tamaño de pantalla.
 
+![Tarjeta de configuración general con idioma, escala de la interfaz y recorrido guiado](/img/capturas/es/configuracion-general-1.2.0-alpha.1.png)
+
+*Captura de NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
 ## Temas
 
 Claro, Negro, **NOPAL Style**, Rojo y un tema **personalizado** con imagen de fondo propia (PNG, JPG o WEBP, hasta **2 MB**; se recomienda 1600×900). Aparece además el «Modo IA» cuando [NOPAL Intelligence](./nopal-intelligence) está activo.
+
+![Tarjeta de apariencia con los temas, NOPAL Style seleccionado y el tercer fondo de Modo IA](/img/capturas/es/configuracion-temas-1.2.0-alpha.1.png)
+
+*Captura de NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
 
 ## Tarjetas solo para administradores
 

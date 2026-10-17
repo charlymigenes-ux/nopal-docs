@@ -25,6 +25,10 @@ Está en **Herramientas → Editor G-Code**. Sirve para **abrir, modificar y des
 Los cambios solo existen en el navegador hasta que pulses **Descargar**. El editor no sobrescribe el archivo de la biblioteca. Si quieres usar el archivo editado en una máquina, descárgalo y **súbelo de nuevo** a la biblioteca.
 :::
 
+![Editor G-Code con el archivo abierto en la pestaña Código y el panel de análisis del archivo](/img/capturas/es/editor-codigo-1.2.0-alpha.1.png)
+
+*Captura de NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
 ## Las dos pestañas
 
 - **Código**: el texto del archivo, con el recuento de líneas. Escribe o modifica el G-code directamente.

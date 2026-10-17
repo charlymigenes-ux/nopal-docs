@@ -37,6 +37,10 @@ You choose which groups are exported. The main ones:
 
 Files that do not exist in your installation are skipped without error: someone without a laser has no `laser_registry.json`.
 
+![Configuration backup card with the encryption passphrase field and the Export and Import buttons](/img/capturas/en/admin-respaldos-1.2.0-alpha.1.png)
+
+*NOPAL 1.2.0-alpha.1 screenshot · English interface · NOPAL Style theme.*
+
 ## Encryption
 
 If you pick a **sensitive** group (users or the AI key) NOPAL **requires an encryption passphrase** and encrypts the file with **Fernet** (AES-128-CBC + HMAC), with a key derived from your passphrase using **scrypt** and a random salt per file.

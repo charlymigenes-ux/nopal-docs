@@ -25,6 +25,10 @@ La Galería **no aparece** para el rol de operador, y las acciones de instalar, 
 
 Si el plugin necesita una versión de Python que tu equipo no cumple, NOPAL lo rechaza con un error.
 
+![Galería de plugins con los plugins disponibles para instalar](/img/capturas/es/plugins-galeria-1.2.0-alpha.1.png)
+
+*Captura de NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
 ## Actualizar
 
 Pulsa actualizar en el plugin. Si solo cambió el frontend, la pantalla se recarga. Si cambió también el backend, NOPAL muestra un aviso: reinicia para aplicar los cambios.

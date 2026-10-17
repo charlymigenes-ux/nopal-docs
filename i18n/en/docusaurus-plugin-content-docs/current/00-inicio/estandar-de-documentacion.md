@@ -163,6 +163,7 @@ Current decision: **no shared source** (the Help Center lives in `app.js` + `tra
 ## 11. Screenshots and diagrams
 
 - All screenshots are taken with the **NOPAL Style** theme and the third AI Mode background. Every screenshot declares the NOPAL version, the interface language and the theme. It is saved as `area-view-version.png`.
+- A screenshot taken on a system with real machines, jobs or AI **MUST** say so in its caption ("Screenshot of a running system"); one taken on a fresh install without machines does not.
 - Screenshots **MUST** be regenerated (ideally with Playwright) when the screen they show changes.
 - No real data: machine names, IPs, tokens and emails are demonstration values.
 - Diagrams are written as text (Mermaid) so they are reviewed in the PR. A binary image only if Mermaid is not enough.

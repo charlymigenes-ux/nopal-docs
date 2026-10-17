@@ -26,6 +26,10 @@ La biblioteca guarda tus archivos en el servidor, en carpetas, y es el punto de 
 
 Se guardan en las carpetas `uploads/models` y `uploads/gcode` de la instalación de NOPAL.
 
+![Biblioteca de Impresión 3D con un modelo seleccionado y su panel de detalle](/img/capturas/es/biblioteca-modelos-1.2.0-alpha.1.png)
+
+*Captura de NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
 ## Subir archivos
 
 - Pulsa **Subir archivo**, o **arrastra archivos desde tu equipo** a la ventana.

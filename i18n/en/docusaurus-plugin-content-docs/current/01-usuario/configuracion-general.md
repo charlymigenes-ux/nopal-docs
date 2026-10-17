@@ -33,9 +33,17 @@ Language, theme and other interface settings are stored in the browser (`localSt
 
 **Customize Settings page** lets you choose which card groups are shown depending on screen size.
 
+![General settings card with language, interface scale and guided tour](/img/capturas/en/configuracion-general-1.2.0-alpha.1.png)
+
+*NOPAL 1.2.0-alpha.1 screenshot · English interface · NOPAL Style theme.*
+
 ## Themes
 
 Light, Black, **NOPAL Style**, Red and a **custom** theme with your own background image (PNG, JPG or WEBP, up to **2 MB**; 1600×900 recommended). "AI Mode" also appears when [NOPAL Intelligence](./nopal-intelligence) is enabled.
+
+![Appearance card with the themes, NOPAL Style selected and the third AI Mode background](/img/capturas/en/configuracion-temas-1.2.0-alpha.1.png)
+
+*NOPAL 1.2.0-alpha.1 screenshot · English interface · NOPAL Style theme.*
 
 ## Administrator-only cards
 
