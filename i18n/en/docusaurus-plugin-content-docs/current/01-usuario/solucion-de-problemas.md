@@ -25,6 +25,7 @@ Look at the logs: **Settings → System logs → View logs**. Filter by componen
 | **Demasiados intentos; vuelve a intentarlo en unos minutos** (too many attempts) | 5 failed attempts in 5 minutes from the same address | Wait a few minutes. The counter resets when NOPAL restarts |
 | **Permiso insuficiente** (insufficient permission) | That action is for administrators only, for example adding devices or changing AI configuration | Ask an administrator |
 | **No autenticado** / **Sesión inválida** (not authenticated / invalid session) | The session expired, or your account changed or was deleted | Sign in again |
+| **NOPAL works best on desktop or tablet** | Your screen is under 640 px wide (a phone) and the full dashboard is not designed for it | Open NOPAL from a desktop computer or a tablet |
 
 ## I cannot find my machine
 

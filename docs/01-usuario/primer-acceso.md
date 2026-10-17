@@ -50,6 +50,10 @@ Desde ahora verás **Iniciar sesión**: escribe tu usuario y contraseña y pulsa
 
 NOPAL está disponible en **español, inglés, portugués (Brasil), francés y alemán**. El selector de idioma está en la pantalla de acceso y, una vez dentro, en la barra superior y en **Configuración → General**.
 
+## Pantallas compatibles
+
+NOPAL está pensado para **escritorio y tablet**. En pantallas de celular, por debajo de **640 px de ancho**, el panel no se abre: aparece el aviso *«NOPAL funciona mejor en escritorio o tablet»*, que sugiere otra alternativa para usar desde el teléfono. En una tablet, el menú lateral se oculta en un cajón que se abre con el botón de menú.
+
 ## Qué sigue
 
 - [Conectar tu primera máquina](./conectar-primera-maquina)

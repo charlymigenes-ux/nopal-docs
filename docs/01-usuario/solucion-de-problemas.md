@@ -24,6 +24,7 @@ Mira los registros: **Configuración → Logs del sistema → Ver logs**. Filtra
 | **Demasiados intentos; vuelve a intentarlo en unos minutos** | 5 intentos fallidos en 5 minutos desde la misma dirección | Espera unos minutos. El contador se reinicia al reiniciar NOPAL |
 | **Permiso insuficiente** | Esa acción es solo para administradores, por ejemplo dar de alta dispositivos o cambiar la configuración de la IA | Pídesela a un administrador |
 | **No autenticado** / **Sesión inválida** | La sesión caducó, o tu cuenta cambió o se eliminó | Vuelve a iniciar sesión |
+| **NOPAL funciona mejor en escritorio o tablet** | Tu pantalla mide menos de 640 px de ancho (celular) y el panel completo no está pensado para ella | Abre NOPAL desde un equipo de escritorio o una tablet |
 
 ## No encuentro mi máquina
 

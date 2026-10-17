@@ -51,6 +51,10 @@ From now on you will see **Sign in**: enter your username and password and click
 
 NOPAL is available in **Spanish, English, Portuguese (Brazil), French and German**. The language selector is on the sign-in screen and, once inside, in the top bar and in **Settings → General**.
 
+## Supported screens
+
+NOPAL is designed for **desktop and tablet**. On phone screens, below **640 px of width**, the dashboard does not open: you see the notice *"NOPAL works best on desktop or tablet"*, which suggests another option for using it from the phone. On a tablet, the side menu hides in a drawer that opens with the menu button.
+
 ## What next
 
 - [Connect your first machine](./conectar-primera-maquina)
