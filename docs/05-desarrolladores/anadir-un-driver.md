@@ -38,7 +38,7 @@ Cada familia de red tiene un servicio y un router:
 | Pieza | Ejemplo (FlashForge) | Qué contiene |
 |---|---|---|
 | **Servicio** | `backend/services/flashforge_service.py` | La conexión con la máquina, su registro (`REGISTRY_PATH`), el alta y la baja, el escaneo de red, la prueba de conexión y las órdenes (pausar, reanudar, cancelar, enviar G-code) |
-| **Router** | `backend/api/flashforge_printers.py` | Las rutas `/api/flashforge/printers…`. Valida y llama al servicio |
+| **Router** | `backend/api/flashforge_printers.py` | Las rutas `/api/flashforge/printers` y sus subrutas. Valida y llama al servicio |
 
 Un servicio ofrece, como mínimo, funciones como `get_registered_printers_with_status`, `register_printer`, `unregister_printer`, `scan_network`, `test_connection`, `pause_printer`, `resume_printer`, `cancel_printer` y `send_gcode_to_printer`. Los nombres exactos varían según lo que la familia permita.
 

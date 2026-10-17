@@ -39,7 +39,7 @@ Each network family has a service and a router:
 | Piece | Example (FlashForge) | What it contains |
 |---|---|---|
 | **Service** | `backend/services/flashforge_service.py` | The connection with the machine, its registry (`REGISTRY_PATH`), registration and removal, network scan, connection test and commands (pause, resume, cancel, send G-code) |
-| **Router** | `backend/api/flashforge_printers.py` | The `/api/flashforge/printers…` routes. It validates and calls the service |
+| **Router** | `backend/api/flashforge_printers.py` | The `/api/flashforge/printers` and its sub-routes routes. It validates and calls the service |
 
 A service offers, at least, functions such as `get_registered_printers_with_status`, `register_printer`, `unregister_printer`, `scan_network`, `test_connection`, `pause_printer`, `resume_printer`, `cancel_printer` and `send_gcode_to_printer`. The exact names vary with what the family allows.
 
