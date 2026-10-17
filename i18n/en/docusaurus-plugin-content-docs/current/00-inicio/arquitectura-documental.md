@@ -155,7 +155,7 @@ The map above is the **plan**. This is what exists today:
 | 02 Administration | Installation, update and uninstall, users and roles, security, logs, backups, system control, network and HTTPS, machine identity, diagnostics | — |
 | 03 Plugins | Index, matrix, 8 sheets (generated) and laser/CNC design flow | Usage guide for each plugin |
 | 04 Hardware | Compatibility matrix | One page per family, ESP32/Arduino, LED panels, cameras, list of tested models |
-| 05 Developers | Architecture, environment and tests, 5 plugin system pages, tutorial, contributing | Adding a driver, design system |
+| 05 Developers | Architecture, environment and tests, 5 plugin system pages, tutorial, contributing, adding a driver | Design system |
 | 06 Reference | Core REST API (generated), state files, roles by action, environment variables and commands | Error codes, real time |
 | 07 RFC | 7 RFCs as drafts | — |
 | 08 Project | Roadmap, change history (generated), versioning, migration, license | — |

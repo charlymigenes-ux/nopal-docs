@@ -18,6 +18,7 @@ How NOPAL is built and how to extend it.
 - [Development environment and tests](./entorno-y-pruebas.md)
 - [Contributing](./contribuir.md)
 - [Tutorial: your first plugin](./tutorial-primer-plugin.md)
+- [Add a driver](./anadir-un-driver.md)
 
 ## Plugin system
 
@@ -36,5 +37,5 @@ There is no versioned plugin API, enforced permission system, per-plugin depende
 :::
 
 :::caution Under construction
-Pending: adding a device driver and the design system.
+Pending: the design system.
 :::
