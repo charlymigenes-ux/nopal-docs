@@ -5,7 +5,7 @@ sidebar_position: 5
 audience: user
 type: how-to
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 ---
 
 # Impresoras Klipper
@@ -23,6 +23,7 @@ En el panel de control cada impresora tiene una ficha con su nombre, estado, min
 | **Cola** | Los archivos en espera, con su total, tiempo y filamento, y el botón **Iniciar cola** |
 | **Archivos de config** | Los archivos de configuración de la impresora (`printer.cfg` y otros) |
 | **Cámara** | La cámara vinculada, si tienes el plugin Cámaras |
+| **Carrete** | El carrete asignado: filamento, diámetro, restante y color. Sin carrete verás *«Sin carrete asignado»* y el botón **Abrir Materiales**, desde donde se asigna |
 
 El icono de engranaje abre **Personalizar Módulos**: reordena y muestra u oculta los módulos. El diseño se guarda por separado para cuatro tamaños de pantalla (celular, tableta, escritorio y pantalla ancha) y se puede restablecer.
 

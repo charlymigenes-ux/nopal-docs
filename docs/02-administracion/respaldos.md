@@ -5,7 +5,7 @@ sidebar_position: 6
 audience: admin
 type: how-to
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 ---
 
 # Respaldos de configuración
@@ -51,6 +51,7 @@ Si eliges un grupo **sensible** (usuarios o la clave de la IA) NOPAL **exige una
 
 - **`.session_secret`**: con él se podrían falsificar sesiones de esa instalación. Se regenera solo.
 - **Las conversaciones con la IA** (`ai_conversations.json`): son privadas de cada usuario. Tampoco se importan.
+- **Los historiales de trabajos** (`laser_history.json`, `job_print_log.json` y `job_deletions.json`): no pertenecen a ningún grupo. Si mueves NOPAL a otro equipo y los quieres conservar, copia esos archivos a mano.
 
 ## Importar
 

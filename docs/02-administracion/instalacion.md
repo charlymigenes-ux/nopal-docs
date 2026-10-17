@@ -5,7 +5,7 @@ sidebar_position: 1
 audience: admin
 type: how-to
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 ---
 
 # Instalación
@@ -52,6 +52,10 @@ Ejecútalo con tu usuario normal. Si Klipper y Moonraker corren en el mismo equi
 3. Instala las dependencias de `requirements.txt` en ese entorno.
 4. Crea las carpetas `uploads/` y `previews/`.
 5. Escribe `/etc/systemd/system/nopal.service`, lo habilita y lo reinicia.
+
+:::note `numpy` es opcional
+Entre las dependencias está `numpy`, que solo necesita la función **Imagen a dibujo** de la CNC. Si falta, NOPAL arranca igual y esa pantalla avisa.
+:::
 
 El servicio generado tiene estas características:
 

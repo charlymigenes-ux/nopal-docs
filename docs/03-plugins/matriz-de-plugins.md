@@ -4,7 +4,7 @@ sidebar_label: Matriz de plugins
 audience: reference
 type: reference
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 generated: true
 sidebar_position: 1
 ---
@@ -13,7 +13,7 @@ sidebar_position: 1
 
 :::note
 Página **generada** automáticamente. No la edites a mano: corrige la fuente y vuelve a generar.
-Verificado contra `nopal@4346f72` (2026-10-07).
+Verificado contra `nopal@a5853dc` (2026-10-17).
 :::
 
 Plugins oficiales, con los datos de su manifiesto `nopal-plugin.json`.

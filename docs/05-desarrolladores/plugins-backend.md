@@ -5,7 +5,7 @@ sidebar_position: 4
 audience: developer
 type: reference
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 ---
 
 # Sistema de plugins: backend
@@ -78,7 +78,18 @@ Una ruta pensada para que la llame **firmware** (sin cookies) puede autenticarse
 
 ## Tareas en segundo plano
 
-El core **no ofrece una API para que un plugin registre tareas periódicas**. Los únicos bucles de fondo son los propios del core (por ejemplo, las impresiones programadas). `matriz-led`, por ejemplo, lo resuelve sondeando desde el navegador, por lo que algunas de sus funciones requieren que el panel esté abierto en alguna pestaña; su README lo señala como limitación.
+El core **no ofrece una API para registrar tareas periódicas**, pero sí **ganchos de ciclo de vida opcionales**. Si el módulo de entrada del backend define `on_startup()` o `on_shutdown()` (síncronos o `async`), el core los llama:
+
+| Gancho | Cuándo se llama |
+|---|---|
+| `on_startup()` | Al arrancar NOPAL, tras cargar los plugins |
+| `on_shutdown()` | Al detenerse NOPAL, en orden inverso a la carga |
+
+- Cada gancho tiene un tope de **5 segundos**: si tarda más, el core lo registra como aviso y sigue sin esperar.
+- Un gancho que falla **nunca impide** que NOPAL arranque ni que los demás plugins se carguen; el error queda en el log.
+- Son opcionales, igual que `router` y `AI_TOOLS`.
+
+Con `on_startup()` un plugin puede lanzar su propia tarea de fondo. Es lo que usa `matriz-led` para actualizar el panel FK-8Wa sin necesidad de tener NOPAL abierto en el navegador. Los bucles de fondo del propio core, como las impresiones programadas, son independientes de este mecanismo.
 
 ## Dependencias de Python
 

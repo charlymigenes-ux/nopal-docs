@@ -4,17 +4,17 @@ sidebar_label: Plugin matrix
 audience: reference
 type: reference
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 generated: true
 sidebar_position: 1
-source_commit: "4346f72"
+source_commit: "a5853dc"
 ---
 
 # Plugin matrix
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Verified against `nopal@4346f72` (2026-10-07).
+Verified against `nopal@a5853dc` (2026-10-17).
 :::
 
 Official plugins, with the data from their `nopal-plugin.json` manifest.

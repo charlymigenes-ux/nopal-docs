@@ -4,7 +4,7 @@ sidebar_label: Matriz LED
 audience: user
 type: reference
 status: implemented
-verified_against: "nopal@4346f72; matriz-led@bd7e521"
+verified_against: "nopal@a5853dc; matriz-led@bd7e521"
 generated: true
 plugin_id: matriz-led
 plugin_version: "0.10.0"
@@ -15,7 +15,7 @@ source_commit: "bd7e521"
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`matriz-led@bd7e521`, `nopal@4346f72`).
+Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`matriz-led@bd7e521`, `nopal@a5853dc`).
 :::
 
 Panel principal + Editor de Anuncios para una pantalla LED matriz BLE (tipo iPixel Color) y un panel FK-8Wa de 96x16 por red: escenas rápidas, automatizaciones reales (inactividad, material bajo) y alertas por máquina, además de dibujar patrones a color y guardarlos como anuncios reutilizables.

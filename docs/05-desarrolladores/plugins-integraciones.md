@@ -5,7 +5,7 @@ sidebar_position: 7
 audience: developer
 type: reference
 status: convention
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 ---
 
 # Sistema de plugins: integraciones con el core y entre plugins

@@ -5,8 +5,8 @@ sidebar_position: 4
 audience: developer
 type: reference
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
-source_commit: "4346f72"
+verified_against: "nopal@a5853dc (2026-10-17)"
+source_commit: "a5853dc"
 ---
 
 # Plugin system: backend
@@ -79,7 +79,18 @@ A route meant to be called by **firmware** (no cookies) can authenticate with an
 
 ## Background tasks
 
-The core **does not offer an API for a plugin to register periodic tasks**. The only background loops are the core's own (for example, scheduled prints). `matriz-led`, for instance, works around it by polling from the browser, so some of its features need the dashboard open in some tab; its README flags this as a limitation.
+The core **does not offer an API to register periodic tasks**, but it does offer **optional lifecycle hooks**. If the backend entry module defines `on_startup()` or `on_shutdown()` (sync or `async`), the core calls them:
+
+| Hook | When it is called |
+|---|---|
+| `on_startup()` | When NOPAL starts, after the plugins are loaded |
+| `on_shutdown()` | When NOPAL stops, in reverse load order |
+
+- Each hook has a **5-second** limit: if it takes longer, the core logs a warning and carries on without waiting.
+- A hook that fails **never prevents** NOPAL from starting or other plugins from loading; the error goes to the log.
+- They are optional, like `router` and `AI_TOOLS`.
+
+With `on_startup()` a plugin can launch its own background task. This is what `matriz-led` uses to update the FK-8Wa panel without NOPAL needing to be open in a browser. The core's own background loops, such as scheduled prints, are independent of this mechanism.
 
 ## Python dependencies
 

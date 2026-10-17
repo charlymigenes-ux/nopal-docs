@@ -1,7 +1,7 @@
 ---
 title: Creador de formas: configuración
 status: draft
-verified_against: "nopal-plugin-shape-creator@7e88b19 (1.2.0) · nopal@4346f72"
+verified_against: "nopal-plugin-shape-creator@7e88b19 (1.2.0) · nopal@a5853dc"
 ---
 
 

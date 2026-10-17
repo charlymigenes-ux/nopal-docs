@@ -4,7 +4,7 @@ sidebar_label: Herramientas SVG
 audience: user
 type: reference
 status: implemented
-verified_against: "nopal@4346f72; nopal-plugin-svg-toolkit@f78ba10"
+verified_against: "nopal@a5853dc; nopal-plugin-svg-toolkit@f78ba10"
 generated: true
 plugin_id: svg-toolkit
 plugin_version: "0.9.0"
@@ -15,7 +15,7 @@ source_commit: "f78ba10"
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-svg-toolkit@f78ba10`, `nopal@4346f72`).
+Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-svg-toolkit@f78ba10`, `nopal@a5853dc`).
 :::
 
 Limpia, une y simplifica trazos SVG antes de enviarlos a producción.

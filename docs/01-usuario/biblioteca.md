@@ -5,7 +5,7 @@ sidebar_position: 9
 audience: user
 type: how-to
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 ---
 
 # Biblioteca de modelos y G-code

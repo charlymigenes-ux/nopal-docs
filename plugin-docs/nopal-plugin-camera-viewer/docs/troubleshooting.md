@@ -1,7 +1,7 @@
 ---
 title: Cámaras: solución de problemas
 status: draft
-verified_against: "nopal-plugin-camera-viewer@b9634d7 (1.4.0) · nopal@4346f72"
+verified_against: "nopal-plugin-camera-viewer@b9634d7 (1.4.0) · nopal@a5853dc"
 ---
 
 

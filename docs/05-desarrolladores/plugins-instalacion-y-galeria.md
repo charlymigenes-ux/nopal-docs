@@ -5,7 +5,7 @@ sidebar_position: 6
 audience: developer
 type: reference
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 ---
 
 # Sistema de plugins: instalación y Galería

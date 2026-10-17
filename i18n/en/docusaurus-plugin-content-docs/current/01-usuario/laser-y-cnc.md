@@ -5,8 +5,8 @@ sidebar_position: 8
 audience: user
 type: how-to
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
-source_commit: "4346f72"
+verified_against: "nopal@a5853dc (2026-10-17)"
+source_commit: "a5853dc"
 ---
 
 # Laser and CNC
@@ -72,12 +72,32 @@ The **CNC** section uses the same connection and the same routes as the laser, w
 | **Job** | Run, **Stop**, **Park**, **Probe**, feed *overrides* and **Origin Shift** |
 | **Zeros** | **Zero here (XY)** and **Z=0 here**. NOPAL asks you to confirm the tip is touching the workpiece |
 | **Jog** | Move X/Y/Z with different steps and feed rates |
-| **Viewer** | Preview of the file's toolpath before running it |
+| **Viewer** | Three tabs: **VISOR** (toolpath preview with the work area; anything outside is marked red), **SIMULATION** (plays the path with speed, pause and restart, and shows lines, drawn distance, travel and time) and **3D VIEW** (marked *Coming soon*) |
 | **Files** | Upload or choose the G-code (`.nc`, etc.) you are going to machine |
 
 - **CNC panel mode** (in **Settings → General**): **Simple** shows only the essentials; **Advanced** adds *overrides*, work coordinates, pins and profiles.
 - **Profile**: **Router / Mill** or **Plotter (pen/marker)**.
 - **Spindle**: turn on, turn off and set the RPM.
+
+### Run from the board's SD card
+
+If the board has an SD card, the **Job** block offers the **Run from the board's SD card (recommended)** switch. The job is uploaded to the SD and runs **inside the board**, so it does not stop if WiFi drops. In exchange, it **does not allow live Z adjustment**. Without a card, the job is sent line by line over WiFi and may fail if the connection drops.
+
+### Job notices
+
+When a CNC job ends, NOPAL tells you. If it stops with an error, it shows the file, the **line** where it stopped and the reason translated from the GRBL code (for example, *"the move goes outside the allowed work area"* or *"the machine is in alarm or locked"*). While it runs, the card shows *"Line N of M"*.
+
+### Image to drawing (plotter)
+
+The **Image to drawing** button, in the **Files** block, converts an image (PNG, JPG, BMP or GIF, up to 15 MB) into stroke G-code for the plotter:
+
+- It works best with **line art** (mandalas, outlines, black-and-white logos). If the image looks like a photograph, NOPAL warns you.
+- You choose the **width and height** in mm. NOPAL compares with the work area and, if the drawing does not fit, requires you to tick that you understand before generating it.
+- You set the pen (**Z up**, **Z down**) and the drawing, plunge and travel speeds, and you can fine-tune smoothness, small-detail cleanup and precision.
+- You see the preview (**Trace**, **Overlay** or **Original**) with the statistics: strokes, distance, travel and estimated time.
+- **Generate drawing** saves it to the [Library](./biblioteca).
+
+While a plotter job runs over WiFi, you can **raise or lower the pen** (−1 to +1 mm per adjustment; negative = more pressure) for the strokes that remain. With a job from the SD card you cannot.
 
 Two wizards guide you:
 

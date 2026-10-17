@@ -5,7 +5,7 @@ sidebar_position: 9
 audience: admin
 type: explanation
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 ---
 
 # Identidad de máquinas y su migración

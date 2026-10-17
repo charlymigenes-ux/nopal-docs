@@ -5,8 +5,8 @@ sidebar_position: 9
 audience: developer
 type: tutorial
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
-source_commit: "4346f72"
+verified_against: "nopal@a5853dc (2026-10-17)"
+source_commit: "a5853dc"
 ---
 
 # Tutorial: your first plugin (Hello NOPAL)
@@ -14,7 +14,7 @@ source_commit: "4346f72"
 In this tutorial you create a minimal plugin that adds a section to NOPAL with a button. When pressed, the plugin calls its own backend and shows who you are. You go through the whole contract: manifest, backend, frontend, tests and installation.
 
 :::info What is tested and what is not
-- **Steps 1 to 5: tested.** The backend was run with NOPAL's **real loader** (`nopal@4346f72`) and its two tests pass. The frontend was run in a browser, on a test page that imitates the core's hook points (menu, `.content`, `switchSection`).
+- **Steps 1 to 5: tested.** The backend was run with NOPAL's **real loader** (`nopal@a5853dc`) and its two tests pass. The frontend was run in a browser, on a test page that imitates the core's hook points (menu, `.content`, `switchSection`).
 - **Step 6 (installing it in a real NOPAL): not tested.** The full application was not run. The steps come from reading the code of the installer, the loader and the Gallery. If something does not match, it is a defect in this page: report it.
 - The test was run with Python 3.14. NOPAL supports Python 3.9 or later; the example uses nothing that needs a newer version, but it was not run on 3.9.
 :::

@@ -5,8 +5,8 @@ sidebar_position: 3
 audience: admin
 type: explanation
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
-source_commit: "4346f72"
+verified_against: "nopal@a5853dc (2026-10-17)"
+source_commit: "a5853dc"
 ---
 
 # Users and roles
@@ -50,6 +50,9 @@ The full reference, route by route, is in the [core REST API](../06-referencia/a
 | Write `printer.cfg`, restart Klipper or its firmware | ❌ | ✅ |
 | GRBL `$$` parameters | ❌ | ✅ |
 | Format a laser's SD card | ❌ | ✅ |
+| Delete a failed or incomplete job from the history and view the Control log | ❌ | ✅ |
+| Reprint and export the job history | ✅ | ✅ |
+| Convert an image into a drawing (CNC) and run a CNC job from the board's SD card | ✅ | ✅ |
 | Discover machines on the network | ❌ | ✅ |
 | **Add and remove** machines (all brands, laser and CNC) | ❌ | ✅ |
 | Manage users | ❌ | ✅ |

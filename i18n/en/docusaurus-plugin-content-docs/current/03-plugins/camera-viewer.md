@@ -4,18 +4,18 @@ sidebar_label: Cámaras
 audience: user
 type: reference
 status: implemented
-verified_against: "nopal@4346f72; nopal-plugin-camera-viewer@a171d4e"
+verified_against: "nopal@a5853dc; nopal-plugin-camera-viewer@28737a7"
 generated: true
 plugin_id: camera-viewer
 plugin_version: "1.4.0"
-source_commit: "a171d4e"
+source_commit: "28737a7"
 ---
 
 # Cámaras
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-camera-viewer@a171d4e`, `nopal@4346f72`).
+Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-camera-viewer@28737a7`, `nopal@a5853dc`).
 :::
 
 Agrega cámaras por URL de stream MJPEG, ONVIF o webcam USB, y míralas en vivo desde el panel.

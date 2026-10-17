@@ -4,16 +4,16 @@ sidebar_label: Core REST API
 audience: reference
 type: reference
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 generated: true
-source_commit: "4346f72"
+source_commit: "a5853dc"
 ---
 
 # Core REST API
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Verified against `nopal@4346f72` (2026-10-07).
+Verified against `nopal@a5853dc` (2026-10-17).
 :::
 
 Inventory of NOPAL's routes obtained by **static analysis** of the code (`@router.*` decorators and access dependencies). NOPAL is not run. The access shown is the one declared on the route; a role check inside a function body is not detected.
@@ -32,9 +32,9 @@ Inventory of NOPAL's routes obtained by **static analysis** of the code (`@route
 | Access | Routes |
 |---|---:|
 | Public | 5 |
-| Session (admin or operator) | 141 |
-| Admin only | 51 |
-| **Total** | **197** |
+| Session (admin or operator) | 150 |
+| Admin only | 53 |
+| **Total** | **208** |
 
 
 ## NOPAL Intelligence (AI)
@@ -180,9 +180,22 @@ Inventory of NOPAL's routes obtained by **static analysis** of the code (`@route
 | POST | `/api/flashforge/printers/discover` | Admin only | — | Escanea la red local en busca de impresoras FlashForge modernas (5M/5M Pro/AD5X/Creator 5). |
 
 
+## jobs.py
+
+`backend/api/jobs.py` · 5 routes
+
+| Method | Route | Access | Policy | Description |
+|---|---|---|---|---|
+| GET | `/api/jobs/deletions` | Admin only | — | Registro de control: los trabajos dados de baja, con quién, cuándo y por qué. |
+| GET | `/api/jobs/history` | Session (admin or operator) | — | — |
+| POST | `/api/jobs/history/delete` | Admin only | — | — |
+| GET | `/api/jobs/history/export` | Session (admin or operator) | — | Resumen de la lista que se está viendo (mismos filtros), en XML o PDF. |
+| POST | `/api/jobs/reprint-klipper` | Session (admin or operator) | — | Vuelve a imprimir, en la misma impresora Klipper, un archivo que ya está en su carpeta de G-code. |
+
+
 ## Laser and CNC (GRBL)
 
-`backend/api/laser.py` · 42 routes
+`backend/api/laser.py` · 46 routes
 
 | Method | Route | Access | Policy | Description |
 |---|---|---|---|---|
@@ -195,10 +208,13 @@ Inventory of NOPAL's routes obtained by **static analysis** of the code (`@route
 | GET | `/api/laser/info` | Session (admin or operator) | — | Información estática de la placa controladora (chip, firmware, red). |
 | POST | `/api/laser/job/cancel` | Session (admin or operator) | — | — |
 | POST | `/api/laser/job/frame` | Session (admin or operator) | — | Recorre el rectángulo que ocupa un trabajo, sin cortarlo. |
+| GET | `/api/laser/job/last` | Session (admin or operator) | — | Último trabajo terminado (error/cancelado/completado) de esa placa, o {"job": null}. Lo usa la tarjeta TRABAJO de CNC para avisar cómo acab… |
 | POST | `/api/laser/job/pause` | Session (admin or operator) | — | — |
 | POST | `/api/laser/job/resume` | Session (admin or operator) | — | — |
 | POST | `/api/laser/job/start` | Session (admin or operator) | — | Inicia el envío de un archivo G-code (de la biblioteca) al láser. |
+| POST | `/api/laser/job/start-sd` | Session (admin or operator) | — | Corre un archivo de la biblioteca DESDE la SD de la placa: lo sube y lo arranca ahí. Es más firme que el envío línea por línea por WiFi (el… |
 | GET | `/api/laser/job/status` | Session (admin or operator) | — | — |
+| POST | `/api/laser/job/z-offset` | Session (admin or operator) | — | Ajuste de Z en vivo (plotter): suma `delta` mm a la Z de lápiz abajo para los trazos que faltan. |
 | GET | `/api/laser/jobs/active` | Session (admin or operator) | — | Todos los hosts con un trabajo propio en curso ahora mismo — para que el frontend no pierda de vista un corte activo aunque el usuario esté… |
 | POST | `/api/laser/jog` | Session (admin or operator) | — | Mueve un eje en relativo. La secuencia real (jog GRBL vs. G91/G1/G90 de Marlin) se arma en el backend según el firmware registrado para ese… |
 | GET | `/api/laser/parser-state` | Session (admin or operator) | — | Sistema de coordenadas activo (G54/G55/...) vía '$G'. |
@@ -219,6 +235,7 @@ Inventory of NOPAL's routes obtained by **static analysis** of the code (`@route
 | POST | `/api/laser/sd/folder` | Session (admin or operator) | — | Crea una carpeta en la tarjeta SD. |
 | POST | `/api/laser/sd/format` | Admin only | — | Formatea la tarjeta SD -- borra TODO su contenido, sin vuelta atrás. Admin-only server-side (no solo oculto en el frontend). Ver el comenta… |
 | POST | `/api/laser/sd/run` | Session (admin or operator) | — | Corre directamente un archivo que ya está en la SD, sin volver a subirlo. |
+| GET | `/api/laser/sd/status` | Session (admin or operator) | — | ¿La placa tiene una tarjeta SD lista? (la pantalla ofrece correr desde la SD si la hay). |
 | POST | `/api/laser/sd/upload` | Session (admin or operator) | — | Sube un archivo (desde tu computadora) directo a la tarjeta SD de la placa. No espera a que termine: el tramo lento de verdad es NOPAL-&gt;pla… |
 | POST | `/api/laser/sd/upload-from-library` | Session (admin or operator) | — | Envía un archivo ya subido a la biblioteca de G-code de NOPAL directo a la SD de la placa -- mismo criterio de segundo plano + upload_id qu… |
 | GET | `/api/laser/sd/upload-progress/{upload_id}` | Session (admin or operator) | — | Estado real de una subida en curso (ver sd_upload_file_tracked). Cuando status ya es "done"/"error" el frontend deja de sondear y llama a e… |
@@ -319,6 +336,16 @@ Inventory of NOPAL's routes obtained by **static analysis** of the code (`@route
 | Method | Route | Access | Policy | Description |
 |---|---|---|---|---|
 | GET | `/api/notifications` | Session (admin or operator) | — | Cuenta de problemas activos ahora mismo (impresoras/láser/CNC/ accesorios desconectados, trabajos con error, actualización disponible) — no… |
+
+
+## plotter.py
+
+`backend/api/plotter.py` · 2 routes
+
+| Method | Route | Access | Policy | Description |
+|---|---|---|---|---|
+| POST | `/api/plotter/generate` | Session (admin or operator) | — | Genera el G-code de plotter y lo guarda en la raíz de la Biblioteca (G-code). |
+| POST | `/api/plotter/preview` | Session (admin or operator) | — | Trazos en mm (origen abajo a la izquierda) para dibujar la vista previa, sus números y los avisos de la imagen (`notes`). |
 
 
 ## Plugin gallery

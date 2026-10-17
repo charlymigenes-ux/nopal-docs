@@ -5,8 +5,8 @@ sidebar_position: 4
 audience: user
 type: explanation
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
-source_commit: "4346f72"
+verified_against: "nopal@a5853dc (2026-10-17)"
+source_commit: "a5853dc"
 ---
 
 # Dashboard
@@ -51,7 +51,7 @@ The top part shows *"Real-time overview of your workshop"* and the overall statu
 | **Workshop ambient temp.** | The ambient temperature, if you have a sensor (Workshop Automation plugin); otherwise "No sensor" |
 | **Current consumption** | An **estimated** value |
 | **Next maintenance** | A suggestion based on the current alerts and jobs; "No data" if there is none |
-| **Quick actions** and **Active scenes** | Appear with the Workshop Automation plugin |
+| **Quick actions** and **Active scenes** | Filled in by the Workshop Automation plugin; without it they appear as empty slots |
 
 You can collapse the top panel (*Collapse top panel*) and choose in **Settings → Appearance & UI/UX** whether it stays always visible or hides until you move the mouse over the top bar.
 

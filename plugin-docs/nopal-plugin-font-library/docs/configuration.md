@@ -1,7 +1,7 @@
 ---
 title: Texto para fabricación: configuración
 status: draft
-verified_against: "nopal-plugin-font-library@bfd9c87 (0.5.1) · nopal@4346f72"
+verified_against: "nopal-plugin-font-library@bfd9c87 (0.5.1) · nopal@a5853dc"
 ---
 
 

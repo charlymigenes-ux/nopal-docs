@@ -4,18 +4,18 @@ sidebar_label: Cotizador
 audience: user
 type: reference
 status: implemented
-verified_against: "nopal@4346f72; nopal-plugin-cotizador@b013177"
+verified_against: "nopal@a5853dc; nopal-plugin-cotizador@cb06264"
 generated: true
 plugin_id: cotizador
 plugin_version: "1.1.0"
-source_commit: "b013177"
+source_commit: "cb06264"
 ---
 
 # Cotizador
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-cotizador@b013177`, `nopal@4346f72`).
+Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-cotizador@cb06264`, `nopal@a5853dc`).
 :::
 
 Calcula el costo estimado de trabajos de impresión 3D, láser o CNC y genera cotizaciones listas para enviar.

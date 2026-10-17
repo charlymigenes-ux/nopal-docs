@@ -4,10 +4,10 @@ sidebar_label: Change history
 audience: reference
 type: reference
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 generated: true
 sidebar_position: 2
-source_commit: "4346f72"
+source_commit: "a5853dc"
 ---
 
 # Change history
@@ -16,16 +16,17 @@ source_commit: "4346f72"
 This page is **generated** from `nopal`'s git history. Do not edit it by hand.
 :::
 
-Groups the commit messages (238 changes, up to `4346f72`, 2026-10-07) by version and type. **It is not a curated changelog**: the texts are the commits' own, in the language they were written in. NOPAL does not publish tagged releases yet (see [versioning](./versionado-y-soporte.md)).
+Groups the commit messages (248 changes, up to `a5853dc`, 2026-10-17) by version and type. **It is not a curated changelog**: the texts are the commits' own, in the language they were written in. NOPAL does not publish tagged releases yet (see [versioning](./versionado-y-soporte.md)).
 
 11 changes to components whose documentation is deferred are omitted.
 
-## 1.2.0-alpha.1 — Unreleased (2026-07-15 → 2026-10-07, 211)
+## 1.2.0-alpha.1 — Unreleased (2026-07-15 → 2026-10-17, 221)
 
-### Added (98)
+### Added (105)
 
 **ai**
 
+- show_panel_message action for the FK-8Wa LED panel (`da6da81`, 2026-10-11)
 - las preguntas de material suben al nivel medio, no solo el catálogo (`d9ba0ac`, 2026-08-13)
 - nueva acción assign_spool para cambiar el material asignado (`068ed4e`, 2026-08-13)
 - interfaz del historial y botón de confirmar acciones (`083315a`, 2026-08-12)
@@ -54,6 +55,12 @@ Groups the commit messages (238 changes, up to `4346f72`, 2026-10-07) by version
 - add authorization policy enforcement (`cc851ef`, 2026-10-03)
 - harden authorization policy (`142e709`, 2026-10-03)
 
+**cnc**
+
+- correr desde la SD de la placa (`2a6a643`, 2026-10-13)
+- vectorizado de line art, visor con área real, simulación y ajuste de Z en vivo (`6489c11`, 2026-10-13)
+- imagen a dibujo para plotter, progreso/errores del trabajo y barra lateral (`39791e9`, 2026-10-12)
+
 **dashboard**
 
 - las fichas de temperatura/consumo/mantenimiento solo se ven con datos reales (`3f46cf8`, 2026-08-14)
@@ -70,6 +77,10 @@ Groups the commit messages (238 changes, up to `4346f72`, 2026-10-07) by version
 **help**
 
 - complete and correct the help center (`5b2e485`, 2026-10-07)
+
+**historial**
+
+- historial de trabajos con control, colores por tipo y barra lateral (`638580e`, 2026-10-17)
 
 **ia**
 
@@ -96,10 +107,12 @@ Groups the commit messages (238 changes, up to `4346f72`, 2026-10-07) by version
 
 **plugins**
 
+- optional on_startup/on_shutdown hooks for plugins (`3f5ec1a`, 2026-10-11)
 - honor python_requires from plugin manifest and catalog (`1f37a32`, 2026-10-05)
 
 **ui**
 
+- Panel de Control, detalle de impresoras y CNC con nuevo acabado (`a9e357c`, 2026-10-17)
 - move Marlin printers to the unified device card with camera (`49e5f7e`, 2026-10-07)
 - la ficha muestra el carrete real y pierde el menú de puntos (`9864415`, 2026-08-13)
 - la ficha del láser/CNC pasa al sistema unificado .dev-card (`b630f88`, 2026-08-13)
@@ -161,7 +174,7 @@ Groups the commit messages (238 changes, up to `4346f72`, 2026-10-07) by version
 - redesign G-code file library (`dfeb0f1`, 2026-07-16)
 - make system updates machine-safe (`ab40aeb`, 2026-07-16)
 
-### Fixed (58)
+### Fixed (60)
 
 **ai**
 
@@ -180,6 +193,8 @@ Groups the commit messages (238 changes, up to `4346f72`, 2026-10-07) by version
 
 **i18n**
 
+- validate generator languages by hand for Python 3.9-3.13 (`d9c2b16`, 2026-10-08)
+- track English source in the translation cache and add reviewed overrides (`808c250`, 2026-10-08)
 - restore laserSdSelectFile in es/en (`e1997db`, 2026-10-05)
 
 **ia**
@@ -302,10 +317,11 @@ Groups the commit messages (238 changes, up to `4346f72`, 2026-10-07) by version
 - align auth fixtures with production roles (`614d320`, 2026-10-03)
 - run pytest in GitHub Actions (`247efab`, 2026-10-03)
 
-### Maintenance (14)
+### Maintenance (15)
 
 **i18n**
 
+- completar de/fr/pt-BR con las claves nuevas y corregir traducciones y voseo (`fc37efe`, 2026-10-17)
 - regenerate de/fr/pt-BR for help center and Marlin card (`6a6ef0b`, 2026-10-07)
 - regenerate de/fr/pt-BR language packs (`67abd94`, 2026-10-05)
 

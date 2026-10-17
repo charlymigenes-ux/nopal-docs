@@ -1,7 +1,7 @@
 ---
 title: Cotizador: configuración
 status: draft
-verified_against: "nopal-plugin-cotizador@64d1394 (1.1.0) · nopal@4346f72"
+verified_against: "nopal-plugin-cotizador@64d1394 (1.1.0) · nopal@a5853dc"
 ---
 
 

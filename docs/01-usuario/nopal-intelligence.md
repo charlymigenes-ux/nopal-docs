@@ -5,7 +5,7 @@ sidebar_position: 14
 audience: user
 type: explanation
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 ---
 
 # NOPAL Intelligence
@@ -24,6 +24,8 @@ Puedes hacerle preguntas sobre tus máquinas y trabajos y recibir respuestas en 
 ## Acciones de la IA
 
 Por defecto la IA **solo lee**. Un administrador puede activar *«Permitir que la IA actúe»*. Aun así, las acciones con riesgo piden **tu confirmación** antes de ejecutarse.
+
+Si el plugin **Matriz LED** está instalado, la IA puede además **mostrar un mensaje corto en el panel LED FK-8Wa**: es una acción de riesgo bajo, que sustituye al mensaje vigente y vence sola (1 a 1440 minutos; 5 por omisión). Sin el plugin, la acción no está disponible.
 
 ## Configuración (administrador)
 

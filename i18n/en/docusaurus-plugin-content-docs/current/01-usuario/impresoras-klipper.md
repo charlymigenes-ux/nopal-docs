@@ -5,8 +5,8 @@ sidebar_position: 5
 audience: user
 type: how-to
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
-source_commit: "4346f72"
+verified_against: "nopal@a5853dc (2026-10-17)"
+source_commit: "a5853dc"
 ---
 
 # Klipper printers
@@ -24,6 +24,7 @@ On the dashboard each printer has a card with its name, status, thumbnail and te
 | **Queue** | The waiting files, with their total, time and filament, and the **Start queue** button |
 | **Config files** | The printer's configuration files (`printer.cfg` and others) |
 | **Camera** | The linked camera, if you have the Cameras plugin |
+| **Spool** | The assigned spool: filament, diameter, remaining and color. With no spool you will see *"No spool assigned"* and the **Open Materials** button, from where it is assigned |
 
 The gear icon opens **Customize Modules**: reorder and show or hide the modules. The layout is saved separately for four screen sizes (phone, tablet, desktop and wide screen) and can be reset.
 

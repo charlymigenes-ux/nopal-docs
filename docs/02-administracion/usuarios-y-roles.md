@@ -5,7 +5,7 @@ sidebar_position: 3
 audience: admin
 type: explanation
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 ---
 
 # Usuarios y roles
@@ -49,6 +49,9 @@ La referencia completa, ruta por ruta, está en la [API REST del core](../06-ref
 | Escribir `printer.cfg`, reiniciar Klipper o su firmware | ❌ | ✅ |
 | Parámetros `$$` de GRBL | ❌ | ✅ |
 | Formatear la tarjeta SD de un láser | ❌ | ✅ |
+| Eliminar un trabajo fallido o incompleto del historial y ver el Registro de control | ❌ | ✅ |
+| Reimprimir y exportar el historial de trabajos | ✅ | ✅ |
+| Convertir una imagen en dibujo (CNC) y correr un trabajo CNC desde la SD de la placa | ✅ | ✅ |
 | Descubrir máquinas en la red | ❌ | ✅ |
 | **Dar de alta y de baja** máquinas (todas las marcas, láser y CNC) | ❌ | ✅ |
 | Gestionar usuarios | ❌ | ✅ |

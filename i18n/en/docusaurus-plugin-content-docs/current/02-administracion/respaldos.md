@@ -5,8 +5,8 @@ sidebar_position: 6
 audience: admin
 type: how-to
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
-source_commit: "4346f72"
+verified_against: "nopal@a5853dc (2026-10-17)"
+source_commit: "a5853dc"
 ---
 
 # Configuration backups
@@ -51,6 +51,7 @@ If you pick a **sensitive** group (users or the AI key) NOPAL **requires an encr
 ## What is never exported
 
 - **`.session_secret`**: with it, sessions of that installation could be forged. It regenerates on its own.
+- **Job histories** (`laser_history.json`, `job_print_log.json` and `job_deletions.json`): they belong to no group. If you move NOPAL to another computer and want to keep them, copy those files by hand.
 - **AI conversations** (`ai_conversations.json`): they are private to each user. They are not imported either.
 
 ## Import

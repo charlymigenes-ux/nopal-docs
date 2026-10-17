@@ -4,7 +4,7 @@ sidebar_label: Desarrolladores
 audience: developer
 type: explanation
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 ---
 
 # Desarrolladores

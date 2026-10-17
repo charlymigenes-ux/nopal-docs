@@ -5,8 +5,8 @@ sidebar_position: 4
 audience: admin
 type: how-to
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
-source_commit: "4346f72"
+verified_against: "nopal@a5853dc (2026-10-17)"
+source_commit: "a5853dc"
 ---
 
 # Migration

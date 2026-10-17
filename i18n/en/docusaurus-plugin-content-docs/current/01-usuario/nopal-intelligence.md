@@ -5,8 +5,8 @@ sidebar_position: 14
 audience: user
 type: explanation
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
-source_commit: "4346f72"
+verified_against: "nopal@a5853dc (2026-10-17)"
+source_commit: "a5853dc"
 ---
 
 # NOPAL Intelligence
@@ -25,6 +25,8 @@ You can ask it about your machines and jobs and get natural-language answers. It
 ## AI actions
 
 By default the AI **only reads**. An administrator can enable *"Allow the AI to act"*. Even then, risky actions ask for **your confirmation** before they run.
+
+If the **LED Matrix** plugin is installed, the AI can also **show a short message on the FK-8Wa LED panel**: a low-risk action that replaces the current message and expires by itself (1 to 1440 minutes; 5 by default). Without the plugin, the action is not available.
 
 ## Configuration (administrator)
 

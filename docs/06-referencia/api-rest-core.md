@@ -4,7 +4,7 @@ sidebar_label: API REST del core
 audience: reference
 type: reference
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 generated: true
 ---
 
@@ -12,7 +12,7 @@ generated: true
 
 :::note
 Página **generada** automáticamente. No la edites a mano: corrige la fuente y vuelve a generar.
-Verificado contra `nopal@4346f72` (2026-10-07).
+Verificado contra `nopal@a5853dc` (2026-10-17).
 :::
 
 Inventario de las rutas de NOPAL obtenido por **análisis estático** del código (decoradores `@router.*` y dependencias de acceso). No se ejecuta NOPAL. El acceso mostrado es el declarado en la ruta; una comprobación de rol dentro del cuerpo de una función no se detecta.
@@ -31,9 +31,9 @@ Inventario de las rutas de NOPAL obtenido por **análisis estático** del códig
 | Acceso | Rutas |
 |---|---:|
 | Pública | 5 |
-| Sesión (admin u operador) | 141 |
-| Solo admin | 51 |
-| **Total** | **197** |
+| Sesión (admin u operador) | 150 |
+| Solo admin | 53 |
+| **Total** | **208** |
 
 
 ## NOPAL Intelligence (IA)
@@ -179,9 +179,22 @@ Inventario de las rutas de NOPAL obtenido por **análisis estático** del códig
 | POST | `/api/flashforge/printers/discover` | Solo admin | — | Escanea la red local en busca de impresoras FlashForge modernas (5M/5M Pro/AD5X/Creator 5). |
 
 
+## jobs.py
+
+`backend/api/jobs.py` · 5 rutas
+
+| Método | Ruta | Acceso | Política | Descripción |
+|---|---|---|---|---|
+| GET | `/api/jobs/deletions` | Solo admin | — | Registro de control: los trabajos dados de baja, con quién, cuándo y por qué. |
+| GET | `/api/jobs/history` | Sesión (admin u operador) | — | — |
+| POST | `/api/jobs/history/delete` | Solo admin | — | — |
+| GET | `/api/jobs/history/export` | Sesión (admin u operador) | — | Resumen de la lista que se está viendo (mismos filtros), en XML o PDF. |
+| POST | `/api/jobs/reprint-klipper` | Sesión (admin u operador) | — | Vuelve a imprimir, en la misma impresora Klipper, un archivo que ya está en su carpeta de G-code. |
+
+
 ## Láser y CNC (GRBL)
 
-`backend/api/laser.py` · 42 rutas
+`backend/api/laser.py` · 46 rutas
 
 | Método | Ruta | Acceso | Política | Descripción |
 |---|---|---|---|---|
@@ -194,10 +207,13 @@ Inventario de las rutas de NOPAL obtenido por **análisis estático** del códig
 | GET | `/api/laser/info` | Sesión (admin u operador) | — | Información estática de la placa controladora (chip, firmware, red). |
 | POST | `/api/laser/job/cancel` | Sesión (admin u operador) | — | — |
 | POST | `/api/laser/job/frame` | Sesión (admin u operador) | — | Recorre el rectángulo que ocupa un trabajo, sin cortarlo. |
+| GET | `/api/laser/job/last` | Sesión (admin u operador) | — | Último trabajo terminado (error/cancelado/completado) de esa placa, o {"job": null}. Lo usa la tarjeta TRABAJO de CNC para avisar cómo acab… |
 | POST | `/api/laser/job/pause` | Sesión (admin u operador) | — | — |
 | POST | `/api/laser/job/resume` | Sesión (admin u operador) | — | — |
 | POST | `/api/laser/job/start` | Sesión (admin u operador) | — | Inicia el envío de un archivo G-code (de la biblioteca) al láser. |
+| POST | `/api/laser/job/start-sd` | Sesión (admin u operador) | — | Corre un archivo de la biblioteca DESDE la SD de la placa: lo sube y lo arranca ahí. Es más firme que el envío línea por línea por WiFi (el… |
 | GET | `/api/laser/job/status` | Sesión (admin u operador) | — | — |
+| POST | `/api/laser/job/z-offset` | Sesión (admin u operador) | — | Ajuste de Z en vivo (plotter): suma `delta` mm a la Z de lápiz abajo para los trazos que faltan. |
 | GET | `/api/laser/jobs/active` | Sesión (admin u operador) | — | Todos los hosts con un trabajo propio en curso ahora mismo — para que el frontend no pierda de vista un corte activo aunque el usuario esté… |
 | POST | `/api/laser/jog` | Sesión (admin u operador) | — | Mueve un eje en relativo. La secuencia real (jog GRBL vs. G91/G1/G90 de Marlin) se arma en el backend según el firmware registrado para ese… |
 | GET | `/api/laser/parser-state` | Sesión (admin u operador) | — | Sistema de coordenadas activo (G54/G55/...) vía '$G'. |
@@ -218,6 +234,7 @@ Inventario de las rutas de NOPAL obtenido por **análisis estático** del códig
 | POST | `/api/laser/sd/folder` | Sesión (admin u operador) | — | Crea una carpeta en la tarjeta SD. |
 | POST | `/api/laser/sd/format` | Solo admin | — | Formatea la tarjeta SD -- borra TODO su contenido, sin vuelta atrás. Admin-only server-side (no solo oculto en el frontend). Ver el comenta… |
 | POST | `/api/laser/sd/run` | Sesión (admin u operador) | — | Corre directamente un archivo que ya está en la SD, sin volver a subirlo. |
+| GET | `/api/laser/sd/status` | Sesión (admin u operador) | — | ¿La placa tiene una tarjeta SD lista? (la pantalla ofrece correr desde la SD si la hay). |
 | POST | `/api/laser/sd/upload` | Sesión (admin u operador) | — | Sube un archivo (desde tu computadora) directo a la tarjeta SD de la placa. No espera a que termine: el tramo lento de verdad es NOPAL-&gt;pla… |
 | POST | `/api/laser/sd/upload-from-library` | Sesión (admin u operador) | — | Envía un archivo ya subido a la biblioteca de G-code de NOPAL directo a la SD de la placa -- mismo criterio de segundo plano + upload_id qu… |
 | GET | `/api/laser/sd/upload-progress/{upload_id}` | Sesión (admin u operador) | — | Estado real de una subida en curso (ver sd_upload_file_tracked). Cuando status ya es "done"/"error" el frontend deja de sondear y llama a e… |
@@ -318,6 +335,16 @@ Inventario de las rutas de NOPAL obtenido por **análisis estático** del códig
 | Método | Ruta | Acceso | Política | Descripción |
 |---|---|---|---|---|
 | GET | `/api/notifications` | Sesión (admin u operador) | — | Cuenta de problemas activos ahora mismo (impresoras/láser/CNC/ accesorios desconectados, trabajos con error, actualización disponible) — no… |
+
+
+## plotter.py
+
+`backend/api/plotter.py` · 2 rutas
+
+| Método | Ruta | Acceso | Política | Descripción |
+|---|---|---|---|---|
+| POST | `/api/plotter/generate` | Sesión (admin u operador) | — | Genera el G-code de plotter y lo guarda en la raíz de la Biblioteca (G-code). |
+| POST | `/api/plotter/preview` | Sesión (admin u operador) | — | Trazos en mm (origen abajo a la izquierda) para dibujar la vista previa, sus números y los avisos de la imagen (`notes`). |
 
 
 ## Galería de plugins

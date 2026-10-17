@@ -5,7 +5,7 @@ sidebar_position: 8
 audience: user
 type: how-to
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 ---
 
 # Láser y CNC
@@ -71,12 +71,32 @@ La sección **CNC** usa la misma conexión y las mismas rutas que el láser, con
 | **Trabajo** | Correr, **Detener**, **Estacionar**, **Probe**, *overrides* de avance y **Origen de Shift** |
 | **Ceros** | **Cero aquí (XY)** y **Z=0 aquí**. NOPAL te pide confirmar que la punta toca la pieza |
 | **Jog** | Mover X/Y/Z con distintos pasos y velocidades |
-| **Visor** | Vista previa de la trayectoria del archivo antes de correrlo |
+| **Visor** | Tres pestañas: **VISOR** (vista previa de la trayectoria con el área de trabajo; lo que queda fuera se marca en rojo), **SIMULATION** (reproduce el trayecto con velocidad, pausa y reinicio, y muestra líneas, distancia dibujada, traslado y tiempo) y **3D VIEW** (marcada *Próximamente*) |
 | **Archivos** | Subir o elegir el G-code (`.nc`, etc.) que vas a mecanizar |
 
 - **Modo del panel CNC** (en **Configuración → General**): **Simple** muestra solo lo esencial; **Avanzado** añade *overrides*, coordenadas de trabajo, pines y perfiles.
 - **Perfil**: **Router / Fresadora** o **Plotter (lápiz/marcador)**.
 - **Husillo**: encender, apagar y fijar las RPM.
+
+### Correr desde la SD de la placa
+
+Si la placa tiene tarjeta SD, el bloque **Trabajo** ofrece el interruptor **Correr desde la SD de la placa (recomendado)**. El trabajo se sube a la SD y corre **dentro de la placa**, así que no se corta si el WiFi falla. A cambio, **no permite ajustar el Z en vivo**. Sin tarjeta, el trabajo se envía línea por línea por WiFi y puede fallar si la conexión se interrumpe.
+
+### Avisos del trabajo
+
+Al terminar un trabajo CNC, NOPAL lo avisa. Si se detiene con un error, indica el archivo, la **línea** en que se detuvo y el motivo traducido del código de GRBL (por ejemplo, *«el movimiento se sale del área de trabajo permitida»* o *«la máquina está en alarma o bloqueada»*). Mientras corre, la tarjeta muestra *«Línea N de M»*.
+
+### Imagen a dibujo (plotter)
+
+El botón **Imagen a dibujo**, en el bloque **Archivos**, convierte una imagen (PNG, JPG, BMP o GIF, hasta 15 MB) en un G-code de trazos para el plotter:
+
+- Funciona mejor con **dibujos de líneas** (mandalas, contornos, logos en blanco y negro). Si la imagen parece una fotografía, NOPAL avisa.
+- Eliges el **ancho y el alto** en mm. NOPAL compara con el área de trabajo y, si el dibujo no cabe, exige que marques que lo entiendes antes de generarlo.
+- Configuras el lápiz (**Z arriba**, **Z abajo**) y las velocidades de dibujo, bajada y traslado, y puedes afinar la suavidad, la limpieza de detalles y la precisión.
+- Ves la vista previa (**Trazo**, **Superpuesto** u **Original**) con las estadísticas: trazos, distancia, traslado y tiempo estimado.
+- **Generar dibujo** lo guarda en la [Biblioteca](./biblioteca).
+
+Mientras un trabajo de plotter corre por WiFi, puedes **subir o bajar el lápiz** (de −1 a +1 mm por ajuste; negativo = más presión) para los trazos que faltan. Con un trabajo desde la SD no se puede.
 
 Dos asistentes te guían:
 

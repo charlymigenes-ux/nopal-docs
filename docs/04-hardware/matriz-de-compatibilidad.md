@@ -5,7 +5,7 @@ sidebar_position: 1
 audience: reference
 type: reference
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 ---
 
 # Matriz de compatibilidad

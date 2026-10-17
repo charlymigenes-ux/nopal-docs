@@ -5,7 +5,7 @@ sidebar_position: 4
 audience: user
 type: explanation
 status: implemented
-verified_against: "nopal@4346f72 (2026-10-07)"
+verified_against: "nopal@a5853dc (2026-10-17)"
 ---
 
 # Panel de control
@@ -50,7 +50,7 @@ La parte superior muestra *«Resumen en tiempo real de tu taller»* y el estado 
 | **Temp. ambiente del taller** | La temperatura ambiente, si tienes un sensor (plugin Automatización de Taller); si no, «Sin sensor» |
 | **Consumo actual** | Un valor **estimado** |
 | **Próximo mantenimiento** | Una sugerencia basada en las alertas y trabajos actuales; «Sin datos» si no hay |
-| **Acciones rápidas** y **Escenas activas** | Aparecen con el plugin Automatización de Taller |
+| **Acciones rápidas** y **Escenas activas** | Los rellena el plugin Automatización de Taller; sin él aparecen como huecos vacíos |
 
 Puedes plegar el panel superior (*Colapsar panel superior*) y elegir en **Configuración → Apariencia** si queda siempre visible o se oculta hasta que pasas el ratón por la barra superior.
 
