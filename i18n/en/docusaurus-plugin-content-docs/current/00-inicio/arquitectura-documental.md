@@ -156,7 +156,7 @@ The map above is the **plan**. This is what exists today:
 | 03 Plugins | Index, matrix and 8 sheets (generated) | Laser/CNC design flow |
 | 04 Hardware | Compatibility matrix | One page per family, ESP32/Arduino, LED panels, cameras, list of tested models |
 | 05 Developers | Architecture, environment and tests, 5 plugin system pages, tutorial, contributing | Adding a driver, design system |
-| 06 Reference | Core REST API (generated) | JSON state files, roles per action, environment variables and CLI, error codes, real time |
+| 06 Reference | Core REST API (generated), state files, roles by action, environment variables and commands | Error codes, real time |
 | 07 RFC | 7 RFCs as drafts | — |
 | 08 Project | Roadmap, change history (generated), versioning, migration, license | — |
 
