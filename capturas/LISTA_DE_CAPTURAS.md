@@ -10,7 +10,7 @@ Las capturas **no se pueden sacar del código**: hay que tomarlas de una instala
 |---|---|
 | Versión | La de **Configuración → Acerca de NOPAL**. Anótala |
 | Idioma de la interfaz | **Español** (primera tanda). Si puedes, repite en **inglés** (segunda tanda) |
-| Tema | **Claro** (el mismo en todas) |
+| Tema | **NOPAL Style** con el **tercer fondo de Modo IA** (`FONDO3_IA`), el mismo en todas. En **Configuración → Apariencia** elige NOPAL Style y pulsa la tercera miniatura de la fila de Modo IA |
 | Navegador | Ventana de escritorio, zoom 100 %, **1440 × 900** |
 | Formato | PNG, sin recortar el menú lateral salvo que se indique |
 | Datos personales | Oculta o difumina IP, nombres de usuario reales, números de serie, claves y correos |
@@ -43,7 +43,7 @@ Las capturas **no se pueden sacar del código**: hay que tomarlas de una instala
 
 | # | Archivo | Qué debe verse | Cómo llegar | Página |
 |---|---|---|---|---|
-| 12 | `configuracion-temas` | Los temas disponibles | **Configuración → Apariencia** | Configuración general |
+| 12 | `configuracion-temas` | Los temas disponibles, con NOPAL Style seleccionado | **Configuración → Apariencia** | Configuración general |
 | 13 | `configuracion-acerca-de` | La tarjeta **Acerca de NOPAL** | **Configuración** | Diagnóstico |
 | 14 | `ayuda-centro` | El Centro de ayuda con sus categorías y el buscador | Icono de ayuda | Centro de ayuda |
 | 15 | `ayuda-asistente-impresora` | El asistente guiado, paso de elegir marca | Centro de ayuda → Impresoras 3D | Centro de ayuda |
