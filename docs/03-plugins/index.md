@@ -31,6 +31,8 @@ Las páginas siguientes se **generan** desde el manifiesto y el código de cada 
 - [Herramientas SVG](./svg-toolkit.md)
 - [Texto para fabricación](./font-library.md)
 
+Para usar los tres juntos, ver el [flujo de diseño para láser y CNC](./flujo-de-diseno-laser-cnc.md).
+
 :::caution En construcción
-Pendiente: el flujo de diseño para láser/CNC que une Creador de formas, Herramientas SVG y Texto para fabricación, y la guía de uso de cada plugin.
+Pendiente: la guía de uso de cada plugin.
 :::

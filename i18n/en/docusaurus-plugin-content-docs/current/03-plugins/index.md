@@ -32,6 +32,8 @@ The following pages are **generated** from each plugin's manifest and code.
 - [SVG tools](./svg-toolkit.md)
 - [Text for fabrication](./font-library.md)
 
+To use the three together, see the [laser and CNC design flow](./flujo-de-diseno-laser-cnc.md).
+
 :::caution Under construction
-Pending: the laser/CNC design flow that joins Shape creator, SVG tools and Text for fabrication, and a usage guide for each plugin.
+Pending: a usage guide for each plugin.
 :::
