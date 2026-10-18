@@ -38,6 +38,27 @@ const config = {
 
   clientModules: ['./src/clientModules/accessibility.js'],
 
+  // Búsqueda local con resultados mientras se escribe (sin servicio externo). El índice se
+  // genera al compilar, uno por idioma.
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        hashed: true,
+        language: ['es', 'en'],
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: false,
+        docsRouteBasePath: '/',
+        highlightSearchTermsOnTargetPage: true,
+        searchResultLimits: 10,
+        searchResultContextMaxLength: 70,
+        searchBarShortcutHint: true,
+      }),
+    ],
+  ],
+
   presets: [
     [
       'classic',

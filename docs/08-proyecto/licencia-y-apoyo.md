@@ -14,10 +14,6 @@ verified_against: "nopal@a5853dc (2026-10-17)"
 
 NOPAL se distribuye bajo la **GNU General Public License v3.0 (GPLv3)**. El texto completo está en el archivo `LICENSE` del repositorio. Al contribuir aceptas que tu aportación se licencie bajo la misma licencia.
 
-:::caution Licencia de los plugins
-Los repositorios de los plugins oficiales que se revisaron **no incluyen un archivo `LICENSE`**. El de `font-library` sí incluye las licencias de sus tipografías. Conviene que el autor aclare la licencia de cada plugin.
-:::
-
 ## Créditos de terceros
 
 - **Tipografías:** `font-library` incluye 20 familias con la licencia **SIL Open Font License 1.1**, con su texto junto a cada tipografía.

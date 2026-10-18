@@ -78,3 +78,24 @@
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+/* Buscador local: colores con contraste AA (WCAG 1.4.3). El plugin usa grises claros por defecto. */
+:root {
+  --search-local-muted-color: #4a5260;
+  --search-local-hit-color: #1f2530;
+}
+[data-theme='dark'] {
+  --search-local-muted-color: #b9c1cd;
+  --search-local-hit-color: #e8ebf0;
+  --search-local-highlight-color: #6fd08c;
+}
+/* En modo oscuro el resaltado del término usa un fondo propio (texto blanco sobre verde, AA). */
+[data-theme='dark'] [role='listbox'] mark {
+  background-color: #0b6b31 !important;
+  color: #fff !important;
+}
+/* Resultado activo en modo oscuro: fondo verde oscuro con texto blanco (AA). */
+[data-theme='dark'] [role='listbox'] [role='option'][class*='cursor'] {
+  background-color: #0b6b31 !important;
+  color: #fff !important;
+}

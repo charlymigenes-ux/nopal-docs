@@ -15,10 +15,6 @@ source_commit: "a5853dc"
 
 NOPAL is distributed under the **GNU General Public License v3.0 (GPLv3)**. The full text is in the repository's `LICENSE` file. By contributing you agree your contribution is licensed under the same license.
 
-:::caution License of the plugins
-The official plugin repositories that were reviewed **do not include a `LICENSE` file**. `font-library` does include the licenses of its typefaces. The author should clarify each plugin's license.
-:::
-
 ## Third-party credits
 
 - **Typefaces:** `font-library` includes 20 families under the **SIL Open Font License 1.1**, with its text next to each typeface.
