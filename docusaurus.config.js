@@ -36,7 +36,7 @@ const config = {
     },
   },
 
-  clientModules: ['./src/clientModules/accessibility.js'],
+  clientModules: ['./src/clientModules/accessibility.js', './src/clientModules/searchPreload.js'],
 
   // Búsqueda local con resultados mientras se escribe (sin servicio externo). El índice se
   // genera al compilar, uno por idioma.
