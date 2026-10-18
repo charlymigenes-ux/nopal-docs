@@ -71,7 +71,7 @@ Prefijo(s) de ruta: `/api/spoolman` · 17 rutas (Sesión (admin u operador): 11;
 ## Notas verificadas
 
 - Integración opcional con el Cotizador: un `material_id` con la forma `spoolman:<id_de_carrete>` enviado a `POST /api/pricing/quote` toma el costo de este plugin en lugar de `pricing_config.json`. Spoolman sigue siendo la fuente de verdad del inventario. <small>(evidencia: `nopal-plugin-spoolman/README.md`)</small>
-- Requiere un servidor Spoolman accesible en la red (el README propone ejecutarlo con Docker en el puerto 7912). <small>(evidencia: `nopal-plugin-spoolman/README.md`)</small>
+- Requiere un servidor Spoolman accesible en la red por HTTP plano, sin credenciales ni subruta (la guía de Spoolman recomienda Docker Compose, con el puerto 7912). Ver la guía de instalación del plugin. <small>(evidencia: `nopal-plugin-spoolman/README.md`)</small>
 
 ## Más información
 

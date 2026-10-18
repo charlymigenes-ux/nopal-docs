@@ -72,7 +72,7 @@ Route prefix(es): `/api/spoolman` · 17 routes (Session (admin or operator): 11;
 ## Verified notes
 
 - Optional Cotizador integration: a `material_id` of the form `spoolman:<spool_id>` sent to `POST /api/pricing/quote` takes its cost from this plugin instead of `pricing_config.json`. Spoolman remains the source of truth for inventory. <small>(evidence: `nopal-plugin-spoolman/README.md`)</small>
-- Requires a Spoolman server reachable on the network (the README suggests running it with Docker on port 7912). <small>(evidence: `nopal-plugin-spoolman/README.md`)</small>
+- Requires a Spoolman server reachable on the network over plain HTTP, with no credentials or sub-path (Spoolman's guide recommends Docker Compose, on port 7912). See the plugin's installation guide. <small>(evidence: `nopal-plugin-spoolman/README.md`)</small>
 
 ## More information
 
