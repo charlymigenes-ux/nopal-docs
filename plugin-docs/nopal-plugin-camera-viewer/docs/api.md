@@ -1,7 +1,7 @@
 ---
 title: Cámaras: API
 status: draft
-verified_against: "nopal-plugin-camera-viewer@28737a7 (1.4.0) · nopal@a5853dc"
+verified_against: "nopal-plugin-camera-viewer@28737a7 (1.4.0) · nopal@d6d86a5"
 generated: true
 ---
 

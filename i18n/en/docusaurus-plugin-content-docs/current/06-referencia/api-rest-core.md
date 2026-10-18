@@ -4,16 +4,16 @@ sidebar_label: Core REST API
 audience: reference
 type: reference
 status: implemented
-verified_against: "nopal@a5853dc (2026-10-17)"
+verified_against: "nopal@d6d86a5 (2026-10-17)"
 generated: true
-source_commit: "a5853dc"
+source_commit: "d6d86a5"
 ---
 
 # Core REST API
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Verified against `nopal@a5853dc` (2026-10-17).
+Verified against `nopal@d6d86a5` (2026-10-17).
 :::
 
 Inventory of NOPAL's routes obtained by **static analysis** of the code (`@router.*` decorators and access dependencies). NOPAL is not run. The access shown is the one declared on the route; a role check inside a function body is not detected.

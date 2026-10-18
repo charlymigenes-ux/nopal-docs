@@ -4,7 +4,7 @@ sidebar_label: Creador de formas
 audience: user
 type: reference
 status: implemented
-verified_against: "nopal@a5853dc; nopal-plugin-shape-creator@bbf1157"
+verified_against: "nopal@d6d86a5; nopal-plugin-shape-creator@bbf1157"
 generated: true
 plugin_id: shape-creator
 plugin_version: "1.2.0"
@@ -15,7 +15,7 @@ source_commit: "bbf1157"
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-shape-creator@bbf1157`, `nopal@a5853dc`).
+Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-shape-creator@bbf1157`, `nopal@d6d86a5`).
 :::
 
 Crea rectángulos, círculos, polígonos y formas paramétricas listas para láser o CNC.

@@ -1,7 +1,7 @@
 ---
 title: Texto para fabricación: API
 status: draft
-verified_against: "nopal-plugin-font-library@bfd9c87 (0.5.1) · nopal@a5853dc"
+verified_against: "nopal-plugin-font-library@bfd9c87 (0.5.1) · nopal@d6d86a5"
 generated: true
 ---
 

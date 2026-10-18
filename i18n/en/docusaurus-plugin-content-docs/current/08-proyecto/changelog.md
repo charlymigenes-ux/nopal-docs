@@ -4,10 +4,10 @@ sidebar_label: Change history
 audience: reference
 type: reference
 status: implemented
-verified_against: "nopal@a5853dc (2026-10-17)"
+verified_against: "nopal@d6d86a5 (2026-10-17)"
 generated: true
 sidebar_position: 2
-source_commit: "a5853dc"
+source_commit: "d6d86a5"
 ---
 
 # Change history
@@ -16,11 +16,11 @@ source_commit: "a5853dc"
 This page is **generated** from `nopal`'s git history. Do not edit it by hand.
 :::
 
-Groups the commit messages (248 changes, up to `a5853dc`, 2026-10-17) by version and type. **It is not a curated changelog**: the texts are the commits' own, in the language they were written in. NOPAL does not publish tagged releases yet (see [versioning](./versionado-y-soporte.md)).
+Groups the commit messages (249 changes, up to `d6d86a5`, 2026-10-17) by version and type. **It is not a curated changelog**: the texts are the commits' own, in the language they were written in. NOPAL does not publish tagged releases yet (see [versioning](./versionado-y-soporte.md)).
 
 11 changes to components whose documentation is deferred are omitted.
 
-## 1.2.0-alpha.1 — Unreleased (2026-07-15 → 2026-10-17, 221)
+## 1.2.0-alpha.1 — Unreleased (2026-07-15 → 2026-10-17, 222)
 
 ### Added (105)
 
@@ -340,10 +340,11 @@ Groups the commit messages (248 changes, up to `a5853dc`, 2026-10-17) by version
 - sube Matriz LED a v0.2.0 en el catálogo de plugins (`c175ea5`, 2026-08-02)
 - begin 1.2.0 alpha cycle (`2d2856e`, 2026-07-16)
 
-### Other (14)
+### Other (15)
 
 **General**
 
+- web: tarjeta destacada con la documentación oficial (ES/EN) (`cea07f1`, 2026-10-17)
 - avance en ai_actions (NOPAL Intelligence) (`4f45104`, 2026-08-28)
 - frontend: redisenar NOPAL Intelligence alrededor del nucleo IA (`a81f1a6`, 2026-08-26)
 - backend: avisar de laseres y CNC en alarma (`0a6dc1f`, 2026-08-26)

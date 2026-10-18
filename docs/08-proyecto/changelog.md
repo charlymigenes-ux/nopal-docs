@@ -4,7 +4,7 @@ sidebar_label: Historial de cambios
 audience: reference
 type: reference
 status: implemented
-verified_against: "nopal@a5853dc (2026-10-17)"
+verified_against: "nopal@d6d86a5 (2026-10-17)"
 generated: true
 sidebar_position: 2
 ---
@@ -15,11 +15,11 @@ sidebar_position: 2
 Página **generada** desde el historial de git de `nopal`. No la edites a mano.
 :::
 
-Agrupa los mensajes de commit (248 cambios, hasta `a5853dc`, 2026-10-17) por versión y tipo. **No es un changelog curado**: los textos son los de los commits, en el idioma en que se escribieron. NOPAL aún no publica versiones etiquetadas (ver [versionado](./versionado-y-soporte.md)).
+Agrupa los mensajes de commit (249 cambios, hasta `d6d86a5`, 2026-10-17) por versión y tipo. **No es un changelog curado**: los textos son los de los commits, en el idioma en que se escribieron. NOPAL aún no publica versiones etiquetadas (ver [versionado](./versionado-y-soporte.md)).
 
 Se omiten 11 cambios de componentes cuya documentación está diferida.
 
-## 1.2.0-alpha.1 — Sin publicar (2026-07-15 → 2026-10-17, 221)
+## 1.2.0-alpha.1 — Sin publicar (2026-07-15 → 2026-10-17, 222)
 
 ### Añadido (105)
 
@@ -339,10 +339,11 @@ Se omiten 11 cambios de componentes cuya documentación está diferida.
 - sube Matriz LED a v0.2.0 en el catálogo de plugins (`c175ea5`, 2026-08-02)
 - begin 1.2.0 alpha cycle (`2d2856e`, 2026-07-16)
 
-### Otros (14)
+### Otros (15)
 
 **General**
 
+- web: tarjeta destacada con la documentación oficial (ES/EN) (`cea07f1`, 2026-10-17)
 - avance en ai_actions (NOPAL Intelligence) (`4f45104`, 2026-08-28)
 - frontend: redisenar NOPAL Intelligence alrededor del nucleo IA (`a81f1a6`, 2026-08-26)
 - backend: avisar de laseres y CNC en alarma (`0a6dc1f`, 2026-08-26)

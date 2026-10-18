@@ -4,7 +4,7 @@ sidebar_label: API REST del core
 audience: reference
 type: reference
 status: implemented
-verified_against: "nopal@a5853dc (2026-10-17)"
+verified_against: "nopal@d6d86a5 (2026-10-17)"
 generated: true
 ---
 
@@ -12,7 +12,7 @@ generated: true
 
 :::note
 Página **generada** automáticamente. No la edites a mano: corrige la fuente y vuelve a generar.
-Verificado contra `nopal@a5853dc` (2026-10-17).
+Verificado contra `nopal@d6d86a5` (2026-10-17).
 :::
 
 Inventario de las rutas de NOPAL obtenido por **análisis estático** del código (decoradores `@router.*` y dependencias de acceso). No se ejecuta NOPAL. El acceso mostrado es el declarado en la ruta; una comprobación de rol dentro del cuerpo de una función no se detecta.

@@ -4,7 +4,7 @@ sidebar_label: Texto para fabricación
 audience: user
 type: reference
 status: implemented
-verified_against: "nopal@a5853dc; nopal-plugin-font-library@bfd9c87"
+verified_against: "nopal@d6d86a5; nopal-plugin-font-library@bfd9c87"
 generated: true
 plugin_id: font-library
 plugin_version: "0.5.1"
@@ -15,7 +15,7 @@ source_commit: "bfd9c87"
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-font-library@bfd9c87`, `nopal@a5853dc`).
+Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-font-library@bfd9c87`, `nopal@d6d86a5`).
 :::
 
 Crea texto con medidas físicas, valida su fabricación y agrégalo como trayectos editables a un proyecto NOPAL.
