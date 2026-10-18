@@ -155,7 +155,7 @@ El mapa anterior es el **plan**. Esto es lo que existe hoy:
 | 03 Plugins | Índice, matriz, 8 fichas (generadas) y flujo de diseño láser/CNC | Guía de uso de cada plugin |
 | 04 Hardware | Matriz de compatibilidad | Una página por familia, ESP32/Arduino, paneles LED, cámaras, lista de modelos probados |
 | 05 Desarrolladores | Arquitectura, entorno y pruebas, 5 páginas del sistema de plugins, tutorial, contribuir, añadir un driver | Sistema de diseño |
-| 06 Referencia | API REST del core (generada), archivos de estado, roles por acción, variables de entorno y comandos | Códigos de error, tiempo real |
+| 06 Referencia | API REST del core (generada), archivos de estado, roles por acción, variables de entorno y comandos, códigos de error | Tiempo real |
 | 07 RFC | 7 RFC en borrador | — |
 | 08 Proyecto | Hoja de ruta, historial de cambios (generado), versionado, migración, licencia | — |
 

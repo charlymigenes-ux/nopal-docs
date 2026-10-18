@@ -15,8 +15,9 @@ Datos exactos, sin narrativa.
 - [Archivos de estado](./archivos-de-estado.md): qué guarda cada archivo y si entra en los respaldos.
 - [Roles por acción](./roles-por-accion.md): la política de autorización, acción por acción.
 - [Variables de entorno y línea de comandos](./variables-y-cli.md): variables, instalador y scripts.
+- [Códigos de error](./codigos-de-error.md): qué significa cada código HTTP y qué hacer.
 - La API de cada plugin está en su [ficha](../03-plugins/index.md).
 
 :::caution En construcción
-Pendiente: códigos de error y tiempo real.
+Pendiente: tiempo real.
 :::

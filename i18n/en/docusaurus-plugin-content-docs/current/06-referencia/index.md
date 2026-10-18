@@ -16,8 +16,9 @@ Exact data, no narrative.
 - [State files](./archivos-de-estado.md): what each file holds and whether it is in backups.
 - [Roles by action](./roles-por-accion.md): the authorization policy, action by action.
 - [Environment variables and command line](./variables-y-cli.md): variables, installer and scripts.
+- [Error codes](./codigos-de-error.md): what each HTTP code means and what to do.
 - Each plugin's API is on its [sheet](../03-plugins/index.md).
 
 :::caution Under construction
-Pending: error codes and real time.
+Pending: real time.
 :::
