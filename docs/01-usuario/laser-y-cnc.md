@@ -24,6 +24,10 @@ Desde octubre de 2026 NOPAL ya no guarda un «láser activo» compartido por tod
 
 La tarjeta **Conexión** muestra a qué máquina estás conectado y cómo: **Conexión USB** o **Conexión de red (WiFi)**. Si no hay conexión verás *«Sin conexión con el láser»*.
 
+![Sección del láser con el movimiento del cabezal, el área de trabajo y la información de la placa conectada](/img/capturas/es/laser-conexion-1.2.0-alpha.1.png)
+
+*Captura de un sistema en funcionamiento · NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
 ### Mover el cabezal
 
 En **Movimiento del cabezal** mueves el cabezal con flechas y eliges el **paso** en milímetros.

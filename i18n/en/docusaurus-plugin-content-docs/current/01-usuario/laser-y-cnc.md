@@ -25,6 +25,10 @@ Since October 2026 NOPAL no longer keeps an "active laser" shared by all session
 
 The **Connection** card shows which machine you are connected to and how: **USB connection** or **Network connection (WiFi)**. If there is no connection you will see *"Laser not connected"*.
 
+![Laser section with head movement, work area and the connected board information](/img/capturas/es/laser-conexion-1.2.0-alpha.1.png)
+
+*Screenshot of a running system · NOPAL 1.2.0-alpha.1 · Spanish interface · NOPAL Style theme.*
+
 ### Move the head
 
 Under **Head movement** you move the head with arrows and choose the **step** in millimeters.

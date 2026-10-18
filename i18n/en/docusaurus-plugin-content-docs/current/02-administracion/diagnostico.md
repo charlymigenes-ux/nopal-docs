@@ -26,6 +26,10 @@ In **Settings** there is an **About NOPAL** card with the server's diagnostic da
 
 The **Copy diagnostic information** button puts everything on the clipboard, ready to paste into an issue or a help request. If the browser does not allow copying, the screen asks you to copy the text by hand.
 
+!["About NOPAL" card with the version, the operating system and the installed plugins](/img/capturas/es/configuracion-acerca-de-1.2.0-alpha.1.png)
+
+*Screenshot of a running system · NOPAL 1.2.0-alpha.1 · Spanish interface · NOPAL Style theme.*
+
 ## Plugin dependencies
 
 :::warning NOPAL does not install a plugin's dependencies

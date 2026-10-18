@@ -13,6 +13,10 @@ source_commit: "a5853dc"
 
 This is NOPAL's main screen (**Home** in the menu, *Dashboard* as its title). It summarizes your workshop's status in real time and takes you to each machine.
 
+![Dashboard with four machines online (a Klipper printer, a Marlin printer, a laser and a CNC) and the 96×16 LED panel](/img/capturas/en/panel-maquinas-1.2.0-alpha.1.png)
+
+*Screenshot of a running system · NOPAL 1.2.0-alpha.1 · English interface · NOPAL Style theme.*
+
 ## The side menu
 
 | Group | What it contains |

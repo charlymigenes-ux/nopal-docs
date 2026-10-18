@@ -37,6 +37,10 @@ Changes only exist in the browser until you click **Download**. The editor does 
 
 When you modify the file, the editor marks it as **modified**.
 
+![G-Code Editor with the 2D viewer showing an engraving toolpath, the edit panel and the file analysis](/img/capturas/es/editor-geometria-1.2.0-alpha.1.png)
+
+*Screenshot of a running system · NOPAL 1.2.0-alpha.1 · Spanish interface · NOPAL Style theme.*
+
 ## Geometry
 
 From the **Geometry** panel you can transform the job without editing line by line:

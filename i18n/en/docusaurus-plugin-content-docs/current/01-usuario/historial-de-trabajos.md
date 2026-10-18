@@ -13,6 +13,10 @@ source_commit: "a5853dc"
 
 It is under **Jobs → Job History**. It brings together, in a single list, the **3D printing, laser and CNC** jobs, with the status and files of each.
 
+![Job history with the unified 3D, laser and CNC list, the summary by type and the machines status](/img/capturas/es/historial-trabajos-1.2.0-alpha.1.png)
+
+*Screenshot of a running system · NOPAL 1.2.0-alpha.1 · Spanish interface · NOPAL Style theme.*
+
 ## What it shows
 
 - **Recent jobs**: the unified list, newest first.

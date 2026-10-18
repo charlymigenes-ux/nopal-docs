@@ -21,6 +21,10 @@ Puedes hacerle preguntas sobre tus máquinas y trabajos y recibir respuestas en 
 - **Nunca inicia el láser ni el CNC.**
 - Muestra un aviso de que la IA puede equivocarse: verifica lo importante.
 
+![NOPAL Intelligence con una conversación sobre el taller, el estado de las máquinas y los eventos recientes](/img/capturas/es/ia-conversacion-1.2.0-alpha.1.png)
+
+*Captura de un sistema en funcionamiento · NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
 ## Acciones de la IA
 
 Por defecto la IA **solo lee**. Un administrador puede activar *«Permitir que la IA actúe»*. Aun así, las acciones con riesgo piden **tu confirmación** antes de ejecutarse.
@@ -44,6 +48,10 @@ Usar un servidor público exige aceptar de forma explícita (`allow_public_endpo
 :::
 
 Un servidor local de IA suele necesitar una GPU para responder con fluidez.
+
+![Tarjeta «Inteligencia artificial» con dos IAs guardadas y la configuración de un proveedor externo](/img/capturas/es/ia-configuracion-1.2.0-alpha.1.png)
+
+*Captura de un sistema en funcionamiento · NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
 
 ## Todavía no disponible
 

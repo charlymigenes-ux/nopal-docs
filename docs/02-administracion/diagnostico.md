@@ -25,6 +25,10 @@ En **Configuración** hay una tarjeta **Acerca de NOPAL** con los datos de diagn
 
 El botón **Copiar información de diagnóstico** deja todo en el portapapeles, listo para pegarlo en un *issue* o al pedir ayuda. Si el navegador no permite copiar, la pantalla te pide copiar el texto a mano.
 
+![Tarjeta «Acerca de NOPAL» con la versión, el sistema operativo y los plugins instalados](/img/capturas/es/configuracion-acerca-de-1.2.0-alpha.1.png)
+
+*Captura de un sistema en funcionamiento · NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
 ## Dependencias de los plugins
 
 :::warning NOPAL no instala las dependencias de un plugin

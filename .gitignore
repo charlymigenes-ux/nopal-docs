@@ -10,3 +10,7 @@ generated/*
 # Auditorías internas de trabajo (solo locales); el formulario de hardware sí se versiona
 auditoria/*
 !auditoria/HARDWARE_PROBADO.md
+
+# Capturas originales del usuario (pueden mostrar IPs y datos de red): solo locales. Las publicables van en static/img/capturas/.
+capturas/es/
+capturas/en/

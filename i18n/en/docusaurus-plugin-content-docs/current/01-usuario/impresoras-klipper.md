@@ -30,6 +30,10 @@ The gear icon opens **Customize Modules**: reorder and show or hide the modules.
 
 While a print is running, the detail view shows its progress. You can **pause**, **resume** and **cancel** the job.
 
+![Detail view of a Klipper printer with toolhead, temperatures, camera, spool and print queue](/img/capturas/es/impresora-ficha-klipper-1.2.0-alpha.1.png)
+
+*Screenshot of a running system · NOPAL 1.2.0-alpha.1 · Spanish interface · NOPAL Style theme.*
+
 ## Send a file to print
 
 From the [library](./biblioteca), choose a file and click **Send to printer**. With a Klipper there are three modes:

@@ -36,6 +36,10 @@ Los cambios solo existen en el navegador hasta que pulses **Descargar**. El edit
 
 Cuando modificas el archivo, el editor lo marca como **modificado**.
 
+![Editor G-Code con el Visor 2D mostrando la trayectoria de un grabado, el panel de edición y el análisis del archivo](/img/capturas/es/editor-geometria-1.2.0-alpha.1.png)
+
+*Captura de un sistema en funcionamiento · NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
 ## Geometría
 
 Desde el panel **Geometría** puedes transformar el trabajo sin editar línea por línea:

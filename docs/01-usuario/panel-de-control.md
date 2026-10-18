@@ -12,6 +12,10 @@ verified_against: "nopal@a5853dc (2026-10-17)"
 
 Es la pantalla principal de NOPAL (**Inicio** en el menú, *Panel de Control* como título). Resume en tiempo real el estado de tu taller y te lleva a cada máquina.
 
+![Panel de control con cuatro máquinas en línea (una impresora Klipper, una Marlin, un láser y una CNC) y el panel LED de 96×16](/img/capturas/es/panel-maquinas-1.2.0-alpha.1.png)
+
+*Captura de un sistema en funcionamiento · NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
 ## El menú lateral
 
 | Grupo | Qué contiene |

@@ -27,8 +27,10 @@ for (const lang of ['es', 'en']) {
   const dir = path.join(ROOT, 'static/img/capturas', lang);
   const files = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith('.png')) : [];
   const absent = wanted.filter((w) => !files.some((f) => f.startsWith(`${w}-`)));
-  missing += absent.length;
-  console.log(`capturas ${lang}: ${wanted.length - absent.length}/${wanted.length}${absent.length ? ` · faltan: ${absent.join(', ')}` : ''}`);
+  missing += lang === 'es' ? absent.length : 0;
+  // En inglés, una captura sin versión propia se sustituye por la de español (el pie de figura lo dice).
+  if (lang === 'es') console.log(`capturas es: ${wanted.length - absent.length}/${wanted.length}${absent.length ? ` · faltan: ${absent.join(', ')}` : ''}`);
+  else console.log(`capturas en: ${wanted.length - absent.length}/${wanted.length} con versión propia (el resto usa la de español)`);
 }
 for (const e of errors) console.error(`✗ ${e}`);
 console.log(`capturas: ${errors.length} error(es)`);

@@ -12,6 +12,10 @@ verified_against: "nopal@a5853dc (2026-10-17)"
 
 Está en **Trabajos → Historial de trabajos**. Reúne en una sola lista los trabajos de **impresión 3D, láser y CNC**, con el estado y los archivos de cada uno.
 
+![Historial de trabajos con la lista unificada de 3D, láser y CNC, el resumen por tipo y el estado de las máquinas](/img/capturas/es/historial-trabajos-1.2.0-alpha.1.png)
+
+*Captura de un sistema en funcionamiento · NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
 ## Qué muestra
 
 - **Trabajos recientes**: la lista unificada, del más reciente al más antiguo.

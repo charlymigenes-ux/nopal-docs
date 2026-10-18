@@ -22,6 +22,10 @@ You can ask it about your machines and jobs and get natural-language answers. It
 - It **never starts the laser or the CNC**.
 - It shows a notice that AI can be wrong: verify anything important.
 
+![NOPAL Intelligence with a conversation about the workshop, the machines status and recent events](/img/capturas/es/ia-conversacion-1.2.0-alpha.1.png)
+
+*Screenshot of a running system · NOPAL 1.2.0-alpha.1 · Spanish interface · NOPAL Style theme.*
+
 ## AI actions
 
 By default the AI **only reads**. An administrator can enable *"Allow the AI to act"*. Even then, risky actions ask for **your confirmation** before they run.
@@ -45,6 +49,10 @@ Using a public server requires explicitly accepting (`allow_public_endpoint`) a 
 :::
 
 A local AI server usually needs a GPU to answer smoothly.
+
+!["Artificial intelligence" card with two saved AIs and the configuration of an external provider](/img/capturas/es/ia-configuracion-1.2.0-alpha.1.png)
+
+*Screenshot of a running system · NOPAL 1.2.0-alpha.1 · Spanish interface · NOPAL Style theme.*
 
 ## Not available yet
 

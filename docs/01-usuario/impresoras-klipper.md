@@ -29,6 +29,10 @@ El icono de engranaje abre **Personalizar Módulos**: reordena y muestra u ocult
 
 Mientras hay una impresión en curso, la vista de detalle muestra su progreso. Puedes **pausar**, **reanudar** y **cancelar** el trabajo.
 
+![Vista de detalle de una impresora Klipper con toolhead, temperaturas, cámara, carrete y cola de impresión](/img/capturas/es/impresora-ficha-klipper-1.2.0-alpha.1.png)
+
+*Captura de un sistema en funcionamiento · NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
 ## Enviar un archivo a imprimir
 
 Desde la [biblioteca](./biblioteca), elige un archivo y pulsa **Enviar a impresora**. Con una Klipper hay tres modos:
