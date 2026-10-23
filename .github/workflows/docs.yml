@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -36,10 +36,9 @@ jobs:
       - run: npm run fetch
       # Páginas generadas (referencia REST, fichas y matriz de plugins).
       - run: npm run gen
-      # Las páginas generadas versionadas deben estar al día con el código fuente.
-      # En la ejecución semanal no se exige: los repos fuente pueden haber cambiado y el sitio se publica regenerado.
+      # En una pull request solo se exige que las páginas generadas estén al día.
       - name: Las páginas generadas están actualizadas
-        if: github.event_name != 'schedule'
+        if: github.event_name == 'pull_request'
         run: git diff --exit-code -- docs i18n plugin-docs ':(exclude)docs/08-proyecto/changelog.md' ':(exclude)i18n/en/docusaurus-plugin-content-docs/current/08-proyecto/changelog.md'
 
       # Standard §18: validadores antes de compilar.
@@ -47,6 +46,23 @@ jobs:
       - run: npm run check:sources
       # onBrokenLinks: 'throw' hace fallar el build ante enlaces rotos.
       - run: npm run build
+
+      # En main (push, semanal o manual) se suben las páginas regeneradas, pero solo
+      # si ya pasaron los validadores y el build. El push con el token de Actions no
+      # dispara otro flujo. Si main está protegida y el push falla, no se tumba el despliegue.
+      - name: Subir las páginas regeneradas
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        continue-on-error: true
+        run: |
+          git add -A -- docs i18n plugin-docs
+          if git diff --cached --quiet; then
+            echo "Las páginas generadas ya estaban al día."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Regenera las páginas generadas (automático)" -m "Se regeneraron contra la última versión del núcleo y de los plugins."
+            git pull --rebase origin main && git push origin HEAD:main
+          fi
 
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
