@@ -26,7 +26,39 @@ NOPAL comprueba el permiso **antes** de enviar nada a la impresora.
 
 ## Macros
 
-El bloque **Macros** lista los macros que tienes definidos en el `printer.cfg` de Klipper, con la descripción que les hayas puesto (*«Sin descripción configurada en Klipper»* si no tienen). Un administrador ejecuta un macro **con un clic**, sin escribirlo en la consola.
+![Panel de macros con tres macros personalizadas (G28, Reinicia FW y posicion), los macros de Klipper con su descripción y el botón «Nueva macro»](/img/capturas/es/consola-macros-1.2.0-alpha.1.png)
+
+*Captura de un sistema en funcionamiento · NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
+El botón **Macros y plantillas** abre un panel con tres pestañas: **Macros**, **Plantillas** y **Ayuda**.
+
+### Macros
+
+La pestaña **Macros** reúne dos tipos, con un buscador arriba:
+
+- **Los de Klipper**, definidos en el `printer.cfg`, con la descripción que les hayas puesto (*«Sin descripción configurada en Klipper»* si no tienen).
+- **Los tuyos**, marcados con la etiqueta **Personalizada**, que se crean en NOPAL y se pueden editar o eliminar.
+
+Un administrador ejecuta un macro **con un clic**, sin escribirlo en la consola.
+
+Para crear uno propio, un administrador pulsa **Nueva macro** y rellena:
+
+| Campo | Qué es |
+|---|---|
+| **Nombre** y **Descripción** | Cómo se ve en la lista |
+| **Icono** | Uno de la lista: llama, inicio, carrete, capas, boquilla, encendido, llave, termómetro, rayo, carpeta o reproducir |
+| **Comandos** | Un comando G-code por línea |
+| **Disponible para** | Los tipos de máquina donde aparece: impresoras 3D, láser o CNC |
+
+NOPAL no ejecuta un macro en una máquina de un tipo para el que no esté habilitado: responde *«Esa macro no está habilitada para este tipo de máquina»*.
+
+### Plantillas
+
+Una **plantilla** es un macro con valores por ajustar, como una temperatura. La eliges, ajustas sus parámetros y la envías. Eliminar una pide confirmación.
+
+### Ayuda
+
+Resume lo anterior: elegir la máquina activa (los comandos y macros se envían a ella), crear macros y usar plantillas.
 
 ## Las demás consolas
 
@@ -46,4 +78,5 @@ En todas, **ver** es para todos y **enviar** comandos es solo para administrador
 |---|:-:|:-:|
 | Ver la consola y la lista de macros | ✅ | ✅ |
 | Enviar comandos | ❌ | ✅ |
-| Ejecutar macros | ❌ | ✅ |
+| Ejecutar macros y plantillas | ❌ | ✅ |
+| Crear, editar y eliminar macros y plantillas | ❌ | ✅ |
