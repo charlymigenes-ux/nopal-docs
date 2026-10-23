@@ -1,7 +1,7 @@
 ---
 title: Materiales: API
 status: draft
-verified_against: "nopal-plugin-spoolman@255486c (0.3.0) · nopal@b9aa473"
+verified_against: "nopal-plugin-spoolman@41201f7 (0.3.0) · nopal@b9aa473"
 generated: true
 ---
 

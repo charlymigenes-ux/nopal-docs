@@ -4,18 +4,18 @@ sidebar_label: Materiales
 audience: user
 type: reference
 status: implemented
-verified_against: "nopal@b9aa473; nopal-plugin-spoolman@255486c"
+verified_against: "nopal@b9aa473; nopal-plugin-spoolman@41201f7"
 generated: true
 plugin_id: spoolman
 plugin_version: "0.3.0"
-source_commit: "255486c"
+source_commit: "41201f7"
 ---
 
 # Materiales
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-spoolman@255486c`, `nopal@b9aa473`).
+Sources: `nopal-plugin.json`, plugin code and `plugin_catalog.json` (`nopal-plugin-spoolman@41201f7`, `nopal@b9aa473`).
 :::
 
 Conecta NOPAL con un servidor Spoolman para ver tu inventario real de spools de filamento, asignarlos a tus impresoras Klipper y usar sus costos reales en el Cotizador.
