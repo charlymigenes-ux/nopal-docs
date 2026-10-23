@@ -4,10 +4,10 @@ sidebar_label: Change history
 audience: reference
 type: reference
 status: implemented
-verified_against: "nopal@d6d86a5 (2026-10-17)"
+verified_against: "nopal@b9aa473 (2026-10-22)"
 generated: true
 sidebar_position: 2
-source_commit: "d6d86a5"
+source_commit: "b9aa473"
 ---
 
 # Change history
@@ -16,13 +16,13 @@ source_commit: "d6d86a5"
 This page is **generated** from `nopal`'s git history. Do not edit it by hand.
 :::
 
-Groups the commit messages (249 changes, up to `d6d86a5`, 2026-10-17) by version and type. **It is not a curated changelog**: the texts are the commits' own, in the language they were written in. NOPAL does not publish tagged releases yet (see [versioning](./versionado-y-soporte.md)).
+Groups the commit messages (257 changes, up to `b9aa473`, 2026-10-22) by version and type. **It is not a curated changelog**: the texts are the commits' own, in the language they were written in. NOPAL does not publish tagged releases yet (see [versioning](./versionado-y-soporte.md)).
 
-11 changes to components whose documentation is deferred are omitted.
+12 changes to components whose documentation is deferred are omitted.
 
-## 1.2.0-alpha.1 — Unreleased (2026-07-15 → 2026-10-17, 222)
+## 1.2.0-alpha.1 — Unreleased (2026-07-15 → 2026-10-22, 230)
 
-### Added (105)
+### Added (110)
 
 **ai**
 
@@ -35,6 +35,10 @@ Groups the commit messages (249 changes, up to `d6d86a5`, 2026-10-17) by version
 - historial de conversaciones con CRUD y memoria de contexto (`1d1db5f`, 2026-08-12)
 - preguntas rápidas editables (`36d9bb8`, 2026-08-12)
 - la capa de IA ve los plugins y sus dispositivos (`3f4879b`, 2026-08-12)
+
+**arranque**
+
+- pantalla de carga radial con estado real por módulo (`00263ab`, 2026-10-22)
 
 **auth**
 
@@ -55,11 +59,23 @@ Groups the commit messages (249 changes, up to `d6d86a5`, 2026-10-17) by version
 - add authorization policy enforcement (`cc851ef`, 2026-10-03)
 - harden authorization policy (`142e709`, 2026-10-03)
 
+**biblioteca**
+
+- mosaico con selector ✓, botones reordenados y tarjeta de subida (`74cd9be`, 2026-10-22)
+
 **cnc**
 
 - correr desde la SD de la placa (`2a6a643`, 2026-10-13)
 - vectorizado de line art, visor con área real, simulación y ajuste de Z en vivo (`6489c11`, 2026-10-13)
 - imagen a dibujo para plotter, progreso/errores del trabajo y barra lateral (`39791e9`, 2026-10-12)
+
+**consola**
+
+- rediseño con macros, plantillas, historial, guardar log y cargar archivo (`964e4b4`, 2026-10-19)
+
+**consolas**
+
+- Marlin, láser y CNC en la consola, macros por tipo y color por máquina (`31afe24`, 2026-10-19)
 
 **dashboard**
 
@@ -73,6 +89,10 @@ Groups the commit messages (249 changes, up to `d6d86a5`, 2026-10-17) by version
 
 - Nopal_FF reemplaza el sensor T/H analógico por DHT11 (`b32741b`, 2026-08-14)
 - buzzer pasivo, 3 tiras NeoPixel y sensor T/H analógico en Nopal_FF (`0efef7f`, 2026-07-31)
+
+**gcode**
+
+- render 2D compartido, generado al importar, y vista previa en el área del láser (`615fcbd`, 2026-10-22)
 
 **help**
 
@@ -174,7 +194,7 @@ Groups the commit messages (249 changes, up to `d6d86a5`, 2026-10-17) by version
 - redesign G-code file library (`dfeb0f1`, 2026-07-16)
 - make system updates machine-safe (`ab40aeb`, 2026-07-16)
 
-### Fixed (60)
+### Fixed (61)
 
 **ai**
 
@@ -205,6 +225,7 @@ Groups the commit messages (249 changes, up to `d6d86a5`, 2026-10-17) by version
 
 **laser**
 
+- "Encender láser" dispara de verdad en modo láser ($32=1) (`c22bedb`, 2026-10-22)
 - track SD and external jobs reliably (`86f3e4c`, 2026-10-05)
 
 **security**
@@ -283,7 +304,7 @@ Groups the commit messages (249 changes, up to `d6d86a5`, 2026-10-17) by version
 - center printer MCU metrics (`481227f`, 2026-07-16)
 - refresh light theme palette (`ee1fea2`, 2026-07-16)
 
-### Documentation (14)
+### Documentation (15)
 
 **firmware**
 
@@ -291,6 +312,7 @@ Groups the commit messages (249 changes, up to `d6d86a5`, 2026-10-17) by version
 
 **General**
 
+- AGENTS.md solo con lo tecnico; las notas personales salen del repo (`6981439`, 2026-10-19)
 - correct minimum Python version to 3.9 (`358998a`, 2026-10-05)
 - mark last-admin protection implemented (`d31a010`, 2026-10-03)
 - finalize authorization policy D3 (`1c08cae`, 2026-10-03)
@@ -317,7 +339,7 @@ Groups the commit messages (249 changes, up to `d6d86a5`, 2026-10-17) by version
 - align auth fixtures with production roles (`614d320`, 2026-10-03)
 - run pytest in GitHub Actions (`247efab`, 2026-10-03)
 
-### Maintenance (15)
+### Maintenance (16)
 
 **i18n**
 
@@ -327,6 +349,7 @@ Groups the commit messages (249 changes, up to `d6d86a5`, 2026-10-17) by version
 
 **General**
 
+- .mcp.json con el servidor MCP de CodeGraph (`1504d66`, 2026-10-20)
 - bump cachebuster de app.js (v264 -&gt; v265) (`61dfeb2`, 2026-08-13)
 - agrega botones de donación (PayPal + Buy Me a Coffee) (`7620383`, 2026-08-11)
 - quita el badge/release de versión, todavía no hay pre-release (`a095cb6`, 2026-08-10)

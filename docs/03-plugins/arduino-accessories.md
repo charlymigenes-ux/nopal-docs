@@ -4,7 +4,7 @@ sidebar_label: Automatización de Taller
 audience: user
 type: reference
 status: implemented
-verified_against: "nopal@d6d86a5; nopal-plugin-arduino-accessories@7d81164"
+verified_against: "nopal@b9aa473; nopal-plugin-arduino-accessories@7d81164"
 generated: true
 plugin_id: arduino-accessories
 plugin_version: "2.6.0"
@@ -14,7 +14,7 @@ plugin_version: "2.6.0"
 
 :::note
 Página **generada** automáticamente. No la edites a mano: corrige la fuente y vuelve a generar.
-Fuentes: `nopal-plugin.json`, código del plugin y `plugin_catalog.json` (`nopal-plugin-arduino-accessories@7d81164`, `nopal@d6d86a5`).
+Fuentes: `nopal-plugin.json`, código del plugin y `plugin_catalog.json` (`nopal-plugin-arduino-accessories@7d81164`, `nopal@b9aa473`).
 :::
 
 Control unificado del taller para placas Arduino/ESP32: relés, iluminación, telemetría, escenas, mapas de pines y automatizaciones por máquina.

@@ -4,17 +4,17 @@ sidebar_label: Plugin matrix
 audience: reference
 type: reference
 status: implemented
-verified_against: "nopal@d6d86a5 (2026-10-17)"
+verified_against: "nopal@b9aa473 (2026-10-22)"
 generated: true
 sidebar_position: 1
-source_commit: "d6d86a5"
+source_commit: "b9aa473"
 ---
 
 # Plugin matrix
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Verified against `nopal@d6d86a5` (2026-10-17).
+Verified against `nopal@b9aa473` (2026-10-22).
 :::
 
 Official plugins, with the data from their `nopal-plugin.json` manifest.
@@ -24,7 +24,7 @@ Official plugins, with the data from their `nopal-plugin.json` manifest.
 | [Matriz LED](./matriz-led.md) | `matriz-led` | 0.10.0 | Accesorios | Impresión 3D, Láser, CNC | `>=3.10` | 40 | ⚠️ |
 | [Automatización de Taller](./arduino-accessories.md) | `arduino-accessories` | 2.6.0 | Accesorios | Impresión 3D, Láser, CNC | — | 43 | ⚠️ |
 | [Cámaras](./camera-viewer.md) | `camera-viewer` | 1.4.0 | Producción | Impresión 3D, Láser, CNC | — | 32 | ✅ |
-| [Materiales](./spoolman.md) | `spoolman` | 0.2.0 | Producción | Impresión 3D | — | 17 | ✅ |
+| [Materiales](./spoolman.md) | `spoolman` | 0.3.0 | Producción | Impresión 3D | — | 25 | ⚠️ |
 | [Cotizador](./cotizador.md) | `cotizador` | 1.1.0 | Producción | Impresión 3D, Láser, CNC | — | 18 | ✅ |
 | [Creador de formas](./shape-creator.md) | `shape-creator` | 1.2.0 | Diseño | Láser, CNC | — | no backend | ✅ |
 | [Herramientas SVG](./svg-toolkit.md) | `svg-toolkit` | 0.9.0 | Diseño | Láser, CNC | — | no backend | ✅ |
@@ -39,6 +39,7 @@ Official plugins, with the data from their `nopal-plugin.json` manifest.
 | `matriz-led` | plugin_catalog.json | 0.9.0 | 0.10.0 |
 | `matriz-led` | NopalPluginRegistry (JS) | 0.9.0 | 0.10.0 |
 | `arduino-accessories` | plugin_catalog.json | 2.5.0 | 2.6.0 |
+| `spoolman` | plugin_catalog.json | 0.2.0 | 0.3.0 |
 | `font-library` | plugin_catalog.json | 0.5.0 | 0.5.1 |
 
 Until a single source of metadata exists (see RFC), the catalog and the JS duplicate the manifest version.

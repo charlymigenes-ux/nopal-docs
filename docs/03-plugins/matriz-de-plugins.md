@@ -4,7 +4,7 @@ sidebar_label: Matriz de plugins
 audience: reference
 type: reference
 status: implemented
-verified_against: "nopal@d6d86a5 (2026-10-17)"
+verified_against: "nopal@b9aa473 (2026-10-22)"
 generated: true
 sidebar_position: 1
 ---
@@ -13,7 +13,7 @@ sidebar_position: 1
 
 :::note
 Página **generada** automáticamente. No la edites a mano: corrige la fuente y vuelve a generar.
-Verificado contra `nopal@d6d86a5` (2026-10-17).
+Verificado contra `nopal@b9aa473` (2026-10-22).
 :::
 
 Plugins oficiales, con los datos de su manifiesto `nopal-plugin.json`.
@@ -23,7 +23,7 @@ Plugins oficiales, con los datos de su manifiesto `nopal-plugin.json`.
 | [Matriz LED](./matriz-led.md) | `matriz-led` | 0.10.0 | Accesorios | Impresión 3D, Láser, CNC | `>=3.10` | 40 | ⚠️ |
 | [Automatización de Taller](./arduino-accessories.md) | `arduino-accessories` | 2.6.0 | Accesorios | Impresión 3D, Láser, CNC | — | 43 | ⚠️ |
 | [Cámaras](./camera-viewer.md) | `camera-viewer` | 1.4.0 | Producción | Impresión 3D, Láser, CNC | — | 32 | ✅ |
-| [Materiales](./spoolman.md) | `spoolman` | 0.2.0 | Producción | Impresión 3D | — | 17 | ✅ |
+| [Materiales](./spoolman.md) | `spoolman` | 0.3.0 | Producción | Impresión 3D | — | 25 | ⚠️ |
 | [Cotizador](./cotizador.md) | `cotizador` | 1.1.0 | Producción | Impresión 3D, Láser, CNC | — | 18 | ✅ |
 | [Creador de formas](./shape-creator.md) | `shape-creator` | 1.2.0 | Diseño | Láser, CNC | — | sin backend | ✅ |
 | [Herramientas SVG](./svg-toolkit.md) | `svg-toolkit` | 0.9.0 | Diseño | Láser, CNC | — | sin backend | ✅ |
@@ -38,6 +38,7 @@ Plugins oficiales, con los datos de su manifiesto `nopal-plugin.json`.
 | `matriz-led` | plugin_catalog.json | 0.9.0 | 0.10.0 |
 | `matriz-led` | NopalPluginRegistry (JS) | 0.9.0 | 0.10.0 |
 | `arduino-accessories` | plugin_catalog.json | 2.5.0 | 2.6.0 |
+| `spoolman` | plugin_catalog.json | 0.2.0 | 0.3.0 |
 | `font-library` | plugin_catalog.json | 0.5.0 | 0.5.1 |
 
 Mientras no exista una fuente única de metadatos (ver RFC), el catálogo y el JS duplican la versión del manifiesto.

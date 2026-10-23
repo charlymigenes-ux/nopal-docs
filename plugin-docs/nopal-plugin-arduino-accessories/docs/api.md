@@ -1,7 +1,7 @@
 ---
 title: Automatización de Taller: API
 status: draft
-verified_against: "nopal-plugin-arduino-accessories@7d81164 (2.6.0) · nopal@d6d86a5"
+verified_against: "nopal-plugin-arduino-accessories@7d81164 (2.6.0) · nopal@b9aa473"
 generated: true
 ---
 

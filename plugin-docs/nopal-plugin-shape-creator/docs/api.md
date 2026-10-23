@@ -1,7 +1,7 @@
 ---
 title: Creador de formas: API
 status: draft
-verified_against: "nopal-plugin-shape-creator@bbf1157 (1.2.0) · nopal@d6d86a5"
+verified_against: "nopal-plugin-shape-creator@bbf1157 (1.2.0) · nopal@b9aa473"
 generated: true
 ---
 

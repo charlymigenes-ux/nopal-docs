@@ -4,16 +4,16 @@ sidebar_label: Core REST API
 audience: reference
 type: reference
 status: implemented
-verified_against: "nopal@d6d86a5 (2026-10-17)"
+verified_against: "nopal@b9aa473 (2026-10-22)"
 generated: true
-source_commit: "d6d86a5"
+source_commit: "b9aa473"
 ---
 
 # Core REST API
 
 :::note
 This page is **generated** automatically. Do not edit it by hand: fix the source and regenerate.
-Verified against `nopal@d6d86a5` (2026-10-17).
+Verified against `nopal@b9aa473` (2026-10-22).
 :::
 
 Inventory of NOPAL's routes obtained by **static analysis** of the code (`@router.*` decorators and access dependencies). NOPAL is not run. The access shown is the one declared on the route; a role check inside a function body is not detected.
@@ -32,9 +32,9 @@ Inventory of NOPAL's routes obtained by **static analysis** of the code (`@route
 | Access | Routes |
 |---|---:|
 | Public | 5 |
-| Session (admin or operator) | 150 |
-| Admin only | 53 |
-| **Total** | **208** |
+| Session (admin or operator) | 161 |
+| Admin only | 60 |
+| **Total** | **226** |
 
 
 ## NOPAL Intelligence (AI)
@@ -118,12 +118,26 @@ Inventory of NOPAL's routes obtained by **static analysis** of the code (`@route
 
 ## Console and macros
 
-`backend/api/console.py` · 4 routes
+`backend/api/console.py` · 18 routes
 
 | Method | Route | Access | Policy | Description |
 |---|---|---|---|---|
-| POST | `/api/console/command` | Session (admin or operator) | `SEND_CONSOLE_COMMAND` | Envía un comando de consola/G-code a la impresora indicada. |
-| GET | `/api/console/messages` | Session (admin or operator) | — | Últimos mensajes de la consola G-code de la impresora indicada. |
+| POST | `/api/console/command` | Session (admin or operator) | `SEND_CONSOLE_COMMAND` | Envía un comando de consola/G-code a la máquina indicada. |
+| GET | `/api/console/history` | Session (admin or operator) | — | Últimos comandos enviados a la máquina (el más reciente primero). |
+| DELETE | `/api/console/history` | Admin only | — | — |
+| GET | `/api/console/log/export` | Session (admin or operator) | — | Log de la consola como texto descargable. |
+| GET | `/api/console/macros` | Session (admin or operator) | — | — |
+| POST | `/api/console/macros` | Admin only | — | — |
+| PUT | `/api/console/macros/{macro_id}` | Admin only | — | — |
+| DELETE | `/api/console/macros/{macro_id}` | Admin only | — | — |
+| POST | `/api/console/macros/{macro_id}/run` | Session (admin or operator) | — | — |
+| GET | `/api/console/messages` | Session (admin or operator) | — | Últimos mensajes de la consola G-code de la máquina indicada. |
+| POST | `/api/console/run-file` | Session (admin or operator) | `SEND_CONSOLE_COMMAND` | Envía línea por línea un archivo de G-code corto (calibraciones, pruebas). |
+| GET | `/api/console/templates` | Session (admin or operator) | — | — |
+| POST | `/api/console/templates` | Admin only | — | — |
+| PUT | `/api/console/templates/{template_id}` | Admin only | — | — |
+| DELETE | `/api/console/templates/{template_id}` | Admin only | — | — |
+| POST | `/api/console/templates/{template_id}/run` | Session (admin or operator) | — | — |
 | GET | `/api/macros` | Session (admin or operator) | — | Lista de macros configurados en la impresora indicada. |
 | POST | `/api/macros/run` | Session (admin or operator) | `RUN_MACRO` | Ejecuta un macro por nombre en la impresora indicada. |
 
@@ -195,13 +209,15 @@ Inventory of NOPAL's routes obtained by **static analysis** of the code (`@route
 
 ## Laser and CNC (GRBL)
 
-`backend/api/laser.py` · 46 routes
+`backend/api/laser.py` · 48 routes
 
 | Method | Route | Access | Policy | Description |
 |---|---|---|---|---|
 | POST | `/api/laser/command` | Session (admin or operator) | `action` | Envía un comando GRBL suelto (jog, $H, $X, etc.). |
 | GET | `/api/laser/console` | Session (admin or operator) | — | Últimos mensajes transmitidos por el láser (consola en vivo). |
 | POST | `/api/laser/console` | Session (admin or operator) | `SEND_CONSOLE_COMMAND` | Envía un comando desde la consola del láser. |
+| POST | `/api/laser/fire` | Session (admin or operator) | `SET_LASER_POWER` | Disparo de prueba ("Encender láser"). Devuelve `duration_s`: lo que dura encendido por sí solo (0 = hasta apagarlo). Ver fire_test en laser… |
+| POST | `/api/laser/fire/stop` | Session (admin or operator) | `CANCEL` | Apaga el disparo de prueba. Cualquier operador puede apagarlo (es lo mismo que cancelar). Nunca durante un trabajo: el reinicio suave lo ab… |
 | GET | `/api/laser/history` | Session (admin or operator) | — | Historial de trabajos láser (completados, cancelados o con error), más recientes primero. |
 | POST | `/api/laser/history/snapshot` | Session (admin or operator) | — | Adjunta la captura del grill (figura trazada) al trabajo más reciente de ese host. |
 | POST | `/api/laser/home` | Session (admin or operator) | — | Inicia el ciclo de home ($H en GRBL, G28 en Marlin). |
@@ -313,7 +329,7 @@ Inventory of NOPAL's routes obtained by **static analysis** of the code (`@route
 
 ## Model and G-code library
 
-`backend/api/models.py` · 10 routes
+`backend/api/models.py` · 12 routes
 
 | Method | Route | Access | Policy | Description |
 |---|---|---|---|---|
@@ -324,6 +340,8 @@ Inventory of NOPAL's routes obtained by **static analysis** of the code (`@route
 | POST | `/api/folders` | Session (admin or operator) | — | Crea una subcarpeta dentro de la sección indicada. |
 | PATCH | `/api/folders` | Session (admin or operator) | — | Renombra una subcarpeta existente. |
 | DELETE | `/api/folders` | Session (admin or operator) | — | Elimina una subcarpeta (y su contenido) de la sección indicada. |
+| GET | `/api/gcode/render-meta` | Session (admin or operator) | — | Límites reales (mm) del trazo y tamaño del PNG de /api/gcode/thumbnail, para colocar la imagen en el área de trabajo de una máquina. |
+| GET | `/api/gcode/render-progress` | Session (admin or operator) | — | Avance del render de un G-code recién importado (barra de la biblioteca). |
 | GET | `/api/gcode/thumbnail` | Session (admin or operator) | — | Miniatura 2D generada por NOPAL a partir de la trayectoria real del G-code (para la galería de archivos CNC/láser) — a diferencia de /api/m… |
 | GET | `/api/models` | Session (admin or operator) | — | Listado plano y recursivo de todos los archivos (usado por estadísticas). |
 | GET | `/api/models/thumbnail` | Session (admin or operator) | — | Miniatura PNG incrustada por el slicer en el propio G-code (thumbnail begin/end). 404 si el archivo no trae ninguna incrustada. |

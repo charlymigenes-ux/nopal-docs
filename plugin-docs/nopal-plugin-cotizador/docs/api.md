@@ -1,7 +1,7 @@
 ---
 title: Cotizador: API
 status: draft
-verified_against: "nopal-plugin-cotizador@cb06264 (1.1.0) · nopal@d6d86a5"
+verified_against: "nopal-plugin-cotizador@cb06264 (1.1.0) · nopal@b9aa473"
 generated: true
 ---
 

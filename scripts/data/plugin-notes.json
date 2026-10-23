@@ -46,7 +46,13 @@
       "es": "Requiere un servidor Spoolman accesible en la red por HTTP plano, sin credenciales ni subruta (la guía de Spoolman recomienda Docker Compose, con el puerto 7912). Ver la guía de instalación del plugin.",
       "en": "Requires a Spoolman server reachable on the network over plain HTTP, with no credentials or sub-path (Spoolman's guide recommends Docker Compose, on port 7912). See the plugin's installation guide.",
       "evidence": "nopal-plugin-spoolman/README.md"
+    },
+    {
+      "es": "Desde la versión 0.3.0, un administrador puede pesar, registrar uso, mover y archivar carretes desde NOPAL (cada acción pide confirmación y la ejecuta Spoolman) y pedir una copia de la base de datos de Spoolman. Las herramientas de NOPAL Intelligence `find_spools` y `get_printer_spools` son de solo lectura. El panel consulta cada 10 segundos si el inventario cambió; no hay canal push.",
+      "en": "Since version 0.3.0, an administrator can weigh, log usage, move and archive spools from NOPAL (each action asks for confirmation and Spoolman runs it) and ask for a copy of the Spoolman database. The NOPAL Intelligence tools `find_spools` and `get_printer_spools` are read-only. The panel checks every 10 seconds whether the inventory changed; there is no push channel.",
+      "evidence": "nopal-plugin-spoolman/docs/overview.md"
     }
+
   ],
   "cotizador": [
     {
