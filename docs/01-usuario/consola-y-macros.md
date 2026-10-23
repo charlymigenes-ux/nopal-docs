@@ -10,7 +10,7 @@ verified_against: "nopal@a5853dc (2026-10-17)"
 
 # Consola y macros
 
-La **Consola del sistema** (en **Herramientas**) te deja ver la consola de una impresora **Klipper** y ejecutar sus **macros**.
+Las **Consolas** (en **Herramientas**) te dejan ver la consola de cada máquina, enviarle comandos y ejecutar **macros**.
 
 :::warning Enviar comandos y ejecutar macros es solo para administradores
 Cualquier usuario con sesión puede **ver** la respuesta de la impresora y la **lista de macros**. **Enviar un comando** o **ejecutar un macro** requiere el rol de **administrador**: si no lo tienes, NOPAL responde *«Permiso insuficiente»*.
@@ -18,11 +18,28 @@ Cualquier usuario con sesión puede **ver** la respuesta de la impresora y la **
 
 ## Consola
 
-1. Selecciona una impresora Klipper.
-2. La respuesta de la impresora aparece **en tiempo real**.
-3. Un administrador puede escribir un comando G-code en la caja *«Enviar comando…»* y enviarlo.
+![Consola con la lista de máquinas (Sistema NOPAL, una Klipper, una Marlin, dos láseres y dos CNC), la salida en tiempo real de un láser, el cuadro para escribir comandos y el panel de macros](/img/capturas/es/consola-general-1.2.0-alpha.1.png)
 
-NOPAL comprueba el permiso **antes** de enviar nada a la impresora.
+*Captura de un sistema en funcionamiento · NOPAL 1.2.0-alpha.1 · interfaz en español · tema NOPAL Style.*
+
+1. Abre **Herramientas → Consolas**.
+2. En **Máquinas** elige una tarjeta. Hay una para el **Sistema NOPAL** (solo lectura: eventos y registro de NOPAL) y una por cada impresora **Klipper** o **Marlin**, y por cada **láser** o **CNC** (GRBL). Cada tarjeta muestra su estado (*Lista*, *Imprimiendo*, *En pausa*, *Error* o *Desconectada*) y, en las impresoras, las temperaturas de la boquilla y de la cama.
+3. La respuesta de la máquina aparece **en tiempo real**.
+4. Un administrador escribe un comando G-code en *«Escribe un comando…»* y lo envía.
+
+NOPAL comprueba el permiso **antes** de enviar nada a la máquina. En un láser, no se aceptan comandos mientras corre un trabajo, porque desincronizarían la máquina.
+
+Debajo de la salida hay estas opciones:
+
+| Opción | Qué hace |
+|---|---|
+| **Historial** | Los últimos comandos enviados a esa máquina. Borrarlo es solo para administradores |
+| **Limpiar** | Vacía la salida que ves |
+| **Guardar log** | Descarga la salida como archivo de texto |
+| **Cargar archivo** | Envía línea por línea un archivo corto de G-code, como una calibración. Máximo 256 KB y 500 líneas. Avisa cuántas líneas se enviaron y cuántas se omitieron. Solo administradores |
+| **Autoscroll** | Sigue la última línea |
+
+El icono de engranaje cambia el tamaño de letra y el de copiar copia el log.
 
 ## Macros
 
@@ -62,12 +79,13 @@ Resume lo anterior: elegir la máquina activa (los comandos y macros se envían 
 
 ## Las demás consolas
 
-Cada familia tiene su propia consola, dentro de la sección de la máquina:
+Todas las máquinas con consola aparecen en **Consolas**. Algunas tienen además una consola propia en su sección:
 
 | Máquina | Dónde |
 |---|---|
-| **Marlin** | En la ficha de la impresora. Ver [Impresoras Marlin](./impresoras-marlin) |
-| **Láser y CNC** (GRBL) | **Consola Láser**, en la sección de la máquina. Ver [Láser y CNC](./laser-y-cnc) |
+| **Klipper** | En **Consolas** |
+| **Marlin** | En **Consolas** y en la ficha de la impresora. Ver [Impresoras Marlin](./impresoras-marlin) |
+| **Láser y CNC** (GRBL) | En **Consolas** y en la **Consola Láser**, dentro de su sección. Ver [Láser y CNC](./laser-y-cnc) |
 | Bambu Lab, Elegoo, FlashForge | **No tienen** consola en NOPAL |
 
 En todas, **ver** es para todos y **enviar** comandos es solo para administradores.
@@ -78,5 +96,8 @@ En todas, **ver** es para todos y **enviar** comandos es solo para administrador
 |---|:-:|:-:|
 | Ver la consola y la lista de macros | ✅ | ✅ |
 | Enviar comandos | ❌ | ✅ |
+| Cargar un archivo de G-code | ❌ | ✅ |
+| Borrar el historial | ❌ | ✅ |
+| Ver el historial y guardar el log | ✅ | ✅ |
 | Ejecutar macros y plantillas | ❌ | ✅ |
 | Crear, editar y eliminar macros y plantillas | ❌ | ✅ |

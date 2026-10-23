@@ -5,7 +5,7 @@ Guía y estado de las capturas de pantalla de la documentación. Cumple el [Docu
 Hay dos tipos de captura:
 
 - **Instalación nueva, sin máquinas** (10): las tomó Claude con Playwright sobre una instalación aislada de `nopal@main` 1.2.0-alpha.1, en español e inglés.
-- **Sistema en funcionamiento** (9 pantallas): las tomó el autor en su instalación real (`dev-main`, commit `fc37efe`, Debian 13). Su pie de figura declara que son de un sistema en funcionamiento.
+- **Sistema en funcionamiento** (10 pantallas): las tomó el autor en su instalación real (`dev-main`, commit `fc37efe`, Debian 13). Su pie de figura declara que son de un sistema en funcionamiento.
 
 Todas están ya en las páginas.
 
@@ -49,7 +49,7 @@ Todas están ya en las páginas.
 
 La vista previa 3D de la biblioteca sale vacía en estas capturas porque el navegador de pruebas no tiene aceleración gráfica. Si puedes, repite `biblioteca-modelos` en un navegador real.
 
-## Hechas: sistema en funcionamiento (9)
+## Hechas: sistema en funcionamiento (10)
 
 | # | Archivo (`area-vista`) | Página | Notas |
 |---|---|---|---|
@@ -61,7 +61,8 @@ La vista previa 3D de la biblioteca sale vacía en estas capturas porque el nave
 | 16 | `laser-conexion` | Láser y CNC | IP, puerta de enlace, DNS, MAC, SSID y nombre del equipo difuminados |
 | 17 | `ia-conversacion` | NOPAL Intelligence | IP de un evento difuminada |
 | 18 | `ia-configuracion` | NOPAL Intelligence | |
-| 19 | `consola-macros` | Consola y macros | Panel «Macros y plantillas», solo el panel (no la consola) |
+| 19 | `consola-macros` | Consola y macros | Panel «Macros y plantillas», solo el panel |
+| 20 | `consola-general` | Consola y macros | Lista de máquinas, salida de un láser y panel de macros |
 
 ## Pendiente (0)
 

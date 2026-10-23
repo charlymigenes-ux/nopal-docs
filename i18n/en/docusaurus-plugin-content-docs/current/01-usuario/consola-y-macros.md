@@ -11,7 +11,7 @@ source_commit: "a5853dc"
 
 # Console and macros
 
-The **System Console** (under **Tools**) lets you see a **Klipper** printer's console and run its **macros**.
+The **Consoles** (under **Tools**) let you see each machine's console, send it commands and run **macros**.
 
 :::warning Sending commands and running macros is for administrators only
 Any signed-in user can **see** the printer's response and the **list of macros**. **Sending a command** or **running a macro** requires the **administrator** role: if you do not have it, NOPAL answers *"Permiso insuficiente"* (insufficient permission).
@@ -19,11 +19,28 @@ Any signed-in user can **see** the printer's response and the **list of macros**
 
 ## Console
 
-1. Select a Klipper printer.
-2. The printer's response appears **in real time**.
-3. An administrator can type a G-code command in the *"Send command..."* box and send it.
+![Console with the machine list (NOPAL system, one Klipper, one Marlin, two lasers and two CNCs), a laser's live output, the command box and the macros panel](/img/capturas/es/consola-general-1.2.0-alpha.1.png)
 
-NOPAL checks the permission **before** sending anything to the printer.
+*Screenshot of a running system · NOPAL 1.2.0-alpha.1 · Spanish interface · NOPAL Style theme.*
+
+1. Open **Tools → Consoles**.
+2. Under **Machines** pick a card. There is one for the **NOPAL system** (read-only: NOPAL events and log) and one for each **Klipper** or **Marlin** printer, and for each **laser** or **CNC** (GRBL). Each card shows its state (*Ready*, *Printing*, *Paused*, *Error* or *Disconnected*) and, on printers, the nozzle and bed temperatures.
+3. The machine's response shows up **in real time**.
+4. An administrator types a G-code command in *"Type a command…"* and sends it.
+
+NOPAL checks the permission **before** sending anything to the machine. On a laser, commands are not accepted while a job is running, because they would knock the machine out of sync.
+
+Below the output there are these options:
+
+| Option | What it does |
+|---|---|
+| **History** | The last commands sent to that machine. Clearing it is for administrators only |
+| **Clear** | Empties the output you see |
+| **Save log** | Downloads the output as a text file |
+| **Load file** | Sends a short G-code file line by line, such as a calibration. 256 KB and 500 lines at most. It reports how many lines were sent and how many were skipped. Administrators only |
+| **Autoscroll** | Follows the last line |
+
+The gear icon changes the font size and the copy icon copies the log.
 
 ## Macros
 
@@ -63,12 +80,13 @@ It sums up the above: choose the active machine (commands and macros are sent to
 
 ## The other consoles
 
-Each family has its own console, inside the machine's section:
+Every machine with a console appears in **Consoles**. Some also have a console of their own in their section:
 
 | Machine | Where |
 |---|---|
-| **Marlin** | On the printer's card. See [Marlin printers](./impresoras-marlin) |
-| **Laser and CNC** (GRBL) | **Laser Console**, in the machine's section. See [Laser and CNC](./laser-y-cnc) |
+| **Klipper** | In **Consoles** |
+| **Marlin** | In **Consoles** and on the printer's page. See [Marlin printers](./impresoras-marlin) |
+| **Laser and CNC** (GRBL) | In **Consoles** and in the **Laser Console**, inside their section. See [Laser and CNC](./laser-y-cnc) |
 | Bambu Lab, Elegoo, FlashForge | They **do not have** a console in NOPAL |
 
 In all of them, **viewing** is for everyone and **sending** commands is for administrators only.
@@ -79,5 +97,8 @@ In all of them, **viewing** is for everyone and **sending** commands is for admi
 |---|:-:|:-:|
 | View the console and the macro list | ✅ | ✅ |
 | Send commands | ❌ | ✅ |
+| Load a G-code file | ❌ | ✅ |
+| Clear the history | ❌ | ✅ |
+| View the history and save the log | ✅ | ✅ |
 | Run macros and templates | ❌ | ✅ |
 | Create, edit and delete macros and templates | ❌ | ✅ |
